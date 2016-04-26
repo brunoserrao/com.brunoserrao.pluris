@@ -1,0 +1,10 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/bruno/Sites/pluris/plugins/cordova-plugin-whitelist/whitelist.js",
+        "/Users/bruno/Sites/pluris/plugins/ionic-plugin-keyboard/src/blackberry10/index.js",
+        "/Users/bruno/Sites/pluris/plugins/ionic-plugin-keyboard/src/windows/KeyboardProxy.js",
+        "/Users/bruno/Sites/pluris/plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+        "/Users/bruno/Sites/pluris/www/js/controllers.js",
+        "/Users/bruno/Sites/pluris/www/lib/angular/angular.js"
+    ]
+}

@@ -1,0 +1,128 @@
+<ion-side-menus enable-menu-with-back-views="false">
+	<ion-side-menu-content>
+		<ion-nav-bar class="bar-royal">
+			<ion-nav-back-button></ion-nav-back-button>
+			<ion-nav-buttons side="left">
+				<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+		<ion-nav-view name="menuContent"></ion-nav-view>
+	</ion-side-menu-content>
+
+	<ion-side-menu side="left">
+		<!--
+		<ion-header-bar class="bar-royal">
+			<h1 class="title">{{ 'CONGRESSO' | translate }}</h1>
+		</ion-header-bar>
+		-->
+		<ion-content>
+			<!-- LOGO -->
+			<div id="menu-logo">
+				<a menu-close href="#app/home">
+					<img src="img/logo.png" alt="Pluris 2016" class="logo">
+				</a>
+			</div>
+			
+			<ul class="list">
+				<!-- CONGRESSO -->				
+				<li class="item item-icon-left item-divider">
+					<i class="icon ion-person"></i>
+					<i>
+						{{ 'MENU_CONGRESSO' | translate }}
+					</i>
+				</li>
+
+				<li>
+					<a menu-close class="item" href="#app/congresso/apresentacao">
+						{{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}
+					</a>
+				</li>
+
+				<li>
+					<a menu-close class="item" href="#app/congresso/organizacao">
+						{{ 'MENU_CONGRESSO_ORGANIZACAO' | translate }}
+					</a>
+				</li>
+
+				<li>
+					<a menu-close class="item" href="#app/congresso/idiomas">
+						{{ 'MENU_CONGRESSO_IDIOMAS' | translate }}
+					</a>
+				</li>
+
+				<li>
+					<a menu-close class="item" href="#app/congresso/contatos">
+						{{ 'MENU_CONGRESSO_CONTATOS' | translate }}
+					</a>
+				</li>
+				
+				<!-- LOCAL -->
+				<li class="item item-icon-left item-divider">
+					<i class="icon ion-location"></i>
+					<i>
+						{{ 'MENU_LOCAL' | translate }}
+					</i>
+				</li>
+				
+				<li>
+					<a menu-close class="item" href="#app/local/a-cidade">
+						{{ 'MENU_LOCAL_CIDADE' | translate }}
+					</a>
+				</li>
+				
+				<li>
+					<a menu-close class="item" href="#app/local/local-da-conferencia">
+						{{ 'MENU_LOCAL_CONFERENCIA' | translate }}
+					</a>
+				</li>
+				
+				<!-- IDIOMAS -->
+				<li class="item item-icon-left item-divider">
+					<i class="icon ion-chatbox-working"></i> 
+					<i>
+						{{ 'MENU_IDIOMAS_CONFIG' | translate }}
+					</i>
+				</li>
+
+				<li>
+					<a class="item" ng-click="switchLanguage('pt_BR')">
+						{{ 'MENU_PT' | translate }}
+					</a>
+				</li>
+
+				<li>
+					<a class="item" ng-click="switchLanguage('en')">
+						{{ 'MENU_EN' | translate }}
+					</a>
+				</li>
+
+				<li>
+					<a class="item" ng-click="switchLanguage('es')">
+						{{ 'MENU_ES' | translate }}
+					</a>
+				</li>
+
+				<!-- REDES SOCIAIS -->
+				<li class="item item-icon-left item-divider">
+					<i class="icon icon ion-share-alt"></i> 
+					{{ 'MENU_SOCIAL_NETWORK' | translate }}
+				</li>
+
+				<li class="item tabs tabs-icon-left">
+					<a class="tab-item" href="#" onclick="window.open('https://www.facebook.com/maceio40graus', '_system', 'location=yes'); return false;">
+						<i class="icon ion-social-facebook"></i>
+						Facebook
+					</a>
+					<a class="tab-item" href="#" onclick="window.open('https://instagram.com/ritaccfreire', '_system', 'location=yes'); return false;">
+						<i class="icon ion-social-instagram"></i>
+						Instagram
+					</a>
+					<a class="tab-item" href="#" onclick="window.open('https://twitter.com/pluris2016', '_system', 'location=yes'); return false;">
+						<i class="icon ion-social-twitter"></i>
+						Twitter
+					</a>
+				</li>
+			</ul>
+		</ion-content>
+	</ion-side-menu>
+</ion-side-menus>

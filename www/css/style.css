@@ -1,0 +1,10 @@
+/* Empty. Add your own CSS if you like */
+#menu-logo{
+	padding: 1em 0em;
+}
+.logo{
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
