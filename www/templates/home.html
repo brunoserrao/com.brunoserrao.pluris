@@ -1,5 +1,59 @@
-<ion-view view-title="Home">
-	<ion-content>
-		<h1>Home</h1>
-	</ion-content>
+<ion-view view-title="{{ 'CONGRESSO' | translate }}">
+	<div class="home-content">
+		<ion-content>
+			<div class="logo">
+				<img src="img/logo.png" alt="">
+			</div>
+
+			<div class="list card">
+
+				<div class="item item-avatar">
+					<img src="img/mcfly.jpg">
+					<h2>Marty McFly</h2>
+					<p>November 05, 1955</p>
+				</div>
+
+				<div class="item item-body">
+					<img class="full-image" src="img/delorean.jpg">
+					<p>
+						This is a "Facebook" styled Card. The header is created from a Thumbnail List item, the content is from a card-body consisting of an image and paragraph text. The footer consists of tabs, icons aligned left, within the card-footer.
+					</p>
+				</div>
+
+			</div>
+
+
+
+
+			<!--
+			<div class="row">
+				<div class="col col-75">.col.col-75</div>
+				<div class="col">.col</div>
+			</div>
+
+			<div class="row">
+				<div class="col">.col</div>
+				<div class="col col-75">.col.col-75</div>
+			</div>
+
+			<div class="row">
+				<div class="col">.col</div>
+				<div class="col">.col</div>
+			</div>
+			-->
+
+		</ion-content>
+	</div>
+
+	<div class="tabs tabs-icon-top">
+		<a class="tab-item" href="#app/home">
+			<i class="icon ion-home"></i> Home
+		</a>
+		<a class="tab-item">
+			<i class="icon ion-star"></i> Favorites
+		</a>
+		<a class="tab-item">
+			<i class="icon ion-gear-a"></i> Settings
+		</a>
+	</div>
 </ion-view>

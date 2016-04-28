@@ -3,10 +3,10 @@
   <name>Pluris 2016</name>
   <allow-navigation href="*"/>
   <description>
-			An Ionic Framework and Cordova project.
+			Pluris 2016 - 7º Congresso Luso-brasileiro para o planejamento urbano, regional, integrado e sustentável.
 		</description>
   <author email="bruno@brunoserrao.com" href="http://brunoserrao.com/">
-			Bruno Serrao Team
+			Bruno Serrao
 		</author>
   <content src="index.html"/>
   <access origin="*"/>
