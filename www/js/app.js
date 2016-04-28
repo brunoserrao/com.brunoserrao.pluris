@@ -19,6 +19,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			// org.apache.cordova.statusbar required
 			StatusBar.styleDefault();
 		}
+
+		// hide splashscreen
+		setTimeout(function() {
+	        navigator.splashscreen.hide();
+		}, 100);
 	});
 })
 
