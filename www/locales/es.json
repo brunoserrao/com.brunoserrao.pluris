@@ -1,4 +1,5 @@
 {
+	"MENU_HOME": "Home",
 	"CONGRESSO": "Pluris 2016",
 	"MENU_CONGRESSO": "Congreso",
 	"MENU_CONGRESSO_APRESENTACAO": "Presentación",
@@ -6,9 +7,21 @@
 	"MENU_CONGRESSO_IDIOMAS": "Idiomas",
 	"MENU_CONGRESSO_CONTATOS": "Contactos",
 
+	"MENU_LOCAL": "Local",
+	"MENU_LOCAL_CIDADE": "La ciudad de Maceió",
+	"MENU_LOCAL_CONFERENCIA": "Local del congresso",
+
 	"MENU_IDIOMAS_CONFIG": "Idiomas",
 	"MENU_PT": "Portugués",
 	"MENU_EN": "Inglés",
 	"MENU_ES": "Español",
-	"MENU_SOCIAL_NETWORK": "Redes sociales"
+	"MENU_SOCIAL_NETWORK": "Redes sociales",
+
+	"MENU_INSCREVER": "Suscribir",
+
+	"LEIA_MAIS": "ler mais",
+	"NOTICIAS": "Noticias",
+
+	"MENU_APOIO": "Apoyo",
+	"MENU_ORGANIZACAO": "Organización"
 }

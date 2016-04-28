@@ -1,4 +1,11 @@
 /* Empty. Add your own CSS if you like */
+a{
+	text-decoration: none;
+}
+
+.center{
+	text-align:center;
+}
 
 #menu-logo {
 	background-image: url(../img/background.png);
@@ -16,13 +23,9 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-/*
-	background-image: url(../img/background.png);
-background-size: auto 100%;
-background-position: center center;
-background-repeat: no-repeat;
-*/
 	padding-top: 50px;
+	background-image: url(../img/background.png);
+	background-position: center center;
 }
 
 .home-content .logo {
@@ -32,4 +35,13 @@ background-repeat: no-repeat;
 
 .home-content .logo img {
 	width: 95%;
+}
+
+.button-menu-inscrever{
+    margin-top: inherit !important;
+    margin-bottom: inherit !important;
+}
+
+.apoio img{
+	max-width: 50px;
 }

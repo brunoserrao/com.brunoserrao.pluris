@@ -1,59 +1,108 @@
 <ion-view view-title="{{ 'CONGRESSO' | translate }}">
 	<div class="home-content">
 		<ion-content>
-			<div class="logo">
-				<img src="img/logo.png" alt="">
+
+			<div class="row">
+				<div class="col">
+					<div class="logo">
+						<img src="img/logo-data.png" alt="">
+					</div>
+				</div>
 			</div>
 
 			<div class="list card">
-
-				<div class="item item-avatar">
-					<img src="img/mcfly.jpg">
-					<h2>Marty McFly</h2>
-					<p>November 05, 1955</p>
+				<div class="item">
+					<!-- <img src="img/logo-bola.png"> -->
+					<h2>{{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}</h2>
+					<p ng-if="language == 'pt_BR'">Sétima edição a ser realizada no Brasil</p>
+					<p ng-if="language == 'en'">Sétima edição a ser realizada no Brasil</p>
+					<p ng-if="language == 'es'">Sétima edição a ser realizada no Brasil</p>
 				</div>
 
 				<div class="item item-body">
-					<img class="full-image" src="img/delorean.jpg">
-					<p>
-						This is a "Facebook" styled Card. The header is created from a Thumbnail List item, the content is from a card-body consisting of an image and paragraph text. The footer consists of tabs, icons aligned left, within the card-footer.
+					<div class="item item-image">
+						<img class="full-image" src="img/maceio/ponta-verde-farol.jpg">
+					</div>
+					
+					<p ng-if="language == 'pt_BR'">
+						O PLURIS representa a continuidade da parceria entre pesquisadores do Brasil e de Portugal que se realiza desde 2005.
 					</p>
+
+					<p ng-if="language == 'en'">
+						The PLURIS represents the continuation of the partnership between researchers from Brazil and Portugal since 2005.
+					</p>
+
+					<p ng-if="language == 'es'">
+						El PLURIS 2016 continúa la colaboración entre investigadores de Brasil y Portugal celebrada desde el año 2005.
+					</p>
+					
+					<a class="item item-icon-left royal" href="#app/congresso/apresentacao">
+						<i class="icon ion-ios-paper"></i>
+						{{ 'LEIA_MAIS' | translate }}
+					</a>
 				</div>
-
 			</div>
 
+			<div class="list card">
+				<div class="item">
+					<h2 class="title">
+						{{ 'NOTICIAS' | translate }}
+					</h2>
+				</div>
+				<a class="item item-avatar" href="#">
+					<img src="img/maceio/ponta-verde-farol.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
 
+				<a class="item item-avatar" href="#">
+					<img src="img/maceio/ponta-verde-farol.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
 
+				<a class="item item-avatar" href="#">
+					<img src="img/maceio/ponta-verde-farol.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
 
-			<!--
-			<div class="row">
-				<div class="col col-75">.col.col-75</div>
-				<div class="col">.col</div>
+				<a class="item item-avatar" href="#">
+					<img src="img/maceio/ponta-verde-farol.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+
+				<a class="item item-avatar" href="#">
+					<img src="img/maceio/ponta-verde-farol.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
 			</div>
 
-			<div class="row">
-				<div class="col">.col</div>
-				<div class="col col-75">.col.col-75</div>
-			</div>
-
-			<div class="row">
-				<div class="col">.col</div>
-				<div class="col">.col</div>
-			</div>
-			-->
 
 		</ion-content>
 	</div>
-
+	
+	<!-- 
 	<div class="tabs tabs-icon-top">
 		<a class="tab-item" href="#app/home">
-			<i class="icon ion-home"></i> Home
+			<i class="icon ion-home"></i>
+			{{ 'MENU_HOME' | translate }}
 		</a>
-		<a class="tab-item">
-			<i class="icon ion-star"></i> Favorites
+
+		<a class="tab-item" href="#app/congresso/apresentacao">
+			<i class="icon ion-ios-people"></i> {{ 'MENU_CONGRESSO' | translate }}
 		</a>
-		<a class="tab-item">
-			<i class="icon ion-gear-a"></i> Settings
+
+		<a class="tab-item" href="#app/local/local-da-conferencia">
+			<i class="icon ion-location"></i> {{ 'MENU_LOCAL' | translate }}
 		</a>
-	</div>
+
+		<a class="tab-item" href="#" onclick="window.open('https://pluris2016.fundepes.br/', '_blank'); return false;">
+			<i class="icon ion-compose"></i> {{ 'MENU_INSCREVER' | translate }}
+		</a>
+	</div> 
+	-->
+	
 </ion-view>

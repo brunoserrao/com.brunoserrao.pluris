@@ -15,5 +15,13 @@
 	"MENU_PT": "Português",
 	"MENU_EN": "Inglês",
 	"MENU_ES": "Espanhol",
-	"MENU_SOCIAL_NETWORK": "Redes Sociais"
+	"MENU_SOCIAL_NETWORK": "Redes Sociais",
+
+	"MENU_INSCREVER": "Inscrever-se",
+
+	"LEIA_MAIS": "Leia mais",
+	"NOTICIAS": "Notícias",
+
+	"MENU_APOIO": "Apoio",
+	"MENU_ORGANIZACAO": "Organização"
 }

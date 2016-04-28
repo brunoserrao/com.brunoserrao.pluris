@@ -10,23 +10,30 @@
 	</ion-side-menu-content>
 
 	<ion-side-menu side="left">
-		<!--
+		
 		<ion-header-bar class="bar-royal">
-			<h1 class="title">{{ 'CONGRESSO' | translate }}</h1>
+			<h1 class="title">Menu</h1>
 		</ion-header-bar>
-		-->
+		
 		<ion-content>
 			<!-- LOGO -->
 			<div id="menu-logo" class="padding">
 				<a menu-close href="#app/home">
-					<img src="img/logo.png" alt="Pluris 2016" class="logo">
+					<img src="img/logo.svg" alt="Pluris 2016" class="logo">
 				</a>
 			</div>
 			
 			<ul class="list">
+				<li>
+					<a href="#" onclick="window.open('https://pluris2016.fundepes.br/', '_blank', 'zoom=no'); return false;">
+						<button class="button button-full button-royal button-menu-inscrever icon-left ion-compose">
+							{{ 'MENU_INSCREVER' | translate }}
+						</button>
+					</a>
+				</li>
 				<!-- CONGRESSO -->				
 				<li class="item item-icon-left item-divider">
-					<i class="icon ion-person"></i>
+					<i class="icon ion-ios-people"></i>
 					<i>
 						{{ 'MENU_CONGRESSO' | translate }}
 					</i>
@@ -104,7 +111,7 @@
 
 				<!-- REDES SOCIAIS -->
 				<li class="item item-icon-left item-divider">
-					<i class="icon icon ion-share-alt"></i> 
+					<i class="icon ion-share"></i> 
 					{{ 'MENU_SOCIAL_NETWORK' | translate }}
 				</li>
 
@@ -121,6 +128,55 @@
 						<i class="icon ion-social-twitter"></i>
 						Twitter
 					</a>
+				</li>
+
+				<!-- APOIO / ORGANIZACAO -->
+				<li class="apoio">
+					<div class="item item-divider">
+						{{ 'MENU_APOIO' | translate }}
+					</div>
+
+					<div class="item">
+						<div class="row">
+							<div class="col col-center center">
+								<img src="img/apoio/fundepes.png"/>
+							</div>
+
+							<div class="col col-center">
+								<img src="img/apoio/prefeitura.png"/>
+							</div>
+						</div>
+					</div>
+
+					<div class="item item-divider">
+						{{ 'MENU_ORGANIZACAO' | translate }}
+					</div>
+
+					<div class="item">
+						<div class="row">
+							<div class="col col-center center">
+								<img src="img/apoio/deha.png"/>
+							</div>
+
+							<div class="col col-center center">
+								<img src="img/apoio/ufal.png"/>
+							</div>
+						</div>
+					
+						<div class="row">
+							<div class="col col-center center">
+								<img src="img/apoio/usp.png"/>
+							</div>
+
+							<div class="col col-center center">
+								<img src="img/apoio/ufscar.png"/>
+							</div>
+
+							<div class="col col-center center">
+								<img src="img/apoio/usp.png"/>
+							</div>
+						</div>
+					</div>
 				</li>
 			</ul>
 		</ion-content>
