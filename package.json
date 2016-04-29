@@ -20,7 +20,6 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "org.apache.cordova.statusbar",
     "cordova-plugin-whitelist",
     "cordova-plugin-inappbrowser"
   ],
