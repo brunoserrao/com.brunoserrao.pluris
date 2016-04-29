@@ -24,7 +24,7 @@ a{
 	text-align: center;
 }
 
-.home-content .logo img {
+#menu-logo img, .home-content .logo img {
 	width: 95%;
 }
 
