@@ -21,9 +21,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		}
 
 		// hide splashscreen
-		setTimeout(function() {
-	        navigator.splashscreen.hide();
-		}, 100);
+		if (navigator.splashscreen) {
+			setTimeout(function() {
+				navigator.splashscreen.hide();
+			}, 100);
+		}
 	});
 })
 
@@ -73,6 +75,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 					templateUrl: 'templates/congresso/apresentacao.html',
 					controller: 'CongressoController',
 					'method' : 'apresentacao'
+				}
+			}
+		})
+
+		.state('app.organizacao', {
+			url: '/congresso/organizacao',
+			views: {
+				'menuContent': {
+					templateUrl: 'templates/congresso/organizacao.html',
+					controller: 'CongressoController',
+					'method' : 'organizacao'
 				}
 			}
 		});

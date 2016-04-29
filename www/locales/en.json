@@ -23,5 +23,8 @@
 	"NOTICIAS": "News",
 
 	"MENU_APOIO": "Support",
-	"MENU_ORGANIZACAO": "Organization"
+	"MENU_ORGANIZACAO": "Organization",
+
+	"ORGANIZACAO_PERMANENTE": "Permanent organization",
+	"ORGANIZACAO_PERMANENTE": "Local organization"
 }
