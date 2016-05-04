@@ -21,8 +21,10 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
     "cordova-plugin-whitelist",
-    "cordova-plugin-inappbrowser",
-    "onesignal-cordova-plugin"
+    "onesignal-cordova-plugin",
+    "cordova-plugin-camera",
+    "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "android",
