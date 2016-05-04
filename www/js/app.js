@@ -72,16 +72,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			prefix: 'locales/',
 			suffix: '.json'
 		})
-		.registerAvailableLanguageKeys(['en', 'es', 'pt_BR'], {
-			'en': 'en',
-			'en_US': 'en ',
-			'en_UK': 'en',
-			'es': 'es',
-			'pt': 'pt_BR',
-			'pt_BR': 'pt_BR'
+		.registerAvailableLanguageKeys(['en', 'es', 'pt'], {
+			'en_*': 'en',
+			'es_*': 'es',
+			'pt_*': 'pt'
 		})
-		.preferredLanguage('pt_BR')
-		.fallbackLanguage('pt_BR')
+		.preferredLanguage('pt')
+		.fallbackLanguage('pt')
 		.determinePreferredLanguage()
 		.useSanitizeValueStrategy('escapeParameters')
 		.useLocalStorage();
