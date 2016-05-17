@@ -27,16 +27,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}, 100);
 		}
 
-		// Enable to debug issues.
-		// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-		var notificationOpenedCallback = function(jsonData) {
-			console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-		};
+		// Device Information
+		var deviceInformation = ionic.Platform.device();
 
-		window.plugins.OneSignal.init("b69e6a23-9185-43f4-9746-17886415f661",{googleProjectNumber: "749121535538"},notificationOpenedCallback);
+		if (typeof deviceInformation.available !== 'undefined') {
+			// Enable to debug issues.
+			// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+			var notificationOpenedCallback = function(jsonData) {
+				console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+			};
 
-		// Show an alert box if a notification comes in when the user is in your app.
-		window.plugins.OneSignal.enableInAppAlertNotification(true);
+			window.plugins.OneSignal.init("b69e6a23-9185-43f4-9746-17886415f661",{googleProjectNumber: "749121535538"},notificationOpenedCallback);
+			// Show an alert box if a notification comes in when the user is in your app.
+			// window.plugins.OneSignal.enableInAppAlertNotification(true);
+		}
 
 		// // Camera
 		// var options = {
