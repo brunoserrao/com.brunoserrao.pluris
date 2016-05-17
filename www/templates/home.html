@@ -52,40 +52,17 @@
 			</div>
 		</div>
 
-		<div class="list card">
+		<div class="list card" ng-if="homeNews">
 			<div class="item">
 				<h2 class="title">
 					{{ 'NOTICIAS' | translate }}
 				</h2>
 			</div>
-			<a class="item item-avatar" href="#">
-				<img src="img/maceio/ponta-verde-farol.jpg">
-				<h2>Venkman</h2>
-				<p>Back off, man. I'm a scientist.</p>
-			</a>
 
-			<a class="item item-avatar" href="#">
+			<a ng-repeat="news in homeNews" class="item item-avatar" href="#">
 				<img src="img/maceio/ponta-verde-farol.jpg">
-				<h2>Venkman</h2>
-				<p>Back off, man. I'm a scientist.</p>
-			</a>
-
-			<a class="item item-avatar" href="#">
-				<img src="img/maceio/ponta-verde-farol.jpg">
-				<h2>Venkman</h2>
-				<p>Back off, man. I'm a scientist.</p>
-			</a>
-
-			<a class="item item-avatar" href="#">
-				<img src="img/maceio/ponta-verde-farol.jpg">
-				<h2>Venkman</h2>
-				<p>Back off, man. I'm a scientist.</p>
-			</a>
-
-			<a class="item item-avatar" href="#">
-				<img src="img/maceio/ponta-verde-farol.jpg">
-				<h2>Venkman</h2>
-				<p>Back off, man. I'm a scientist.</p>
+				<p>{{news.date | date : format : timezone}}</p>
+				<h2>{{news.title.rendered}}</h2>
 			</a>
 		</div>
 
