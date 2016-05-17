@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['http.services'])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $translate, $translateLocalStorage) {
 
