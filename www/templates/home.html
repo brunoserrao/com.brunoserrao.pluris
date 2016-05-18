@@ -52,17 +52,17 @@
 			</div>
 		</div>
 
-		<div class="list card" ng-if="homeNews">
+		<div class="list card" ng-if="noticias">
 			<div class="item">
 				<h2 class="title">
 					{{ 'NOTICIAS' | translate }}
 				</h2>
 			</div>
 
-			<a ng-repeat="news in homeNews" class="item item-avatar" href="#">
+			<a ng-repeat="noticia in noticias" class="item item-avatar" href="#app/noticia/{{ noticia.id }}">
 				<img src="img/maceio/ponta-verde-farol.jpg">
-				<p>{{news.date | date : format : timezone}}</p>
-				<h2>{{news.title.rendered}}</h2>
+				<p>{{ 'DATE_FORMAT' | translate:{date:noticia.date} }}</p>
+				<h2>{{ noticia.title.rendered }}</h2>
 			</a>
 		</div>
 
