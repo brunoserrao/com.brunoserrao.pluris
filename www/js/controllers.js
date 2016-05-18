@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['http.services'])
+angular.module('starter.controllers', ['http.services','popup.services'])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $translate, $translateLocalStorage) {
 
@@ -14,4 +14,7 @@ angular.module('starter.controllers', ['http.services'])
 	$scope.getLanguage = function () {
 		return $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
 	};
+
+	// Device Information
+	$scope.deviceInformation = ionic.Platform.device();
 });
