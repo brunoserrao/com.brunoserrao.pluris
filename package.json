@@ -24,7 +24,8 @@
     "onesignal-cordova-plugin",
     "cordova-plugin-camera",
     "cordova-plugin-inappbrowser",
-    "cordova-plugin-crosswalk-webview"
+    "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-network-information"
   ],
   "cordovaPlatforms": [
     "ios",
