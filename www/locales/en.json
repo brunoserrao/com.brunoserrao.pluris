@@ -26,5 +26,10 @@
 	"MENU_ORGANIZACAO": "Organization",
 
 	"ORGANIZACAO_PERMANENTE": "Permanent organization",
-	"ORGANIZACAO_PERMANENTE": "Local organization"
+	"ORGANIZACAO_LOCAL": "Local organization",
+
+	"ALERTA_SEM_CONEXAO" : "No internet connection. Try again later.",
+	"ALERTA_TITULO" : "Alert",
+
+	"DATE_FORMAT": "{{date|date:'M/d/y'}}"
 }

@@ -26,5 +26,10 @@
 	"MENU_ORGANIZACAO": "Organização",
 
 	"ORGANIZACAO_PERMANENTE": "Organização permanente",
-	"ORGANIZACAO_PERMANENTE": "Organização local"
+	"ORGANIZACAO_LOCAL": "Organização local",
+
+	"ALERTA_SEM_CONEXAO" : "Sem conexão com a internet. Tente novamente.",
+	"ALERTA_TITULO" : "Alerta",
+
+	"DATE_FORMAT": "{{date|date:'d/M/y'}}"
 }
