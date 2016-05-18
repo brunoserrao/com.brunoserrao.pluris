@@ -27,10 +27,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}, 100);
 		}
 
-		// Device Information
-		var deviceInformation = ionic.Platform.device();
-
-		if (typeof deviceInformation.available !== 'undefined') {
+		if (typeof ionic.Platform.device().available !== 'undefined') {
 			// Enable to debug issues.
 			// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
 			var notificationOpenedCallback = function(jsonData) {
@@ -41,31 +38,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			// Show an alert box if a notification comes in when the user is in your app.
 			// window.plugins.OneSignal.enableInAppAlertNotification(true);
 		}
-
-		// // Camera
-		// var options = {
-		// 	quality: 100,
-		// 	destinationType: Camera.DestinationType.DATA_URL,
-		// 	sourceType: Camera.PictureSourceType.CAMERA,
-		// 	allowEdit: true,
-		// 	encodingType: Camera.EncodingType.JPEG,
-		// 	targetWidth: 640,
-		// 	targetHeight: 640,
-		// 	popoverOptions: CameraPopoverOptions,
-		// 	saveToPhotoAlbum: true,
-		// 	correctOrientation:true
-		// };
-		
-		// navigator.camera.getPicture(onSuccess, onFail, options);
-
-		// function onSuccess(imageURI) {
-		// 	var image = document.getElementById('myImage');
-		// 	image.src = imageURI;
-		// }
-
-		// function onFail(message) {
-		// 	alert('Failed because: ' + message);
-		// }
 	});
 })
 
@@ -83,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		})
 		.preferredLanguage('pt')
 		.fallbackLanguage('pt')
-		.determinePreferredLanguage()
+		.determinePreferredLanguage('pt')
 		.useSanitizeValueStrategy('escapeParameters')
 		.useLocalStorage();
 
@@ -98,9 +70,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		.state('app.home', {
 			url: '/home',
 			views: {
-				'menuContent': {
+				menuContent: {
 					templateUrl: 'templates/home.html',
 					controller: 'HomeController'
+				}
+			}
+		})
+
+		.state('app.noticias', {
+			url: '/noticia/:id',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/noticias/noticia.html',
+					controller: 'NoticiasController',
+					method : 'noticia'
 				}
 			}
 		})
@@ -108,10 +92,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		.state('app.apresentacao', {
 			url: '/congresso/apresentacao',
 			views: {
-				'menuContent': {
+				menuContent: {
 					templateUrl: 'templates/congresso/apresentacao.html',
 					controller: 'CongressoController',
-					'method' : 'apresentacao'
+					method : 'apresentacao'
 				}
 			}
 		})
@@ -119,10 +103,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		.state('app.organizacao', {
 			url: '/congresso/organizacao',
 			views: {
-				'menuContent': {
+				menuContent: {
 					templateUrl: 'templates/congresso/organizacao.html',
 					controller: 'CongressoController',
-					'method' : 'organizacao'
+					method : 'organizacao'
 				}
 			}
 		});
