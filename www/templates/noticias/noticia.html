@@ -1,0 +1,14 @@
+<ion-view  view-title="{{ 'NOTICIAS' | translate }}">
+	<ion-content>
+		<div class="list card">
+			<div class="item">
+				<h2>{{ noticia.title.rendered }}</h2>
+				<p>{{ 'DATE_FORMAT' | translate:{date:noticia.date} }}</p>
+			</div>
+
+			<div class="item item-body">
+				<div class="noticia" ng-bind-html="noticia.content.rendered"></div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
