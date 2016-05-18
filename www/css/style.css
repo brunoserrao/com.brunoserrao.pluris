@@ -36,3 +36,12 @@ a{
 .apoio img{
 	max-width: 50px;
 }
+
+.noticia{
+
+}
+
+.noticia img{
+	max-width: 100%;
+	height: auto;
+}
