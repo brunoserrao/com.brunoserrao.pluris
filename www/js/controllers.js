@@ -2,7 +2,7 @@ angular.module('starter.controllers', ['http.services','popup.services'])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $translate, $translateLocalStorage) {
 
-	$scope.language = 'pt_BR';
+	$scope.language = 'pb';
 
 	// Set Language
 	$scope.switchLanguage = function (key) {
