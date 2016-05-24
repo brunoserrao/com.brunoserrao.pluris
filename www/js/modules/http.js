@@ -3,9 +3,10 @@ angular.module('http.services', [])
 .factory('RequestService', function($http, $timeout, $ionicLoading, $translateLocalStorage, PopupService){
     var timeout = 10000;
 
-    function request(method,endPoint, data, callback) {
+    function request(method,end_point, data, callback) {
         var lang = $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
-        var urlApi = 'http://localhost/pluris2016.fundepes.br/wp-json/api/v1' + endPoint + '?lang=' + lang;
+        var concat = end_point.indexOf('?') > 1 ? '&' : '/?';
+        var urlApi = 'http://10.0.0.111/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat + 'lang=' + lang;
 
         $ionicLoading.show({
              showBackdrop: false
