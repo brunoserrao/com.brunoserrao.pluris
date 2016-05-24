@@ -59,10 +59,10 @@
 				</h2>
 			</div>
 
-			<a ng-repeat="noticia in noticias" class="item item-avatar" href="#app/noticia/{{ noticia.id }}">
-				<img src="img/maceio/ponta-verde-farol.jpg">
-				<p>{{ 'DATE_FORMAT' | translate:{date:noticia.date} }}</p>
-				<h2>{{ noticia.title.rendered }}</h2>
+			<a ng-repeat="noticia in noticias" class="item item-avatar" href="#app/noticia/{{ noticia.ID }}">
+				<img src="{{ noticia.thumbnail }}">
+				<p>{{ noticia.post_date }}.</p>
+				<h2>{{ noticia.post_title }}</h2>
 			</a>
 		</div>
 

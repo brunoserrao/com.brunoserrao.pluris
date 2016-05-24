@@ -3,10 +3,9 @@ angular.module('http.services', [])
 .factory('RequestService', function($http, $timeout, $ionicLoading, $translateLocalStorage, PopupService){
     var timeout = 10000;
 
-
     function request(method,endPoint, data, callback) {
         var lang = $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
-        var urlApi = 'https://pluris2016.fundepes.br/wp-json/wp/v2/' + endPoint + '?lang=' + lang;
+        var urlApi = 'http://localhost/pluris2016.fundepes.br/wp-json/api/v1' + endPoint + '?lang=' + lang;
 
         $ionicLoading.show({
              showBackdrop: false
@@ -31,7 +30,7 @@ angular.module('http.services', [])
                 function acabei(){
                     $timeout(function () {
                         $ionicLoading.hide();
-                    }, 2000);
+                    }, 500);
                 }
             )
         // }
