@@ -20,31 +20,20 @@
 
 		<div class="list card">
 			<div class="item">
-				<h2>{{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}</h2>
-				<p ng-if="language == 'pt_BR'">Sétima edição a ser realizada no Brasil</p>
-				<p ng-if="language == 'en'">Sétima edição a ser realizada no Brasil</p>
-				<p ng-if="language == 'es'">Sétima edição a ser realizada no Brasil</p>
+				<h2>{{ apresentacao.post_title }}</h2>
 			</div>
 
 			<div class="item item-body">
 				<div class="item item-image">
-					<a href="#app/congresso/apresentacao">
-						<img class="full-image" src="img/maceio/ponta-verde-farol.jpg">
+					<a href="#app/congresso/apresentacao" title="{{ apresentacao.post_title }}">
+						<img class="full-image" src="{{ apresentacao.thumbnail }}" alt="{{ apresentacao.post_title }}">
 					</a>
 				</div>
-				
-				<p ng-if="language == 'pt_BR'">
-					O PLURIS representa a continuidade da parceria entre pesquisadores do Brasil e de Portugal que se realiza desde 2005.
-				</p>
 
-				<p ng-if="language == 'en'">
-					The PLURIS represents the continuation of the partnership between researchers from Brazil and Portugal since 2005.
+				<p>
+					{{ apresentacao.post_excerpt }}
 				</p>
-
-				<p ng-if="language == 'es'">
-					El PLURIS 2016 continúa la colaboración entre investigadores de Brasil y Portugal celebrada desde el año 2005.
-				</p>
-				
+								
 				<a class="item item-icon-left royal" href="#app/congresso/apresentacao">
 					<i class="icon ion-ios-paper"></i>
 					{{ 'LEIA_MAIS' | translate }}
@@ -59,8 +48,8 @@
 				</h2>
 			</div>
 
-			<a ng-repeat="noticia in noticias" class="item item-avatar" href="#app/noticia/{{ noticia.ID }}">
-				<img src="{{ noticia.thumbnail }}">
+			<a ng-repeat="noticia in noticias" class="item item-avatar" href="#app/noticia/{{ noticia.ID }}" title="{{ noticia.post_title }}">
+				<img class="full-image" src="{{ noticia.thumbnail }}" alt="{{ noticia.post_title }}">
 				<p>{{ noticia.post_date }}.</p>
 				<h2>{{ noticia.post_title }}</h2>
 			</a>
