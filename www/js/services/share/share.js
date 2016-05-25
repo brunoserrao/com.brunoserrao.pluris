@@ -5,7 +5,7 @@ angular.module('share.services', [])
         var options = {
             message: post.post_title,
             subject: post.post_excerpt,
-            files: ['www/img/share.png'],
+            files: ['www/img/share.jpg'],
             url: post.link,
             chooserTitle: $translate.instant('CONGRESSO')
         }
