@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova'])
 
 .run(function ($ionicPlatform) {
 	$ionicPlatform.ready(function () {
@@ -78,13 +78,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		})
 
 		.state('app.noticias', {
+			url: '/noticias',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/noticias/index.html',
+					controller: 'NoticiasController'
+				}
+			}
+		})
+
+		.state('app.noticias/id', {
 			url: '/noticia/:id',
 			cache: false,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/noticias/noticia.html',
-					controller: 'NoticiasController',
-					method : 'noticia'
+					controller: 'NoticiasController'
 				}
 			}
 		})
@@ -94,8 +104,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			views: {
 				menuContent: {
 					templateUrl: 'templates/congresso/apresentacao.html',
-					controller: 'CongressoController',
-					method : 'apresentacao'
+					controller: 'CongressoController'
 				}
 			}
 		})
@@ -105,8 +114,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			views: {
 				menuContent: {
 					templateUrl: 'templates/congresso/organizacao.html',
-					controller: 'CongressoController',
-					method : 'organizacao'
+					controller: 'CongressoController'
 				}
 			}
 		});
