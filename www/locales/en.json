@@ -31,5 +31,6 @@
 	"ALERTA_SEM_CONEXAO" : "No internet connection. Try again later.",
 	"ALERTA_TITULO" : "Alert",
 
-	"DATE_FORMAT": "{{date|date:'M/d/y'}}"
+	"DATE_FORMAT": "{{date|date:'M/d/y'}}",
+	"COMPARTILHAR": "Share this link"
 }

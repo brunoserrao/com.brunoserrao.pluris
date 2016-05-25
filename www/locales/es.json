@@ -31,5 +31,6 @@
 	"ALERTA_SEM_CONEXAO" : "Sin conexión a Internet. Inténtelo de nuevo más tarde.",
 	"ALERTA_TITULO" : "Atención",
 
-	"DATE_FORMAT": "{{date|date:'d.M.y'}}"
+	"DATE_FORMAT": "{{date|date:'d.M.y'}}",
+	"COMPARTILHAR": "Compartir este enlace"
 }
