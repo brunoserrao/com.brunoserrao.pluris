@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="logo">
-					<img src="img/logo-data.png" alt="">
+					<img src="img/logo-data.png" alt="{{ 'CONGRESSO' | translate }}">
 				</div>
 			</div>
 		</div>
@@ -18,27 +18,26 @@
 			</div>
 		</div>
 
-		<div class="list card">
+		<div class="list card" ng-if="apresentacao">
 			<div class="item">
 				<h2>{{ apresentacao.post_title }}</h2>
 			</div>
 
-			<div class="item item-body">
-				<div class="item item-image">
-					<a href="#app/congresso/apresentacao" title="{{ apresentacao.post_title }}">
-						<img class="full-image" src="{{ apresentacao.thumbnail }}" alt="{{ apresentacao.post_title }}">
-					</a>
-				</div>
+			<div class="item item-image">
+				<a href="#app/congresso/apresentacao" title="{{ apresentacao.post_title }}">
+					<img class="full-image" src="{{ apresentacao.thumbnail }}" alt="{{ apresentacao.post_title }}">
+				</a>
+			</div>
 
+			<div class="item item-body">
 				<p>
 					{{ apresentacao.post_excerpt }}
 				</p>
-								
-				<a class="item item-icon-left royal" href="#app/congresso/apresentacao">
-					<i class="icon ion-ios-paper"></i>
-					{{ 'LEIA_MAIS' | translate }}
-				</a>
 			</div>
+
+			<a href="#app/congresso/apresentacao" class="item item-icon-left royal"  title="{{ LEIA_MAIS | translate }}">
+				<i class="icon ion-ios-paper"></i>{{ 'LEIA_MAIS' | translate }}
+			</a>
 		</div>
 
 		<div class="list card" ng-if="noticias">
@@ -52,6 +51,11 @@
 				<img class="full-image" src="{{ noticia.thumbnail }}" alt="{{ noticia.post_title }}">
 				<p>{{ noticia.post_date }}.</p>
 				<h2>{{ noticia.post_title }}</h2>
+			</a>
+
+			<a class="item item-icon-left royal" href="#app/noticias" title="{{ LEIA_MAIS | translate }}">
+				<i class="icon ion-ios-paper"></i>
+				{{ 'LEIA_MAIS' | translate }}
 			</a>
 		</div>
 
