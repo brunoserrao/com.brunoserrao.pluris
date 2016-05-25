@@ -1,6 +1,6 @@
-angular.module('starter.controllers', ['http.services','popup.services'])
+angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services'])
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $translate, $translateLocalStorage) {
+.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $translate, $translateLocalStorage, ShareService) {
 
 	$scope.language = 'pb';
 
@@ -17,4 +17,8 @@ angular.module('starter.controllers', ['http.services','popup.services'])
 
 	// Device Information
 	$scope.deviceInformation = ionic.Platform.device();
+
+	$scope.share = function(post) {
+        ShareService.share(post);
+    }
 });
