@@ -29,13 +29,19 @@
 	<script src="cordova.js"></script>
 
 	<!-- your app's js -->
+	<script src="js/cordova/ng-cordova.min.js"></script>
 	<script src="js/app.js"></script>
-	<script src="js/modules/http.js"></script>
-	<script src="js/modules/popup.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/controllers/HomeController.js"></script>
 	<script src="js/controllers/CongressoController.js"></script>
 	<script src="js/controllers/NoticiasController.js"></script>
+
+	<!-- modules -->
+	<script src="js/services/http/http.js"></script>
+	<script src="js/services/popup/popup.js"></script>
+	<script src="js/services/share/share.js"></script>
+	<script src="js/services/noticias/noticias.js"></script>
+	<!-- endmodules -->
 </head>
 
 	<body ng-app="starter">

@@ -9,7 +9,8 @@ angular.module('http.services', [])
         var urlApi = 'http://10.0.0.111/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat + 'lang=' + lang;
 
         $ionicLoading.show({
-             showBackdrop: false
+             showBackdrop: false,
+             class: 'royal'
         });
         
         // if(window.Connection) {
@@ -17,7 +18,8 @@ angular.module('http.services', [])
                 method: method, 
                 data: data, 
                 url: urlApi,
-                timeout: timeout
+                timeout: timeout,
+                cache: true
             }).then(
                 function successCallback(response){
                     if (callback) {
