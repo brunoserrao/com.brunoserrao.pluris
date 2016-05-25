@@ -45,3 +45,9 @@ a{
 	max-width: 100%;
 	height: auto;
 }
+
+.content a{
+	text-decoration: underline;
+	color: inherit;
+	font-weight: bold;
+}
