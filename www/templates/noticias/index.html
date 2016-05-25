@@ -1,0 +1,26 @@
+<ion-view view-title="{{ 'NOTICIAS' | translate }}">
+	<ion-content>
+		<div class="list card" ng-repeat="noticia in noticias">
+			<ion-list>
+				<div class="item item-avatar">
+					<img src="img/logo-bola.png" alt="{{ 'CONGRESSO' | translate }}">
+					<a href="#app/noticia/{{ noticia.ID }}" title="{{ noticia.post_title }}">
+						<p>{{ noticia.post_date }}</p>
+						<h2>{{ noticia.ID }} - {{ noticia.post_title }}</h2>
+					</a>
+				</div>
+
+				<div class="item item-image">
+					<a href="#app/noticia/{{ noticia.ID }}" title="{{ noticia.post_title }}">
+						<img class="full-image" src="{{ noticia.thumbnail }}" alt="{{ noticia.title }}">
+					</a>
+				</div>
+
+				<a href="#" class="item item-icon-left royal" ng-click="share(noticia)" title="{{ 'SHARE' | translate }}">
+					<i class="icon ion-android-share-alt"></i>&nbsp;
+				</a>
+			</ion-list>
+		</div>
+		<ion-infinite-scroll ng-if="items_disponiveis" on-infinite="carregar_noticias()" distance="10%"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

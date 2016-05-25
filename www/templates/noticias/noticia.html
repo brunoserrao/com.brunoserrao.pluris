@@ -1,6 +1,6 @@
 <ion-view  view-title="{{ 'NOTICIAS' | translate }}">
 	<ion-content>
-		<div class="list card">
+		<ion-item class="list card">
 
 			<div class="item">
 				<p>{{ noticia.post_date }}</p>
@@ -14,6 +14,6 @@
 				
 				<div class="noticia content" ng-bind-html="noticia.post_content"></div>
 			</div>
-		</div>
+		</ion-item>
 	</ion-content>
 </ion-view>
