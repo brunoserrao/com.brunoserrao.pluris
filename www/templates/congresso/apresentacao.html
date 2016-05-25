@@ -1,33 +1,27 @@
 <ion-view view-title="{{ 'MENU_CONGRESSO_APRESENTACAO' | translate}}">
 	<ion-content>
 		<div class="list card">
-			<div class="item item-avatar">
-				<img src="img/logo-bola.png">
-				<h2>{{ apresentacao.post_title }}</h2>
-				<p>{{ 'MENU_CONGRESSO' | translate }}</p>
-			</div>
-
-			<div class="item item-body">
-				<div class="item item-image">
-					<img class="full-image" src="{{ apresentacao.thumbnail }}">
+			<ion-list>
+				<div class="item item-avatar">
+					<img src="img/logo-bola.png">
+					<h2>{{ apresentacao.post_title }}</h2>
+					<p>{{ 'MENU_CONGRESSO' | translate }}</p>
 				</div>
-				
-				<div class="noticia content" ng-bind-html="apresentacao.post_content"></div>
-			</div>
 
-			<div class="item tabs tabs-icon">
-				<!-- 
-				<a class="tab-item" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://www.fau.ufal.br/evento/pluris2016/congresso_apresentacao.html', '_system', 'location=yes'); return false;">
-					<i class="icon ion-android-share-alt"></i>
-				</a>
-				<a class="tab-item" href="#" onclick="window.open('http://www.twitter.com/share?url=http://www.fau.ufal.br/evento/pluris2016/congresso_apresentacao.html', '_system', 'location=yes'); return false;">
-					<i class="icon ion-social-twitter"></i>
-				</a>
-				-->
-				<a class="tab-item" href="#" ng-click="shareAnywhere()">
-					<i class="icon ion-android-share-alt"></i>
-				</a>
-			</div>
+				<div class="item item-image">
+					<img class="full-image" src="{{ apresentacao.thumbnail }}" alt="{{ apresentacao.post_title }}">
+				</div>
+
+				<div class="item item-body">				
+					<div class="noticia content" ng-bind-html="apresentacao.post_content"></div>
+				</div>
+
+				<div class="item tabs tabs-icon tabs-icon-left">
+					<a class="tab-item" href="#" ng-click="share(apresentacao)" title="{{ 'SHARE' | translate }}">
+						<i class="icon ion-android-share-alt"></i>
+					</a>
+				</div>
+			</ion-list>
 		</div>
 	</ion-content>
 </ion-view>
