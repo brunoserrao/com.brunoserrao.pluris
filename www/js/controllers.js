@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','paginas.services'])
+angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','paginas.services','toast.services'])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $translate, $translateLocalStorage, ShareService) {
 
