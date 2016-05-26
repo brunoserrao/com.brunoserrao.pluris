@@ -1,6 +1,6 @@
 angular.module('http.services', [])
 
-.factory('RequestService', function($http, $timeout, $ionicLoading, $translateLocalStorage, PopupService){
+.factory('RequestService', function($http, $timeout, $ionicLoading, $translateLocalStorage, PopupService, ToastService){
     var timeout = 10000;
 
     function request(method,end_point, data, callback) {
@@ -27,10 +27,10 @@ angular.module('http.services', [])
                     }
                 },
                 function errorCallback(response){
-                   PopupService.alert(response.status);
+                    ToastService.message($translate.instant('ERRO_SERVIDOR') + ' : ' + response.status);
                 }
             ).finally(
-                function acabei(){
+                function itsover(){
                     $timeout(function () {
                         $ionicLoading.hide();
                     }, 500);
