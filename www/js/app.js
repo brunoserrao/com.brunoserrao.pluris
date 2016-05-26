@@ -94,30 +94,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			views: {
 				menuContent: {
 					templateUrl: 'templates/noticias/noticia.html',
-					controller: 'NoticiasController'
+					controller: 'NoticiasViewController'
 				}
 			}
 		})
 
 		.state('app.apresentacao', {
-			url: '/congresso/apresentacao',
+			url: '/pagina/:id',
 			views: {
 				menuContent: {
-					templateUrl: 'templates/congresso/apresentacao.html',
-					controller: 'CongressoController'
+					templateUrl: 'templates/paginas/pagina.html',
+					controller: 'PaginasController'
 				}
 			}
 		})
-
-		.state('app.organizacao', {
-			url: '/congresso/organizacao',
-			views: {
-				menuContent: {
-					templateUrl: 'templates/congresso/organizacao.html',
-					controller: 'CongressoController'
-				}
-			}
-		});
 	
 	$urlRouterProvider.otherwise('/app/home');
 });
