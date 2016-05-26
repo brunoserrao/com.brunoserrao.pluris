@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="item item-image">
-				<a href="#app/congresso/apresentacao" title="{{ apresentacao.post_title }}">
+				<a href="#app/pagina/{{ apresentacao.ID }}" title="{{ apresentacao.post_title }}">
 					<img class="full-image" src="{{ apresentacao.thumbnail }}" alt="{{ apresentacao.post_title }}">
 				</a>
 			</div>
@@ -35,7 +35,7 @@
 				</p>
 			</div>
 
-			<a href="#app/congresso/apresentacao" class="item item-icon-left royal"  title="{{ LEIA_MAIS | translate }}">
+			<a href="#app/pagina/{{ apresentacao.ID }}" class="item item-icon-left royal"  title="{{ LEIA_MAIS | translate }}">
 				<i class="icon ion-ios-paper"></i>{{ 'LEIA_MAIS' | translate }}
 			</a>
 		</div>

@@ -1,0 +1,27 @@
+<ion-view view-title="{{ 'MENU_CONGRESSO_APRESENTACAO' | translate}}">
+	<ion-content>
+		<div class="list card">
+			<ion-list>
+				<div class="item item-avatar">
+					<img src="img/logo-bola.png">
+					<h2>{{ apresentacao.post_title }}</h2>
+					<p>{{ 'MENU_CONGRESSO' | translate }}</p>
+				</div>
+
+				<div class="item item-image">
+					<img class="full-image" src="{{ apresentacao.thumbnail }}" alt="{{ apresentacao.post_title }}">
+				</div>
+
+				<div class="item item-body">				
+					<div class="noticia content" ng-bind-html="apresentacao.post_content"></div>
+				</div>
+
+				<div class="item tabs tabs-icon tabs-icon-left">
+					<a class="tab-item" href="#" ng-click="share(apresentacao)" title="{{ 'SHARE' | translate }}">
+						<i class="icon ion-android-share-alt"></i>
+					</a>
+				</div>
+			</ion-list>
+		</div>
+	</ion-content>
+</ion-view>
