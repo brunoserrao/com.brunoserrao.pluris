@@ -4,20 +4,20 @@
 			<ion-list>
 				<div class="item item-avatar">
 					<img src="img/logo-bola.png">
-					<h2>{{ apresentacao.post_title }}</h2>
+					<h2>{{ pagina.post_title }}</h2>
 					<p>{{ 'MENU_CONGRESSO' | translate }}</p>
 				</div>
 
 				<div class="item item-image">
-					<img class="full-image" src="{{ apresentacao.thumbnail }}" alt="{{ apresentacao.post_title }}">
+					<img class="full-image" src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
 				</div>
 
 				<div class="item item-body">				
-					<div class="noticia content" ng-bind-html="apresentacao.post_content"></div>
+					<div class="noticia content" ng-bind-html="pagina.post_content"></div>
 				</div>
 
 				<div class="item tabs tabs-icon tabs-icon-left">
-					<a class="tab-item" href="#" ng-click="share(apresentacao)" title="{{ 'SHARE' | translate }}">
+					<a class="tab-item" href="#" ng-click="share(pagina)" title="{{ 'SHARE' | translate }}">
 						<i class="icon ion-android-share-alt"></i>
 					</a>
 				</div>

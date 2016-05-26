@@ -18,24 +18,24 @@
 			</div>
 		</div>
 
-		<div class="list card" ng-if="apresentacao">
+		<div class="list card" ng-if="pagina">
 			<div class="item">
-				<h2>{{ apresentacao.post_title }}</h2>
+				<h2>{{ pagina.post_title }}</h2>
 			</div>
 
 			<div class="item item-image">
-				<a href="#app/pagina/{{ apresentacao.ID }}" title="{{ apresentacao.post_title }}">
-					<img class="full-image" src="{{ apresentacao.thumbnail }}" alt="{{ apresentacao.post_title }}">
+				<a href="#app/pagina/{{ pagina.ID }}" title="{{ pagina.post_title }}">
+					<img class="full-image" src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
 				</a>
 			</div>
 
 			<div class="item item-body">
 				<p>
-					{{ apresentacao.post_excerpt }}
+					{{ pagina.post_excerpt }}
 				</p>
 			</div>
 
-			<a href="#app/pagina/{{ apresentacao.ID }}" class="item item-icon-left royal"  title="{{ LEIA_MAIS | translate }}">
+			<a href="#app/pagina/{{ pagina.ID }}" class="item item-icon-left royal"  title="{{ LEIA_MAIS | translate }}">
 				<i class="icon ion-ios-paper"></i>{{ 'LEIA_MAIS' | translate }}
 			</a>
 		</div>
@@ -58,7 +58,5 @@
 				{{ 'LEIA_MAIS' | translate }}
 			</a>
 		</div>
-
-
 	</ion-content>
 </ion-view>
