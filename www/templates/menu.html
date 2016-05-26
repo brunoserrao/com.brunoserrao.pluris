@@ -25,7 +25,7 @@
 			
 			<ul class="list">
 				<!-- HOME  -->
-				<li class="item item-icon-left item-divider">
+				<li class="item item-icon-left">
 					<i class="icon ion-ios-home-outline"></i>
 					<a menu-close href="#app/home">
 						{{ 'MENU_HOME' | translate }}
@@ -33,7 +33,7 @@
 				</li>
 
 				<!-- CONGRESSO -->
-				<li class="item item-icon-left item-divider">
+				<li class="item item-icon-left">
 					<i class="icon ion-ios-people-outline"></i>
 					<i>
 						{{ 'MENU_CONGRESSO' | translate }}
@@ -71,7 +71,7 @@
 				</li>
 				
 				<!-- LOCAL -->
-				<li class="item item-icon-left item-divider">
+				<li class="item item-icon-left">
 					<i class="icon ion-ios-location-outline"></i>
 					<i>
 						{{ 'MENU_LOCAL' | translate }}
@@ -91,27 +91,27 @@
 				</li>
 
 				<!-- DATAS IMPORTANTES -->
-				<li class="item item-icon-left item-divider">
+				<li class="item item-icon-left">
 					<i class="icon ion-ios-calendar-outline"></i>
 					<i>
-						<a href="">
+						<a href="#app/pagina/" title="{{ 'MENU_DATAS_IMPORTANTES' | translate }}">
 							{{ 'MENU_DATAS_IMPORTANTES' | translate }}
 						</a>
 					</i>
 				</li>
 
-				<!-- DATAS IMPORTANTES -->
-				<li class="item item-icon-left item-divider">
+				<!-- NOTICIAS -->
+				<li class="item item-icon-left">
 					<i class="icon ion-ios-paper-outline"></i>
 					<i>
-						<a href="">
+						<a menu-close href="#app/noticias" title="{{ 'MENU_NOTICIAS' | translate }}">
 							{{ 'MENU_NOTICIAS' | translate }}
 						</a>
 					</i>
 				</li>
 				
 				<!-- IDIOMAS -->
-				<li class="item item-icon-left item-divider">
+				<li class="item item-icon-left">
 					<i class="icon ion-ios-world-outline"></i> 
 					<i>
 						{{ 'MENU_IDIOMAS_CONFIG' | translate }}
@@ -125,19 +125,20 @@
 				</li>
 
 				<li>
-					<a class="item" ng-click="switchLanguage('en')">
+					<a class="item" ng-click="switchLanguage('en')" title="{{ 'MENU_MUDAR_IDIOMA' | translate }}">
 						{{ 'MENU_EN' | translate }}
 					</a>
 				</li>
 
 				<li>
-					<a class="item" ng-click="switchLanguage('es')">
+					<a class="item" ng-click="switchLanguage('es')" title="{{ 'MENU_MUDAR_IDIOMA' | translate }}">
 						{{ 'MENU_ES' | translate }}
 					</a>
 				</li>
 
+
 				<!-- REDES SOCIAIS -->
-				<li class="item item-icon-left item-divider">
+				<li class="item item-icon-left">
 					<i class="icon ion-ios-upload-outline"></i> 
 					{{ 'MENU_SOCIAL_NETWORK' | translate }}
 				</li>
@@ -159,7 +160,7 @@
 
 				<!-- APOIO / ORGANIZACAO -->
 				<li class="apoio">
-					<div class="item item-divider">
+					<div class="item">
 						{{ 'MENU_APOIO' | translate }}
 					</div>
 
@@ -175,7 +176,7 @@
 						</div>
 					</div>
 
-					<div class="item item-divider">
+					<div class="item">
 						{{ 'MENU_ORGANIZACAO' | translate }}
 					</div>
 

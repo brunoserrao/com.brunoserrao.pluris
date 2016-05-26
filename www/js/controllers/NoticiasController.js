@@ -10,7 +10,7 @@ angular.module('starter.controllers')
 			for (var i = 0; i < result.data.length; i++) {
 				$scope.noticias.push(result.data[i]);
 			}
-			// $scope.noticias.push(result.data);
+
 			$scope.paging = result.paging;
 
 			if ( result.paging.actual_page == result.paging.total_pages  ) {

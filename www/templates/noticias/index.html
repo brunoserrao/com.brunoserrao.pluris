@@ -16,9 +16,11 @@
 					</a>
 				</div>
 
-				<a href="#" class="item item-icon-left royal" ng-click="share(noticia)" title="{{ 'SHARE' | translate }}">
-					<i class="icon ion-android-share-alt"></i>&nbsp;
-				</a>
+				<div class="item tabs tabs-icon tabs-icon-left">
+					<a class="tab-item" href="#" ng-click="share(noticia)" title="{{ 'SHARE' | translate }}">
+						<i class="icon ion-android-share-alt"></i>
+					</a>
+				</div>
 			</ion-list>
 		</div>
 		<ion-infinite-scroll ng-if="items_disponiveis" on-infinite="carregar_noticias()" distance="10%"></ion-infinite-scroll>
