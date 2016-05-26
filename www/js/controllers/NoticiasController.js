@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-.controller('NoticiasController', function($scope, $timeout, $ionicScrollDelegate, NoticiasService){
+.controller('NoticiasController', function($scope, NoticiasService){
 	paged = 1;
 	$scope.items_disponiveis = true;
 	$scope.noticias = [];
@@ -21,8 +21,4 @@ angular.module('starter.controllers')
 			paged++;
 		});
 	}
-
-	// NoticiasService.noticia(84,function(result){
-	// 	console.log(result);
-	// });
 });
