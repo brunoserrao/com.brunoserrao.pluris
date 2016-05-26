@@ -26,74 +26,100 @@
 			<ul class="list">
 				<!-- HOME  -->
 				<li class="item item-icon-left item-divider">
-					<i class="icon ion-home royal"></i>
-					<a menu-close href="#app/home" class="royal">
+					<i class="icon ion-ios-home-outline"></i>
+					<a menu-close href="#app/home">
 						{{ 'MENU_HOME' | translate }}
 					</a>
 				</li>
 
 				<!-- CONGRESSO -->
 				<li class="item item-icon-left item-divider">
-					<i class="icon ion-ios-people"></i>
+					<i class="icon ion-ios-people-outline"></i>
 					<i>
 						{{ 'MENU_CONGRESSO' | translate }}
 					</i>
 				</li>
 
 				<li>
-					<a menu-close class="item" href="#app/pagina/2" title="Menu {{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}">
+					<a menu-close class="item" href="#app/pagina/2" title="{{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}">
 						{{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}
 					</a>
 				</li>
 
 				<li>
-					<a menu-close class="item" href="#app/congresso/organizacao" title="Menu {{ 'MENU_CONGRESSO_ORGANIZACAO' | translate }}">
+					<a menu-close class="item" href="#app/pagina/125" title="{{ 'MENU_CONGRESSO_ORGANIZACAO' | translate }}">
 						{{ 'MENU_CONGRESSO_ORGANIZACAO' | translate }}
 					</a>
 				</li>
 
 				<li>
-					<a menu-close class="item" href="#app/congresso/idiomas" title="Menu {{ 'MENU_CONGRESSO_IDIOMAS' | translate }}">
-						{{ 'MENU_CONGRESSO_IDIOMAS' | translate }}
+					<a menu-close class="item" href="#app/pagina/127" title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}">
+						{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}
 					</a>
 				</li>
 
 				<li>
-					<a menu-close class="item" href="#app/congresso/contatos" title="Menu {{ 'MENU_CONGRESSO_CONTATOS' | translate }}">
+					<a menu-close class="item" href="#app/pagina/131" title="{{ 'MENU_CONGRESSO_PUBLICACAO' | translate }}">
+						{{ 'MENU_CONGRESSO_PUBLICACAO' | translate }}
+					</a>
+				</li>
+
+				<li>
+					<a menu-close class="item" href="#app/pagina/129" title="{{ 'MENU_CONGRESSO_CONTATOS' | translate }}">
 						{{ 'MENU_CONGRESSO_CONTATOS' | translate }}
 					</a>
 				</li>
 				
 				<!-- LOCAL -->
 				<li class="item item-icon-left item-divider">
-					<i class="icon ion-location"></i>
+					<i class="icon ion-ios-location-outline"></i>
 					<i>
 						{{ 'MENU_LOCAL' | translate }}
 					</i>
 				</li>
 				
 				<li>
-					<a menu-close class="item" href="#app/local/a-cidade">
+					<a menu-close class="item" href="#app/pagina/133" title="{{ 'MENU_LOCAL_CIDADE' | translate }}">
 						{{ 'MENU_LOCAL_CIDADE' | translate }}
 					</a>
 				</li>
 				
 				<li>
-					<a menu-close class="item" href="#app/local/local-da-conferencia">
+					<a menu-close class="item" href="#app/pagina/135" title="{{ 'MENU_LOCAL_CONFERENCIA' | translate }}">
 						{{ 'MENU_LOCAL_CONFERENCIA' | translate }}
 					</a>
+				</li>
+
+				<!-- DATAS IMPORTANTES -->
+				<li class="item item-icon-left item-divider">
+					<i class="icon ion-ios-calendar-outline"></i>
+					<i>
+						<a href="">
+							{{ 'MENU_DATAS_IMPORTANTES' | translate }}
+						</a>
+					</i>
+				</li>
+
+				<!-- DATAS IMPORTANTES -->
+				<li class="item item-icon-left item-divider">
+					<i class="icon ion-ios-paper-outline"></i>
+					<i>
+						<a href="">
+							{{ 'MENU_NOTICIAS' | translate }}
+						</a>
+					</i>
 				</li>
 				
 				<!-- IDIOMAS -->
 				<li class="item item-icon-left item-divider">
-					<i class="icon ion-chatbox-working"></i> 
+					<i class="icon ion-ios-world-outline"></i> 
 					<i>
 						{{ 'MENU_IDIOMAS_CONFIG' | translate }}
 					</i>
 				</li>
 
 				<li>
-					<a class="item" ng-click="switchLanguage('pt_BR')">
+					<a class="item" ng-click="switchLanguage('pb')" title="{{ 'MENU_MUDAR_IDIOMA' | translate }}">
 						{{ 'MENU_PT' | translate }}
 					</a>
 				</li>
@@ -112,7 +138,7 @@
 
 				<!-- REDES SOCIAIS -->
 				<li class="item item-icon-left item-divider">
-					<i class="icon ion-share"></i> 
+					<i class="icon ion-ios-upload-outline"></i> 
 					{{ 'MENU_SOCIAL_NETWORK' | translate }}
 				</li>
 

@@ -6,10 +6,15 @@
 	"MENU_CONGRESSO_ORGANIZACAO": "Organization",
 	"MENU_CONGRESSO_IDIOMAS": "Languages",
 	"MENU_CONGRESSO_CONTATOS": "Contacts",
+	"MENU_CONGRESSO_PROGRAMACAO": "Programming",
+	"MENU_CONGRESSO_PUBLICACAO": "Publication",
 
 	"MENU_LOCAL": "Venue",
 	"MENU_LOCAL_CIDADE": "The city of Maceió",
 	"MENU_LOCAL_CONFERENCIA": "Venue",
+
+	"MENU_DATAS_IMPORTANTES": "Importants dates",
+	"MENU_NOTICIAS": "News",
 
 	"MENU_IDIOMAS_CONFIG": "Languages",
 	"MENU_PT": "Portuguese",

@@ -5,10 +5,10 @@
 				<div class="item item-avatar">
 					<img src="img/logo-bola.png">
 					<h2>{{ pagina.post_title }}</h2>
-					<p>{{ 'MENU_CONGRESSO' | translate }}</p>
+					<p>{{ 'CONGRESSO' | translate }}</p>
 				</div>
 
-				<div class="item item-image">
+				<div class="item item-image" ng-if="{{ pagina.thumbnail }}">
 					<img class="full-image" src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
 				</div>
 
