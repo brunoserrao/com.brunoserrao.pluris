@@ -5,7 +5,8 @@
     "ionic": "driftyco/ionic-bower#1.1.1",
     "ionicons": "https://github.com/driftyco/ionicons",
     "platform": "~1.3.0",
-    "platform.js": "platform#^1.3.1"
+    "platform.js": "platform#^1.3.1",
+    "ngstorage": "^0.3.10"
   },
   "dependencies": {
     "angular-translate": "~2.8.1",
@@ -13,7 +14,8 @@
     "install": "~1.0.4",
     "angular-translate-loader-static-files": "~2.8.1",
     "angular-translate-storage-local": "~2.8.1",
-    "angular-cookies": "~1.4.7"
+    "angular-cookies": "~1.4.7",
+    "ngstorage": "^0.3.10"
   },
   "resolutions": {
     "angular": "1.4.3"
