@@ -4,9 +4,7 @@ angular.module('paginas.services', [])
     
     function pagina(id, callback) {
         RequestService.request('GET','/pagina/' + id,null,function(result){
-            if (result) {
-                callback(result);
-            }
+            callback(result);
         });
     }
 
