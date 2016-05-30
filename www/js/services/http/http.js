@@ -12,34 +12,32 @@ angular.module('http.services', [])
              showBackdrop: false,
              class: 'royal'
         });
-        
-        // if(window.Connection) {
-            $http({
-                method: method, 
-                data: data, 
-                url: api,
-                timeout: timeout,
-                cache: true
-            }).then(
-                function successCallback(response){
-                    if (callback) {
-                        callback(response.data)
-                    }
-                },
-                function errorCallback(response){
-                    ToastService.message($translate.instant('ERRO_SERVIDOR') + ' : ' + response.status);
-                    if (callback) {
-                        callback()
-                    }
+
+        $http({
+            method: method, 
+            data: data, 
+            url: api,
+            timeout: timeout,
+            cache: true
+        }).then(
+            function successCallback(response){
+                if (callback) {
+                    callback(response.data)
                 }
-            ).finally(
-                function itsover(){
-                    $timeout(function () {
-                        $ionicLoading.hide();
-                    }, 500);
+            },
+            function errorCallback(response){
+                ToastService.message($translate.instant('ERRO_SERVIDOR') + ' : ' + response.status);
+                if (callback) {
+                    callback()
                 }
-            )
-        // }
+            }
+        ).finally(
+            function itsOver(){
+                $timeout(function () {
+                    $ionicLoading.hide();
+                }, 500);
+            }
+        )
     }
 
     return {
