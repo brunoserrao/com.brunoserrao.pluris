@@ -9088,3 +9088,47 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+a {
+  text-decoration: none;
+  color: initial; }
+
+/* Links Menu */
+#menu-principal, #menu-principal i, #menu-principal, #menu-principal a {
+  color: #444; }
+
+.center {
+  text-align: center; }
+
+.pane {
+  background-image: url(../img/background.png);
+  background-position: center center; }
+
+.logo img {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+.home-content .logo {
+  margin-top: 20px;
+  text-align: center; }
+
+#menu-logo img, .home-content .logo img {
+  width: 95%; }
+
+.button-menu-inscrever {
+  margin-top: inherit !important;
+  margin-bottom: inherit !important; }
+
+.apoio img {
+  max-width: 50px; }
+
+.noticia img {
+  max-width: 100%;
+  height: auto; }
+
+.content a {
+  text-decoration: underline;
+  color: inherit;
+  font-weight: bold; }
