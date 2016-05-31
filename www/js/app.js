@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			url: '/app',
 			abstract: true,
 			templateUrl: 'templates/menu.html',
-			controller: 'AppCtrl'
+			controller: 'MenuController'
 		})
 
 		.state('app.home', {
