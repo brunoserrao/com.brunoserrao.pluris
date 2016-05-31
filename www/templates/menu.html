@@ -23,126 +23,43 @@
 				</a>
 			</div>
 			
-			<ul class="list">
-				<!-- HOME  -->
-				<li class="item item-icon-left">
-					<i class="icon ion-ios-home-outline"></i>
-					<a menu-close href="#app/home">
-						{{ 'MENU_HOME' | translate }}
-					</a>
-				</li>
+			<ion-list id="menu-list">
+				<div ng-repeat="menu in menus">
+					<ion-item>
+						<span class="item-icon-left">
+							<i class="icon" ng-class="menu.ionClass"></i>
+						</span>
+						
+						<span ng-if="!menu.items.length">
+							<a menu-close href="{{ menu.href }}" title="{{ menu.title }}">
+								{{ menu.title }}
+							</a>
+						</span>
 
-				<!-- CONGRESSO -->
-				<li class="item item-icon-left">
-					<i class="icon ion-ios-people-outline"></i>
-					<i>
-						{{ 'MENU_CONGRESSO' | translate }}
-					</i>
-				</li>
-
-				<li>
-					<a menu-close class="item" href="#app/pagina/2" title="{{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}">
-						{{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}
-					</a>
-				</li>
-
-				<li>
-					<a menu-close class="item" href="#app/pagina/125" title="{{ 'MENU_CONGRESSO_ORGANIZACAO' | translate }}">
-						{{ 'MENU_CONGRESSO_ORGANIZACAO' | translate }}
-					</a>
-				</li>
-
-				<li>
-					<a menu-close class="item" href="#app/pagina/127" title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}">
-						{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}
-					</a>
-				</li>
-
-				<li>
-					<a menu-close class="item" href="#app/pagina/131" title="{{ 'MENU_CONGRESSO_PUBLICACAO' | translate }}">
-						{{ 'MENU_CONGRESSO_PUBLICACAO' | translate }}
-					</a>
-				</li>
-
-				<li>
-					<a menu-close class="item" href="#app/pagina/129" title="{{ 'MENU_CONGRESSO_CONTATOS' | translate }}">
-						{{ 'MENU_CONGRESSO_CONTATOS' | translate }}
-					</a>
-				</li>
-				
-				<!-- LOCAL -->
-				<li class="item item-icon-left">
-					<i class="icon ion-ios-location-outline"></i>
-					<i>
-						{{ 'MENU_LOCAL' | translate }}
-					</i>
-				</li>
-				
-				<li>
-					<a menu-close class="item" href="#app/pagina/133" title="{{ 'MENU_LOCAL_CIDADE' | translate }}">
-						{{ 'MENU_LOCAL_CIDADE' | translate }}
-					</a>
-				</li>
-				
-				<li>
-					<a menu-close class="item" href="#app/pagina/135" title="{{ 'MENU_LOCAL_CONFERENCIA' | translate }}">
-						{{ 'MENU_LOCAL_CONFERENCIA' | translate }}
-					</a>
-				</li>
-
-				<!-- DATAS IMPORTANTES -->
-				<li class="item item-icon-left">
-					<i class="icon ion-ios-calendar-outline"></i>
-					<i>
-						<a menu-close href="#app/pagina/" title="{{ 'MENU_DATAS_IMPORTANTES' | translate }}">
-							{{ 'MENU_DATAS_IMPORTANTES' | translate }}
+						<span ng-if="menu.items">
+							{{ menu.title }}
+						</span>
+						
+						<span ng-if="menu.items" class="item-note">
+							<i class="icon ion-chevron-right"></i>
+						</span>
+					</ion-item>
+	
+					<ion-item ng-repeat="submenu in menu.items">
+						<i class="item-icon-left"></i>
+						<a menu-close href="{{ submenu.href }}" title="{{ submenu.title }}">
+							{{ submenu.title }}
 						</a>
-					</i>
-				</li>
-
-				<!-- NOTICIAS -->
-				<li class="item item-icon-left">
-					<i class="icon ion-ios-paper-outline"></i>
-					<i>
-						<a menu-close href="#app/noticias" title="{{ 'MENU_NOTICIAS' | translate }}">
-							{{ 'MENU_NOTICIAS' | translate }}
-						</a>
-					</i>
-				</li>
-				
-				<!-- IDIOMAS -->
-				<li class="item item-icon-left">
-					<i class="icon ion-ios-world-outline"></i> 
-					<i>
-						{{ 'MENU_IDIOMAS_CONFIG' | translate }}
-					</i>
-				</li>
-
-				<li>
-					<a class="item" ng-click="switchLanguage('pb')" title="{{ 'MENU_MUDAR_IDIOMA' | translate }}">
-						{{ 'MENU_PT' | translate }}
-					</a>
-				</li>
-
-				<li>
-					<a class="item" ng-click="switchLanguage('en')" title="{{ 'MENU_MUDAR_IDIOMA' | translate }}">
-						{{ 'MENU_EN' | translate }}
-					</a>
-				</li>
-
-				<li>
-					<a class="item" ng-click="switchLanguage('es')" title="{{ 'MENU_MUDAR_IDIOMA' | translate }}">
-						{{ 'MENU_ES' | translate }}
-					</a>
-				</li>
+					</ion-item>
+				</div>
 
 				<!-- REDES SOCIAIS -->
-				<li class="item item-icon-left">
+				<ion-item class="item item-icon-left">
 					<i class="icon ion-ios-upload-outline"></i> 
 					{{ 'MENU_SOCIAL_NETWORK' | translate }}
-				</li>
+				</ion-item>
 
-				<li class="item tabs tabs-icon-left">
+				<ion-item class="item tabs tabs-icon-left">
 					<a class="tab-item" href="#" onclick="window.open('https://www.facebook.com/pluris.congresso', '_system', 'location=yes'); return false;">
 						<i class="icon ion-social-facebook"></i>
 						Facebook
@@ -155,57 +72,38 @@
 						<i class="icon ion-social-twitter"></i>
 						Twitter
 					</a>
-				</li>
+				</ion-item>
+			
+				<ion-item class="item">
+					{{ 'MENU_ORGANIZACAO' | translate }}
+				</ion-item>
 
-				<!-- APOIO / ORGANIZACAO -->
-				<li class="apoio">
-					<div class="item">
-						{{ 'MENU_APOIO' | translate }}
-					</div>
+				<div class="item apoio">
+					<div class="row">
+						<div class="col col-center center">
+							<img src="img/apoio/deha.png"/>
+						</div>
 
-					<div class="item">
-						<div class="row">
-							<div class="col col-center center">
-								<img src="img/apoio/fundepes.png"/>
-							</div>
-
-							<div class="col col-center">
-								<img src="img/apoio/prefeitura.png"/>
-							</div>
+						<div class="col col-center center">
+							<img src="img/apoio/ufal.png"/>
 						</div>
 					</div>
-
-					<div class="item">
-						{{ 'MENU_ORGANIZACAO' | translate }}
-					</div>
-
-					<div class="item">
-						<div class="row">
-							<div class="col col-center center">
-								<img src="img/apoio/deha.png"/>
-							</div>
-
-							<div class="col col-center center">
-								<img src="img/apoio/ufal.png"/>
-							</div>
+				
+					<div class="row">
+						<div class="col col-center center">
+							<img src="img/apoio/usp.png"/>
 						</div>
-					
-						<div class="row">
-							<div class="col col-center center">
-								<img src="img/apoio/usp.png"/>
-							</div>
 
-							<div class="col col-center center">
-								<img src="img/apoio/ufscar.png"/>
-							</div>
+						<div class="col col-center center">
+							<img src="img/apoio/ufscar.png"/>
+						</div>
 
-							<div class="col col-center center">
-								<img src="img/apoio/universidade-do-minho.png"/>
-							</div>
+						<div class="col col-center center">
+							<img src="img/apoio/universidade-do-minho.png"/>
 						</div>
 					</div>
-				</li>
-			</ul>
+				</div>
+			</ion-list>
 		</ion-content>
 	</ion-side-menu>
 </ion-side-menus>

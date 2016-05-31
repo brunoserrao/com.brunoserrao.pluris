@@ -9132,3 +9132,12 @@ a {
   text-decoration: underline;
   color: inherit;
   font-weight: bold; }
+
+#menu-list ion-item:active {
+  border-color: #ccc;
+  background-color: #D9D9D9; }
+
+#menu-list a {
+  color: inherit;
+  display: inline-block;
+  width: 100%; }
