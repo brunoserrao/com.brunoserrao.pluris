@@ -26,7 +26,7 @@ angular.module('http.services', [])
                 }
             },
             function errorCallback(response){
-                ToastService.message($translate.instant('ERRO_SERVIDOR') + ' : ' + response.status);
+                ToastService.message($translate.instant('ERRO_SERVIDOR') + ' : COD ' + response.status);
                 if (callback) {
                     callback()
                 }

@@ -37,5 +37,6 @@
 	"ALERTA_TITULO" : "Alerta",
 
 	"DATE_FORMAT": "{{date|date:'d/M/y'}}",
-	"COMPARTILHAR": "Compartilhar este link"
+	"COMPARTILHAR": "Compartilhar este link",
+	"ERRO_SERVIDOR": "Sem conexão com a internet"
 }
