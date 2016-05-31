@@ -2,14 +2,14 @@ angular.module('noticias.services', [])
 
 .factory('NoticiasService', function(RequestService){
     
-    function noticias(paged,callback) {
-       RequestService.request('GET','/noticias/?paged=' + paged,null,function(result){
+    function noticias(paged,loading, callback) {
+       RequestService.request('GET','/noticias/?paged=' + paged, false, loading, function(result){
             callback(result)
         });
     }
 
-    function noticia(id, callback) {
-        RequestService.request('GET','/noticias/' + id,null,function(result){
+    function noticia(id, loading, callback) {
+        RequestService.request('GET','/noticias/' + id, false, loading, function(result){
             callback(result)
         });
     }

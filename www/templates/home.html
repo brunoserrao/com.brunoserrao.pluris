@@ -1,8 +1,7 @@
-<ion-view view-title="{{ 'CONGRESSO' | translate }}" ng-init="atualizarHome()">
+<ion-view view-title="{{ 'CONGRESSO' | translate }}" ng-init="atualizarHome(true)">
 	<ion-content>
-
 		<ion-refresher
-			on-refresh="atualizarHome()">
+			on-refresh="atualizarHome(false)">
 		</ion-refresher>
 
 		<div class="row">

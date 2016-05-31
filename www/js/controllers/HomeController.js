@@ -1,8 +1,8 @@
 angular.module('starter.controllers')
 .controller('HomeController', function($scope, RequestService, StorageService){
 	
-	$scope.atualizarHome = function() {
-		RequestService.request('GET','/home',null,function(result){
+	$scope.atualizarHome = function(loading) {
+		RequestService.request('GET','/home',null, loading, function(result){
 			if (result) {
 				$scope.pagina = result.data.pagina.data;
 				$scope.noticias = result.data.noticias.data;
