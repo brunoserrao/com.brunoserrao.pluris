@@ -22,88 +22,9 @@
 					<img src="img/logo.svg" alt="Pluris 2016" class="logo">
 				</a>
 			</div>
+
+			<menu-directive></menu-directive>
 			
-			<ion-list id="menu-list">
-				<div ng-repeat="menu in menus">
-					<ion-item>
-						<span class="item-icon-left">
-							<i class="icon" ng-class="menu.ionClass"></i>
-						</span>
-						
-						<span ng-if="!menu.items.length">
-							<a menu-close href="{{ menu.href }}" title="{{ menu.title }}">
-								{{ menu.title }}
-							</a>
-						</span>
-
-						<span ng-if="menu.items">
-							{{ menu.title }}
-						</span>
-						
-						<span ng-if="menu.items" class="item-note">
-							<i class="icon ion-chevron-right"></i>
-						</span>
-					</ion-item>
-	
-					<ion-item ng-repeat="submenu in menu.items">
-						<i class="item-icon-left"></i>
-						<a menu-close href="{{ submenu.href }}" title="{{ submenu.title }}">
-							{{ submenu.title }}
-						</a>
-					</ion-item>
-				</div>
-
-				<!-- REDES SOCIAIS -->
-				<ion-item class="item item-icon-left">
-					<i class="icon ion-ios-upload-outline"></i> 
-					{{ 'MENU_SOCIAL_NETWORK' | translate }}
-				</ion-item>
-
-				<ion-item class="item tabs tabs-icon-left">
-					<a class="tab-item" href="#" onclick="window.open('https://www.facebook.com/pluris.congresso', '_system', 'location=yes'); return false;">
-						<i class="icon ion-social-facebook"></i>
-						Facebook
-					</a>
-					<a class="tab-item" href="#" onclick="window.open('https://instagram.com', '_system', 'location=yes'); return false;">
-						<i class="icon ion-social-instagram"></i>
-						Instagram
-					</a>
-					<a class="tab-item" href="#" onclick="window.open('https://twitter.com/pluris2016', '_system', 'location=yes'); return false;">
-						<i class="icon ion-social-twitter"></i>
-						Twitter
-					</a>
-				</ion-item>
-			
-				<ion-item class="item">
-					{{ 'MENU_ORGANIZACAO' | translate }}
-				</ion-item>
-
-				<div class="item apoio">
-					<div class="row">
-						<div class="col col-center center">
-							<img src="img/apoio/deha.png"/>
-						</div>
-
-						<div class="col col-center center">
-							<img src="img/apoio/ufal.png"/>
-						</div>
-					</div>
-				
-					<div class="row">
-						<div class="col col-center center">
-							<img src="img/apoio/usp.png"/>
-						</div>
-
-						<div class="col col-center center">
-							<img src="img/apoio/ufscar.png"/>
-						</div>
-
-						<div class="col col-center center">
-							<img src="img/apoio/universidade-do-minho.png"/>
-						</div>
-					</div>
-				</div>
-			</ion-list>
 		</ion-content>
 	</ion-side-menu>
 </ion-side-menus>

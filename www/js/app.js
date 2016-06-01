@@ -1,6 +1,6 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective'])
 
-.run(function ($ionicPlatform) {
+.run(function ($ionicPlatform, $timeout) {
 	$ionicPlatform.ready(function () {
 		if (window.cordova && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			url: '/app',
 			abstract: true,
 			templateUrl: 'templates/menu.html',
-			controller: 'MenuController'
+			controller: 'AppCtrl'
 		})
 
 		.state('app.home', {
