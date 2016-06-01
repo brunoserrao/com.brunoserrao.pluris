@@ -29,9 +29,18 @@ angular.module('http.services', [])
                 }
             },
             function errorCallback(response){
-                ToastService.message($translate.instant('ERRO_SERVIDOR') + ' : COD ' + response.status);
+                var errorMessage = $translate.instant('ERRO_SERVIDOR') + ' : COD ' + response.status;
+                
+                ToastService.message(errorMessage);
+
+                if (typeof ionic.Platform.device().available !== 'undefined'){
+                    $timeout(function(){
+                        window.analytics.trackException(errorMessage, true);
+                    },500);
+                }
+                
                 if (callback) {
-                    callback()
+                    callback();
                 }
             }
         ).finally(
