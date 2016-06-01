@@ -4,18 +4,50 @@ angular.module('menuDirective', [])
 		restrict: 'E',
 		scope: {
 			title: '@',
-			categories: '=',
-			categoryState: '@' // default: FALSE
+			state: '@'
 		},
 		replace: false,
 		templateUrl: 'templates/menu/menu-directive.html',
-		controller: ['$scope','$translate','$ionicSideMenuDelegate',function($scope, $translate, $ionicSideMenuDelegate) {
-			$scope.displaySubMenu = function(menu){
-				console.log(menu);
+		controller: function($scope, $translate, $ionicSideMenuDelegate, $location) {
+
+			var state = $scope.state || false;
+
+			$scope.isActive = function(menu) {
+				if (menu.href && $location.path().indexOf(menu.href) !== -1) {
+					return 'active';
+				} else if (state && $state.includes(state) && $stateParams.id == menu.id) {
+					return 'active';
+				}
+			}
+
+			$scope.toggleCat = function(menu){
+				if ($scope.isCatShown(menu)) {
+					$scope.activeCat = null;
+				} else {
+					$scope.activeCat = menu;
+				}
+
+				$scope.activeSubCat = null;
+			};
+
+			$scope.isCatShown = function(menu) {
+				return $scope.activeCat === menu;
 			};
 
 			$scope.hasSubMenu = function(menu){
 				return menu.items ? true : false;
+			};
+
+			$scope.toggleSubCat = function(menu) {
+				if ($scope.isSubCatShown(menu)) {
+					$scope.activeSubCat = null;
+				} else {
+					$scope.activeSubCat = menu;
+				}
+			};
+
+			$scope.isSubCatShown = function(menu) {
+				return $scope.activeSubCat === menu;
 			};
 			
 			$scope.menus = [
@@ -75,6 +107,6 @@ angular.module('menuDirective', [])
 					href : '#/app/config'
 				}
 			];
-		}]
+		}
 	}
 });
