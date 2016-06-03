@@ -80,17 +80,17 @@ a{
     background-color: $light;
 }
 
-.dayview-allday-label, .weekview-allday-label{
+#calendar .dayview-allday-label, .weekview-allday-label{
 	background-color: $royal ;
 	color: $light;
 }
 
-.monthview-selected {
+#calendar .monthview-selected {
     background-color: $royal !important;
-    color: $light !important;
+    color: $light;
 }
 
-.monthview-primary-with-event {
-    background-color: $dark !important;
-    color: $light !important;
+#calendar .monthview-primary-with-event {
+    background-color: $dark;
+    color: $light;
 }

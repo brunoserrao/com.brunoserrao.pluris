@@ -9151,14 +9151,14 @@ a {
 #calendar .table {
   background-color: #fff; }
 
-.dayview-allday-label, .weekview-allday-label {
+#calendar .dayview-allday-label, .weekview-allday-label {
   background-color: #48887B;
   color: #fff; }
 
-.monthview-selected {
+#calendar .monthview-selected {
   background-color: #48887B !important;
-  color: #fff !important; }
+  color: #fff; }
 
-.monthview-primary-with-event {
-  background-color: #444 !important;
-  color: #fff !important; }
+#calendar .monthview-primary-with-event {
+  background-color: #444;
+  color: #fff; }
