@@ -12,17 +12,28 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 	$scope.carregarProgramacao = function(loading) {
 		RequestService.request('GET','/eventos',null, loading, function(result){
+
+			$scope.calendar.events = [];
+
 			if (result) {
 				for (var i = 0; i < result.data.length; i++) {
-					console.log(result.data[i]);
+					date_start = new Date(result.data[i].metas.date_start[0] + ' ' + result.data[i].metas.time_start[0]);
+					date_end = new Date(result.data[i].metas.date_end[0] + ' ' + result.data[i].metas.time_end[0]);
+
+					evento = {
+						id: result.data[i].ID,
+						title: result.data[i].post_title,
+						startTime: date_start,
+						endTime: date_end,
+						allDay: false
+					};
+
+					$scope.calendar.events.push(evento);
 				}
 
-				// console.log(result.data.length);
-
-				// $scope.programacao = result.data;
-				// StorageService.set('programacao-eventos',result.data.pagina.data);
+				StorageService.set('programacao-eventos',$scope.calendar.events);
 			} else {
-				$scope.programacao = StorageService.get('programacao-eventos');
+				scope.calendar.events = StorageService.get('programacao-eventos');
 			}
 
 			$scope.$broadcast('scroll.refreshComplete');
@@ -36,12 +47,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 		$scope.popover.hide();
 	};
 
-	$scope.loadEvents = function () {
-		$scope.calendar.eventSource = createRandomEvents();
-	};
-
 	$scope.onEventSelected = function (event) {
-		console.log('Event selected:' + event.startTime + '-' + event.endTime + ',' + event.title);
+		console.log('Event selected:' + event.id);
 	};
 
 	$scope.onViewTitleChanged = function (title) {
