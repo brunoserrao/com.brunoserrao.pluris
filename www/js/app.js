@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar'])
 
 .run(function ($ionicPlatform, $timeout) {
 	$ionicPlatform.ready(function () {
@@ -93,6 +93,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				menuContent: {
 					templateUrl: 'templates/paginas/pagina.html',
 					controller: 'PaginasController'
+				}
+			}
+		})
+
+		.state('app.programacao', {
+			url: '/programacao',
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/programacao.html',
+					controller: 'ProgramacaoController'
 				}
 			}
 		})

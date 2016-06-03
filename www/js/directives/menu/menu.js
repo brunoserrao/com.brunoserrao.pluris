@@ -66,19 +66,19 @@ angular.module('menuDirective', [])
 						},
 						{
 							title : $translate.instant('MENU_CONGRESSO_ORGANIZACAO'),
-							href : '#/app/pagina/125'
+							href : '#/app/pagina/151'
 						},
 						{
 							title : $translate.instant('MENU_CONGRESSO_PROGRAMACAO'),
-							href : '#/app/pagina/127'
+							href : '#/app/programacao'
 						},
 						{
 							title : $translate.instant('MENU_CONGRESSO_PUBLICACAO'),
-							href : '#/app/pagina/131'
+							href : '#/app/pagina/229'
 						},
 						{
 							title : $translate.instant('MENU_CONGRESSO_CONTATOS'),
-							href : '#/app/pagina/129'
+							href : '#/app/pagina/231'
 						}
 					]
 				},
@@ -88,11 +88,11 @@ angular.module('menuDirective', [])
 					items : [
 						{
 							title : $translate.instant('MENU_LOCAL_CIDADE'),
-							href : '#/app/pagina/133'
+							href : '#/app/pagina/233'
 						},
 						{
 							title : $translate.instant('MENU_LOCAL_CONFERENCIA'),
-							href : '#/app/pagina/135'
+							href : '#/app/pagina/235'
 						}
 					]
 				},

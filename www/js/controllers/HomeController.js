@@ -14,7 +14,7 @@ angular.module('starter.controllers')
 				$scope.noticias = StorageService.get('noticias-home');
 			}
 
-			 $scope.$broadcast('scroll.refreshComplete');
+			$scope.$broadcast('scroll.refreshComplete');
 		});
 	};
 });
