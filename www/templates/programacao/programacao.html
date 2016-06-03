@@ -1,0 +1,20 @@
+<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}" ng-init="carregarProgramacao(true)">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon ion-android-more-vertical" ng-click="popover.show($event)" ></button>
+	</ion-nav-buttons>
+
+	<ion-content>
+		<ion-refresher
+			on-refresh="carregarProgramacao(false)">
+		</ion-refresher>
+		
+		<calendar 
+			ng-model="calendar.currentDate" 
+			calendar-mode="calendar.mode" 
+			event-source="calendar.eventSource"
+			range-changed="reloadSource(startTime, endTime)"
+			event-selected="onEventSelected(event)" title-changed="onViewTitleChanged(title)"
+			time-selected="onTimeSelected(selectedTime)" step="30">
+		</calendar>
+	</ion-content>
+</ion-view>
