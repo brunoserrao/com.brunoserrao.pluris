@@ -16,6 +16,10 @@
 					</a>
 				</div>
 
+				<div class="item item-body" ng-if="noticia.post_excerpt">
+					<div class="noticia content" ng-bind-html="noticia.post_excerpt"></div>
+				</div>
+
 				<div class="item tabs tabs-icon tabs-icon-left">
 					<a class="tab-item" href="#" ng-click="share(noticia)" title="{{ 'SHARE' | translate }}">
 						<i class="icon ion-android-share-alt"></i>
