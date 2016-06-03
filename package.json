@@ -34,7 +34,8 @@
       "id": "cordova-plugin-x-toast"
     },
     "cordova-plugin-google-analytics",
-    "cordova-plugin-crosswalk-webview"
+    "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-calendar"
   ],
   "cordovaPlatforms": [
     "ios",
