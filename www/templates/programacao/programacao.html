@@ -1,20 +1,25 @@
-<ion-view view-title="{{ viewTitle | translate }} - {{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}" ng-init="carregarProgramacao(true)">
+<ion-view view-title="{{ viewTitle | translate }}" ng-init="carregarProgramacao(true)">
 	<ion-nav-buttons side="right">
 		<button class="button button-icon ion-android-more-vertical" ng-click="popover.show($event)" ></button>
 	</ion-nav-buttons>
 
-	<ion-content>
+	<ion-content id="calendar">
 		<ion-refresher
 			on-refresh="carregarProgramacao(false)">
 		</ion-refresher>
 
-		<calendar 
-			ng-model="calendar.currentDate" 
-			calendar-mode="calendar.mode" 
-			event-source="calendar.events"
-			range-changed="reloadSource(startTime, endTime)"
-			event-selected="onEventSelected(event)" title-changed="onViewTitleChanged(title)"
-			time-selected="onTimeSelected(selectedTime)" step="30">
-		</calendar>
+		<div class="row">
+			<div class="col">
+				<calendar
+					ng-if="calendar.events"
+					ng-model="calendar.currentDate" 
+					calendar-mode="calendar.mode" 
+					event-source="calendar.events"
+					range-changed="reloadSource(startTime, endTime)"
+					event-selected="onEventSelected(event)" title-changed="onViewTitleChanged(title)"
+					time-selected="onTimeSelected(selectedTime)" step="30">
+				</calendar>
+			</div>
+		</div>
 	</ion-content>
 </ion-view>

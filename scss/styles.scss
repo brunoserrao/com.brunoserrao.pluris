@@ -67,3 +67,30 @@ a{
 	display: inline-block;
 	width: 100%;
 }
+
+#calendar > div {
+	height: 100% !important;
+}
+
+#calendar .event-detail-container {
+	border-top: none !important;
+}
+
+#calendar .table {
+    background-color: $light;
+}
+
+.dayview-allday-label, .weekview-allday-label{
+	background-color: $royal ;
+	color: $light;
+}
+
+.monthview-selected {
+    background-color: $royal !important;
+    color: $light !important;
+}
+
+.monthview-primary-with-event {
+    background-color: $dark !important;
+    color: $light !important;
+}

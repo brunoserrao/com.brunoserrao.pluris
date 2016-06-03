@@ -2,16 +2,10 @@
 	<ion-content>
 		<ion-list>
 			<ion-item ng-disabled="isToday()" ng-click="today()">
-				{{ 'CALENDAR_TODAY' | translate }}
+				{{ 'CALENDARIO_HOJE' | translate }}
 			</ion-item>
 			<ion-item ng-click="changeMode('month')">
-				{{ 'CALENDAR_MONTH' | translate }}
-			</ion-item>
-			<ion-item ng-click="changeMode('week')">
-				{{ 'CALENDAR_WEEK' | translate }}
-			</ion-item>
-			<ion-item ng-click="changeMode('day')">
-				{{ 'CALENDAR_DAY' | translate }}
+				{{ 'CALENDARIO_MES' | translate }}
 			</ion-item>
 		</ion-list>
 	</ion-content>

@@ -40,9 +40,8 @@
 	"COMPARTILHAR": "Compartir este enlace",
 	"ERRO_SERVIDOR": "Sin conexión a Internet",
 
-	"CALENDAR_TITLE" : "Opcíons",
-	"CALENDAR_TODAY" : "Hoy",
-	"CALENDAR_MONTH" : "Eventos del mes",
-	"CALENDAR_WEEK" : "Eventos de la semana",
-	"CALENDAR_DAY" : "Eventos del día"
+	"CALENDARIO_TITULO" : "Opcíons",
+	"CALENDARIO_HOJE" : "Hoy",
+	"CALENDARIO_MES" : "Eventos del mes",
+	"CALENDARIO_PROGRAMACAO" : "Programacíon geral"
 }

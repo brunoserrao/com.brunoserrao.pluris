@@ -17,8 +17,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 			if (result) {
 				for (var i = 0; i < result.data.length; i++) {
-					date_start = new Date(result.data[i].metas.date_start[0] + ' ' + result.data[i].metas.time_start[0]);
-					date_end = new Date(result.data[i].metas.date_end[0] + ' ' + result.data[i].metas.time_end[0]);
+					date_start = new Date(result.data[i].metas.date_start[0] + 'T' + result.data[i].metas.time_start[0]);
+					date_end = new Date(result.data[i].metas.date_end[0] + 'T' + result.data[i].metas.time_end[0]);
 
 					evento = {
 						id: result.data[i].ID,
