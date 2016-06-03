@@ -21,7 +21,7 @@ angular.module('http.services', [])
             data: data, 
             url: api,
             timeout: timeout,
-            cache: true
+            cache: false
         }).then(
             function successCallback(response){
                 if (callback) {
