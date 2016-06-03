@@ -57,6 +57,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.home', {
 			url: '/home',
+			cache: false,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/home.html',
@@ -89,6 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.apresentacao', {
 			url: '/pagina/:id',
+			cache: false,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/paginas/pagina.html',
@@ -99,6 +101,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.programacao', {
 			url: '/programacao',
+			cache: false,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/programacao/programacao.html',
