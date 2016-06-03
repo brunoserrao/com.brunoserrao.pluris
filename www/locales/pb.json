@@ -38,5 +38,11 @@
 
 	"DATE_FORMAT": "{{date|date:'d/M/y'}}",
 	"COMPARTILHAR": "Compartilhar este link",
-	"ERRO_SERVIDOR": "Sem conexão com a internet"
+	"ERRO_SERVIDOR": "Sem conexão com a internet",
+
+	"CALENDAR_TITLE" : "Opções",
+	"CALENDAR_TODAY" : "Hoje",
+	"CALENDAR_MONTH" : "Eventos do mês",
+	"CALENDAR_WEEK" : "Eventis da semana",
+	"CALENDAR_DAY" : "Eventos do dia"
 }
