@@ -6,7 +6,7 @@ angular.module('http.services', [])
     function request(method,end_point, data, loading, callback) {
         var lang = $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
         var concat = end_point.indexOf('?') > 1 ? '&' : '/?';
-        var api = 'http://10.0.0.108/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat + 'lang=' + lang;
+        var api = 'http://192.168.1.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat + 'lang=' + lang;
 
 
         if (loading) {
@@ -17,7 +17,7 @@ angular.module('http.services', [])
         }
 
         $http({
-            method: method, 
+            method: method,
             data: data, 
             url: api,
             timeout: timeout,
