@@ -109,6 +109,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				}
 			}
 		})
+
+		.state('app.programacao/id', {
+			url: '/programacao/:id',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/evento.html',
+					controller: 'ProgramacaoViewController'
+				}
+			}
+		})
 	
 	$urlRouterProvider.otherwise('/app/home');
 });

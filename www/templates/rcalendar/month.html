@@ -228,7 +228,9 @@
             <div class="item item-icon-left" ng-repeat="event in selectedDate.events" ng-click="eventSelected({event:event})">
                 <i class="icon ion-ios-calendar-outline"></i>
                 <span>
-                    {{::event.startTime|date: 'HH:mm'}} - {{::event.endTime|date: 'HH:mm'}} - {{::event.title}}
+                    <a href="#app/programacao/{{ event.id }}">
+                        {{::event.startTime|date: 'HH:mm'}} - {{::event.endTime|date: 'HH:mm'}} - {{::event.title}}
+                    </a>
                 </span>
             </div>
         </div>

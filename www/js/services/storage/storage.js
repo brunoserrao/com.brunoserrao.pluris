@@ -17,7 +17,7 @@ angular.module('storage.services', ['LocalStorageModule'])
     }
     
     var remove = function (keys) {
-        return localStorageService.get(keys);
+        return localStorageService.remove(keys);
     }
     
     return {

@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-.controller('HomeController', function($scope, RequestService, StorageService){
+.controller('HomeController', function($scope, $timeout, RequestService, StorageService){
 	
 	$scope.atualizarHome = function(loading) {
 		RequestService.request('GET','/home',null, loading, function(result){
@@ -14,7 +14,9 @@ angular.module('starter.controllers')
 				$scope.noticias = StorageService.get('noticias-home');
 			}
 
-			$scope.$broadcast('scroll.refreshComplete');
+			$timeout(function(){
+				$scope.$broadcast('scroll.refreshComplete');
+			}, 500);
 		});
 	};
 });

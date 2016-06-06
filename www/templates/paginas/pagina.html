@@ -1,6 +1,10 @@
-<ion-view view-title="{{ 'CONGRESSO' | translate }}">
+<ion-view view-title="{{ pagina.post_title }} {{ 'CONGRESSO' | translate }}" ng-init="carregarPagina(true)">
 	<ion-content>
-		<div class="list card">
+		<ion-refresher
+			on-refresh="carregarPagina(false)">
+		</ion-refresher>
+
+		<div class="list card" ng-if="pagina">
 			<ion-list>
 				<div class="item item-avatar">
 					<img src="img/logo-bola.png">

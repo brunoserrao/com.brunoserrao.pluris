@@ -43,5 +43,7 @@
 	"CALENDARIO_TITULO" : "Opcíons",
 	"CALENDARIO_HOJE" : "Hoy",
 	"CALENDARIO_MES" : "Eventos del mes",
-	"CALENDARIO_PROGRAMACAO" : "Programacíon geral"
+	"CALENDARIO_PROGRAMACAO" : "Programacíon geral",
+	"CALENDARIO_DATA_HORA_INICIO" : "Inicio",
+	"CALENDARIO_DATA_HORA_FINAL" : "Final"
 }
