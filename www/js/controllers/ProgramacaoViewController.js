@@ -1,5 +1,7 @@
 angular.module('starter.controllers')
-.controller('ProgramacaoViewController', function($scope, $timeout, $stateParams, EventosService, StorageService){
+.controller('ProgramacaoViewController', function($scope, $timeout, $stateParams, $translate, EventosService, StorageService, ToastService){
+
+	$scope.favoritado = false;
 
 	$scope.carregarEvento = function(loading) {
 		var id = $stateParams.id;
@@ -12,56 +14,82 @@ angular.module('starter.controllers')
 				$scope.evento = StorageService.get('evento-' + id);
 			}
 
+			checarFavorito($scope.evento);
+
 			$timeout(function(){
 				$scope.$broadcast('scroll.refreshComplete');
 			},500)
 		});
-
-		$scope.checarFavorito(id);
-	};
-
-	$scope.checarFavorito = function(id){
-		key = 'favorito-evento-' + id;
-		$scope.favoritado = StorageService.get(key) ? true : false;
-	}
-
-	$scope.toggleFavorito = function(evento){
-		key = 'favorito-evento-' + evento.ID;
-
-		if (StorageService.get(key)) {
-			StorageService.remove(key);
-		} else{
-			var d1 =  new Date(evento.startTime);
-			var d2 =  new Date(evento.endTime);
-			var startDate = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate(), d1.getHours(), d1.getMinutes(), 0, 0);
-			var endDate = new Date(d2.getFullYear(), d2.getMonth(), d2.getDate(), d2.getHours(), d2.getMinutes(), 0, 0);
-			var title = evento.title;
-			var eventLocation = "Home";
-			var notes = "Some notes about this event.";
-			var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-			var error = function(message) { alert("Error: " + message); };
-
-			window.plugins.calendar.createEvent(title,eventLocation,notes,startDate,endDate,success,error);
-
-			StorageService.set(key, evento.ID);
-		}
-
-		// $scope.checarFavorito(evento.ID);
 	};
 
 	$scope.favorito = function(evento){
-		window.plugins.calendar.hasReadWritePermission(function(result){
-			if (result) {
-				$scope.toggleFavorito(evento);
-			} else {
+		var chave = 'favorito-evento-' + evento.ID;
+		var evento_chave = StorageService.get(chave);
 
+		window.plugins.calendar.hasReadWritePermission(
+			function(result) {
+				if (result) {
+					if (evento_chave) {
+						removerFavorito(evento, chave);
+					} else {
+						adicionarFavorito(evento, chave);
+					}
+				} else {
+					window.plugins.calendar.requestReadWritePermission();
+					$scope.favorito(evento);
+				}
 			}
-		});
+		);
+	};
 
-		$scope.checarFavorito(evento.ID);
+	removerFavorito = function(evento, chave){
+		var d1 = new Date(evento.metas.date_start[0] + 'T' + evento.metas.time_start[0]);
+		var d2 = new Date(evento.metas.date_end[0] + 'T' + evento.metas.time_end[0]);
+
+		var startDate = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate(), d1.getHours(), d1.getMinutes(), 0, 0);
+		var endDate = new Date(d2.getFullYear(), d2.getMonth(), d2.getDate(), d2.getHours(), d2.getMinutes(), 0, 0);
+		var title = evento.post_title;
+		var eventLocation = null;
+		var notes = evento.post_content;
+
+		var success = function(id) {
+			StorageService.remove(chave);
+			checarFavorito(evento);
+			ToastService.message($translate.instant('EVENTO_REMOVIDO_DA_AGENDA'));
+		};
+		
+		var error = function(id) { 
+			console.log("Remove Error: " + chave); 
+		};
+
+		window.plugins.calendar.deleteEvent(title,eventLocation,notes,startDate,endDate,success,error);
 	}
 
-	$scope.calendarioPedirPermissao = function(callback){
-		return window.plugins.calendar.requestReadWritePermission();
+	adicionarFavorito = function(evento, chave){
+		var d1 = new Date(evento.metas.date_start[0] + 'T' + evento.metas.time_start[0]);
+		var d2 = new Date(evento.metas.date_end[0] + 'T' + evento.metas.time_end[0]);
+
+		var startDate = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate(), d1.getHours(), d1.getMinutes(), 0, 0);
+		var endDate = new Date(d2.getFullYear(), d2.getMonth(), d2.getDate(), d2.getHours(), d2.getMinutes(), 0, 0);
+		var title = evento.post_title;
+		var eventLocation = null;
+		var notes = evento.post_content;
+
+		var success = function(id) {
+			StorageService.set(chave, evento.ID);
+			checarFavorito(evento);
+			ToastService.message($translate.instant('EVENTO_ADICIONADO_NA_AGENDA'));
+		};
+		
+		var error = function(id) { 
+			console.log("Error: " + chave); 
+		};
+
+		window.plugins.calendar.createEvent(title,eventLocation,notes,startDate,endDate,success,error);
+	}
+
+	var	checarFavorito = function(evento){
+		var evento_chave = 'favorito-evento-' + evento.ID;
+		$scope.favoritado = StorageService.get(evento_chave) ? true : false;
 	}
 });

@@ -45,5 +45,7 @@
 	"CALENDARIO_MES" : "Eventos del mes",
 	"CALENDARIO_PROGRAMACAO" : "Programacíon geral",
 	"CALENDARIO_DATA_HORA_INICIO" : "Inicio",
-	"CALENDARIO_DATA_HORA_FINAL" : "Final"
+	"CALENDARIO_DATA_HORA_FINAL" : "Final",
+	"EVENTO_REMOVIDO_DA_AGENDA" : "Evento añadido en su calendario",
+	"EVENTO_ADICIONADO_NA_AGENDA" : "Evento añadido en su calendario"
 }

@@ -47,9 +47,9 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 		$scope.popover.hide();
 	};
 
-	$scope.onEventSelected = function (evento) {
-		console.log('Event selected:' + event.id);
-	};
+	// $scope.onEventSelected = function (evento) {
+	// 	console.log('Event selected:' + event.id);
+	// };
 
 	$scope.onViewTitleChanged = function (title) {
 		$scope.viewTitle = title;

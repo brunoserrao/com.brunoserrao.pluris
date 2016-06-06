@@ -6,7 +6,7 @@ angular.module('http.services', [])
     function request(method,end_point, data, loading, callback) {
         var lang = $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
         var concat = end_point.indexOf('?') > 1 ? '&' : '/?';
-        var api = 'http://192.168.1.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat + 'lang=' + lang;
+        var api = 'http://10.0.0.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat + 'lang=' + lang;
 
 
         if (loading) {
@@ -29,7 +29,7 @@ angular.module('http.services', [])
                 }
             },
             function errorCallback(response){
-                var errorMessage = $translate.instant('ERRO_SERVIDOR') + ' : COD ' + response.status;
+                var errorMessage = $translate.instant('ERRO_SERVIDOR') + ' : ' + response.status;
                 
                 ToastService.message(errorMessage);
 

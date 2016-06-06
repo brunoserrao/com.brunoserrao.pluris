@@ -45,5 +45,7 @@
 	"CALENDARIO_MES" : "Eventos of month",
 	"CALENDARIO_PROGRAMACAO" : "General programming",
 	"CALENDARIO_DATA_HORA_INICIO" : "Start",
-	"CALENDARIO_DATA_HORA_FINAL" : "End"
+	"CALENDARIO_DATA_HORA_FINAL" : "End",
+	"EVENTO_REMOVIDO_DA_AGENDA" : "Event added in your calendar",
+	"EVENTO_ADICIONADO_NA_AGENDA" : "Event removed from your calendar"
 }
