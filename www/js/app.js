@@ -1,6 +1,9 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar','btbackfunc.services'])
 
-.run(function ($ionicPlatform, $timeout) {
+.run(function ($ionicPlatform, $timeout, btbackfunc) {
+
+	btbackfunc.btbackfunc();
+
 	$ionicPlatform.ready(function () {
 		if (window.cordova && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
