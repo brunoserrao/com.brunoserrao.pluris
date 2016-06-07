@@ -1,8 +1,8 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar','btbackfunc.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar'])
 
-.run(function ($ionicPlatform, $timeout, btbackfunc) {
+.run(function ($ionicPlatform, $timeout) {
 
-	btbackfunc.btbackfunc();
+	// btbackfunc.btbackfunc();
 
 	$ionicPlatform.ready(function () {
 		if (window.cordova && window.cordova.plugins.Keyboard) {

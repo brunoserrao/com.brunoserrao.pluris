@@ -1,4 +1,4 @@
-angular.module('starter.controllers').controller('ProgramacaoController', function($scope, $ionicPopover, $stateParams, RequestService, StorageService){
+angular.module('starter.controllers').controller('ProgramacaoController', function($scope, $ionicPopover, $stateParams, RequestService, StorageService, calendarConfig){
 
 	$ionicPopover.fromTemplateUrl('templates/popover/popover.html', {
 		scope: $scope
