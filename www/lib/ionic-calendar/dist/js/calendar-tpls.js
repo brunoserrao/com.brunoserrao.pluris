@@ -45,7 +45,7 @@ angular.module('ui.rCalendar', ['ui.rCalendar.tpls'])
         self.currentCalendarDate = $scope.$parent.$eval($attrs.initDate);
     }
     if (!self.currentCalendarDate) {
-        self.currentCalendarDate = new Date();
+        self.currentCalendarDate = new Date(2016,9);
         if ($attrs.ngModel && !$scope.$parent.$eval($attrs.ngModel)) {
             $parse($attrs.ngModel).assign($scope.$parent, self.currentCalendarDate);
         }
