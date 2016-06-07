@@ -23,23 +23,25 @@ angular.module('starter.controllers')
 	};
 
 	$scope.favorito = function(evento){
-		var chave = 'favorito-evento-' + evento.ID;
-		var evento_chave = StorageService.get(chave);
+		if (typeof ionic.Platform.device().available !== 'undefined'){
+			var chave = 'favorito-evento-' + evento.ID;
+			var evento_chave = StorageService.get(chave);
 
-		window.plugins.calendar.hasReadWritePermission(
-			function(result) {
-				if (result) {
-					if (evento_chave) {
-						removerFavorito(evento, chave);
+			window.plugins.calendar.hasReadWritePermission(
+				function(result) {
+					if (result) {
+						if (evento_chave) {
+							removerFavorito(evento, chave);
+						} else {
+							adicionarFavorito(evento, chave);
+						}
 					} else {
-						adicionarFavorito(evento, chave);
+						window.plugins.calendar.requestReadWritePermission();
+						$scope.favorito(evento);
 					}
-				} else {
-					window.plugins.calendar.requestReadWritePermission();
-					$scope.favorito(evento);
 				}
-			}
-		);
+			);
+		}
 	};
 
 	removerFavorito = function(evento, chave){
@@ -49,7 +51,7 @@ angular.module('starter.controllers')
 		var startDate = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate(), d1.getHours(), d1.getMinutes(), 0, 0);
 		var endDate = new Date(d2.getFullYear(), d2.getMonth(), d2.getDate(), d2.getHours(), d2.getMinutes(), 0, 0);
 		var title = evento.post_title;
-		var eventLocation = null;
+		var eventLocation = $translate.instant('CONGRESSO');
 		var notes = evento.post_content;
 
 		var success = function(id) {
@@ -62,7 +64,7 @@ angular.module('starter.controllers')
 			console.log("Remove Error: " + chave); 
 		};
 
-		window.plugins.calendar.deleteEvent(title,eventLocation,notes,startDate,endDate,success,error);
+		window.plugins.calendar.deleteEvent(title,null,null,startDate,endDate,success,error);
 	}
 
 	adicionarFavorito = function(evento, chave){
@@ -72,7 +74,7 @@ angular.module('starter.controllers')
 		var startDate = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate(), d1.getHours(), d1.getMinutes(), 0, 0);
 		var endDate = new Date(d2.getFullYear(), d2.getMonth(), d2.getDate(), d2.getHours(), d2.getMinutes(), 0, 0);
 		var title = evento.post_title;
-		var eventLocation = null;
+		var eventLocation = $translate.instant('CONGRESSO');
 		var notes = evento.post_content;
 
 		var success = function(id) {
