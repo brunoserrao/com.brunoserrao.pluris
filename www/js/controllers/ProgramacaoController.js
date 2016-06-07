@@ -23,8 +23,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 					evento = {
 						id: result.data[i].ID,
 						title: result.data[i].post_title,
-						startTime: date_start,
-						endTime: date_end,
+						startTime: new Date(date_start.getUTCFullYear(), date_start.getUTCMonth(), date_start.getUTCDate(), date_start.getUTCHours(),date_start.getUTCMinutes(), date_start.getUTCSeconds()),
+						endTime: new Date(date_end.getUTCFullYear(), date_end.getUTCMonth(), date_end.getUTCDate(), date_end.getUTCHours(),date_end.getUTCMinutes(), date_end.getUTCSeconds()),
 						allDay: false
 					};
 

@@ -48,8 +48,8 @@ angular.module('starter.controllers')
 		var d1 = new Date(evento.metas.date_start[0] + 'T' + evento.metas.time_start[0]);
 		var d2 = new Date(evento.metas.date_end[0] + 'T' + evento.metas.time_end[0]);
 
-		var startDate = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate(), d1.getHours(), d1.getMinutes(), 0, 0);
-		var endDate = new Date(d2.getFullYear(), d2.getMonth(), d2.getDate(), d2.getHours(), d2.getMinutes(), 0, 0);
+		var startDate = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+		var endDate = new Date(d2.getUTCFullYear(), d2.getUTCMonth(), d2.getUTCDate(), d2.getUTCHours(), d2.getUTCMinutes(), d2.getUTCSeconds());
 		var title = evento.post_title;
 		var eventLocation = $translate.instant('CONGRESSO');
 		var notes = evento.post_content;
@@ -71,8 +71,8 @@ angular.module('starter.controllers')
 		var d1 = new Date(evento.metas.date_start[0] + 'T' + evento.metas.time_start[0]);
 		var d2 = new Date(evento.metas.date_end[0] + 'T' + evento.metas.time_end[0]);
 
-		var startDate = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate(), d1.getHours(), d1.getMinutes(), 0, 0);
-		var endDate = new Date(d2.getFullYear(), d2.getMonth(), d2.getDate(), d2.getHours(), d2.getMinutes(), 0, 0);
+		var startDate = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
+		var endDate = new Date(d2.getUTCFullYear(), d2.getUTCMonth(), d2.getUTCDate(), d2.getUTCHours(), d2.getUTCMinutes(), d2.getUTCSeconds());
 		var title = evento.post_title;
 		var eventLocation = $translate.instant('CONGRESSO');
 		var notes = evento.post_content;
