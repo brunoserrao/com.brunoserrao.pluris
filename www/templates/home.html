@@ -37,13 +37,13 @@
 				<h2>{{ pagina.post_title }}</h2>
 			</div>
 
-			<div class="item item-image">
+			<div class="item item-image" ng-if="pagina.thumbnail">
 				<a href="#app/pagina/{{ pagina.ID }}" title="{{ pagina.post_title }}">
 					<img class="full-image" src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
 				</a>
 			</div>
 
-			<div class="item item-body">
+			<div class="item item-body" ng-if="pagina.post_excerpt">
 				<p>
 					{{ pagina.post_excerpt }}
 				</p>
