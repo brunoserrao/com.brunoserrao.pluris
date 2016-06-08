@@ -1,6 +1,6 @@
 {
   "name": "ionic-calendar",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "homepage": "https://github.com/twinssbc/Ionic-Calendar",
   "authors": [
     "twinssbc <bocong@hotmail.com>"
@@ -27,14 +27,13 @@
     "gruntfile.js",
     "package.json"
   ],
-  "_release": "0.2.5",
+  "_release": "0.2.6",
   "_resolution": {
     "type": "version",
-    "tag": "0.2.5",
-    "commit": "2639bca358f929f5bbd6365ec1e2d3c1642aaa51"
+    "tag": "0.2.6",
+    "commit": "6eec0c3adfd7e73eb3ba5f85ddb9fd2f5a1cb128"
   },
   "_source": "https://github.com/twinssbc/Ionic-Calendar.git",
   "_target": "^0.2.5",
-  "_originalSource": "ionic-calendar",
-  "_direct": true
+  "_originalSource": "ionic-calendar"
 }
