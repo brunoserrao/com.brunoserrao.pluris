@@ -1,12 +1,12 @@
 'use strict';
 angular.module('starter.controllers')
 .controller('NoticiasController', function($scope, $timeout, NoticiasService, StorageService){
-	paged = 1;
+	$scope.paged = 1;
 	$scope.items_disponiveis = true;
 	$scope.noticias = [];
 
 	$scope.carregarNoticias = function(loading){
-		NoticiasService.noticias(paged, loading, function(result){
+		NoticiasService.noticias($scope.paged, loading, function(result){
 			if (result) {
 				for (var i = 0; i < result.data.length; i++) {
 					$scope.noticias.push(result.data[i]);
@@ -24,7 +24,7 @@ angular.module('starter.controllers')
 					$scope.$broadcast('scroll.infiniteScrollComplete');	
 				}, 500);
 				
-				paged++;
+				$scope.paged++;
 			} else {
 				$scope.noticias = StorageService.get('noticias');
 				$scope.paging = StorageService.get('noticias-paging');
