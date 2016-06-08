@@ -11,8 +11,7 @@ angular.module('http.services', [])
 
         if (loading) {
             $ionicLoading.show({
-                 showBackdrop: false,
-                 class: 'royal'
+                 showBackdrop: false
             });
         }
 
@@ -43,15 +42,11 @@ angular.module('http.services', [])
                     callback();
                 }
             }
-        ).finally(
-            function itsOver(){
-                if (loading) {
-                    $timeout(function () {
-                        $ionicLoading.hide();
-                    }, 500);
-                }
-            }
-        )
+        ).finally(function(){
+            $timeout(function () {
+                $ionicLoading.hide();
+            }, 500);
+        })
     }
 
     return {
