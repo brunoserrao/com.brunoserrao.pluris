@@ -1,3 +1,4 @@
+'use strict';
 angular.module('starter.controllers').controller('PaginasController', function($scope, $timeout, $stateParams, PaginasService, StorageService){
 	$scope.carregarPagina = function(loading){
 		PaginasService.pagina($stateParams.id, loading, function(result){

@@ -1,3 +1,4 @@
+'use strict';
 angular.module('starter.controllers')
 .controller('NoticiasController', function($scope, $timeout, NoticiasService, StorageService){
 	paged = 1;

@@ -1,3 +1,4 @@
+'use strict';
 angular.module('starter.controllers').controller('ProgramacaoController', function($scope, $ionicPopover, $stateParams, RequestService, StorageService, calendarConfig){
 
 	$ionicPopover.fromTemplateUrl('templates/popover/popover.html', {
@@ -17,10 +18,10 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 			if (result) {
 				for (var i = 0; i < result.data.length; i++) {
-					date_start = new Date(result.data[i].metas.date_start[0] + 'T' + result.data[i].metas.time_start[0]);
-					date_end = new Date(result.data[i].metas.date_end[0] + 'T' + result.data[i].metas.time_end[0]);
+					var date_start = new Date(result.data[i].metas.date_start[0] + 'T' + result.data[i].metas.time_start[0]);
+					var date_end = new Date(result.data[i].metas.date_end[0] + 'T' + result.data[i].metas.time_end[0]);
 
-					evento = {
+					var evento = {
 						id: result.data[i].ID,
 						title: result.data[i].post_title,
 						startTime: new Date(date_start.getUTCFullYear(), date_start.getUTCMonth(), date_start.getUTCDate(), date_start.getUTCHours(),date_start.getUTCMinutes(), date_start.getUTCSeconds()),
@@ -48,7 +49,7 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	};
 
 	$scope.onEventSelected = function (evento) {
-		// console.log('Event selected:' + event.id);
+		// console.log('Event selected:' + evento.id);
 	};
 
 	$scope.onViewTitleChanged = function (title) {

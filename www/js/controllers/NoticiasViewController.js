@@ -1,3 +1,4 @@
+'use strict';
 angular.module('starter.controllers')
 .controller('NoticiasViewController', function($scope, $timeout, $stateParams, NoticiasService, StorageService){
 	$scope.carregarNoticia = function(loading) {
