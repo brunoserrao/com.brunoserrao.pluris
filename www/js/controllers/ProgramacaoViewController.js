@@ -1,3 +1,4 @@
+'use strict';
 angular.module('starter.controllers')
 .controller('ProgramacaoViewController', function($scope, $timeout, $stateParams, $translate, EventosService, StorageService, ToastService){
 
@@ -14,7 +15,7 @@ angular.module('starter.controllers')
 				$scope.evento = StorageService.get('evento-' + id);
 			}
 
-			checarFavorito($scope.evento);
+			$scope.checarFavorito($scope.evento);
 
 			$timeout(function(){
 				$scope.$broadcast('scroll.refreshComplete');
@@ -31,9 +32,9 @@ angular.module('starter.controllers')
 				function(result) {
 					if (result) {
 						if (evento_chave) {
-							removerFavorito(evento, chave);
+							$scope.removerFavorito(evento, chave);
 						} else {
-							adicionarFavorito(evento, chave);
+							$scope.adicionarFavorito(evento, chave);
 						}
 					} else {
 						window.plugins.calendar.requestReadWritePermission();
@@ -44,7 +45,7 @@ angular.module('starter.controllers')
 		}
 	};
 
-	removerFavorito = function(evento, chave){
+	$scope.removerFavorito = function(evento, chave){
 		var d1 = new Date(evento.metas.date_start[0] + 'T' + evento.metas.time_start[0]);
 		var d2 = new Date(evento.metas.date_end[0] + 'T' + evento.metas.time_end[0]);
 
@@ -56,7 +57,7 @@ angular.module('starter.controllers')
 
 		var success = function(id) {
 			StorageService.remove(chave);
-			checarFavorito(evento);
+			$scope.checarFavorito(evento);
 			ToastService.message($translate.instant('EVENTO_REMOVIDO_DA_AGENDA'));
 		};
 		
@@ -67,7 +68,7 @@ angular.module('starter.controllers')
 		window.plugins.calendar.deleteEvent(title,null,null,startDate,endDate,success,error);
 	}
 
-	adicionarFavorito = function(evento, chave){
+	$scope.adicionarFavorito = function(evento, chave){
 		var d1 = new Date(evento.metas.date_start[0] + 'T' + evento.metas.time_start[0]);
 		var d2 = new Date(evento.metas.date_end[0] + 'T' + evento.metas.time_end[0]);
 
@@ -79,7 +80,7 @@ angular.module('starter.controllers')
 
 		var success = function(id) {
 			StorageService.set(chave, evento.ID);
-			checarFavorito(evento);
+			$scope.checarFavorito(evento);
 			ToastService.message($translate.instant('EVENTO_ADICIONADO_NA_AGENDA'));
 		};
 		
@@ -90,7 +91,7 @@ angular.module('starter.controllers')
 		window.plugins.calendar.createEvent(title,eventLocation,notes,startDate,endDate,success,error);
 	}
 
-	var	checarFavorito = function(evento){
+	$scope.checarFavorito = function(evento){
 		var evento_chave = 'favorito-evento-' + evento.ID;
 		$scope.favoritado = StorageService.get(evento_chave) ? true : false;
 	}
