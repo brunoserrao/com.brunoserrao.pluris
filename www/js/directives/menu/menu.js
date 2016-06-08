@@ -1,3 +1,4 @@
+'use strict';
 angular.module('menuDirective', [])
 .directive('menuDirective', function(){
 	return {
@@ -104,7 +105,7 @@ angular.module('menuDirective', [])
 				{
 					title : $translate.instant('MENU_IDIOMAS_CONFIG'),
 					ionClass : 'ion-ios-world-outline',
-					href : '#/app/config'
+					href : '#/app/configuracao'
 				}
 			];
 		}

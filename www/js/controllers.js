@@ -1,19 +1,7 @@
+'use strict';
 angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','paginas.services','eventos.services','toast.services','storage.services'])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $translate, $translateLocalStorage, ShareService) {
-
-	$scope.language = 'pb';
-
-	// Set Language
-	$scope.switchLanguage = function (key) {
-		$translate.use(key);
-		$scope.language = key;
-	};
-
-	// get Language
-	$scope.getLanguage = function () {
-		return $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
-	};
 
 	// Share function
 	$scope.share = function(post) {

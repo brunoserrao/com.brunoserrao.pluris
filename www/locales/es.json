@@ -14,7 +14,7 @@
 	"MENU_LOCAL_CONFERENCIA" : "Local del congresso",
 
 	"MENU_DATAS_IMPORTANTES": "Fechas relevantes",
-	"MENU_NOTICIAS": "News",
+	"MENU_NOTICIAS": "Noticias",
 
 	"MENU_IDIOMAS_CONFIG" : "Idiomas",
 	"MENU_PT" : "Portugués",
@@ -47,5 +47,6 @@
 	"CALENDARIO_DATA_HORA_INICIO" : "Inicio",
 	"CALENDARIO_DATA_HORA_FINAL" : "Final",
 	"EVENTO_REMOVIDO_DA_AGENDA" : "Evento añadido en su calendario",
-	"EVENTO_ADICIONADO_NA_AGENDA" : "Evento añadido en su calendario"
+	"EVENTO_ADICIONADO_NA_AGENDA" : "Evento añadido en su calendario",
+	"TRADUCAO_MENSAGEM" : "Utilice los iconos de abajo para cambiar el idioma de la aplicación."
 }

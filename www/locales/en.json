@@ -47,5 +47,6 @@
 	"CALENDARIO_DATA_HORA_INICIO" : "Start",
 	"CALENDARIO_DATA_HORA_FINAL" : "End",
 	"EVENTO_REMOVIDO_DA_AGENDA" : "Event added in your calendar",
-	"EVENTO_ADICIONADO_NA_AGENDA" : "Event removed from your calendar"
+	"EVENTO_ADICIONADO_NA_AGENDA" : "Event removed from your calendar",
+	"TRADUCAO_MENSAGEM" : "Use the icons below to change the app language."
 }

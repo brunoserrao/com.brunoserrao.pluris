@@ -1,9 +1,7 @@
+'use strict';
 angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar'])
 
 .run(function ($ionicPlatform, $timeout) {
-
-	// btbackfunc.btbackfunc();
-
 	$ionicPlatform.ready(function () {
 		if (window.cordova && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -120,6 +118,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				menuContent: {
 					templateUrl: 'templates/programacao/evento.html',
 					controller: 'ProgramacaoViewController'
+				}
+			}
+		})
+
+		.state('app.configuracao', {
+			url: '/configuracao',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/configuracao/configuracao.html',
+					controller: 'ConfiguracaoController'
 				}
 			}
 		})
