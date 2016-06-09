@@ -23,7 +23,7 @@
 					<strong>{{ 'CALENDARIO_DATA_HORA_FINAL' | translate }}: </strong> {{ evento.metas.date_end[0] +'T'+ evento.metas.time_end[0] | date:'medium' }}
 				</div>
 
-				<div class="item item-body">
+				<div class="item item-body" ng-if="evento.post_content">
 					<div class="noticia content" ng-bind-html="evento.post_content"></div>
 				</div>
 			</ion-list>
