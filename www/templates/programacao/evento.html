@@ -1,4 +1,4 @@
-<ion-view view-title="{{ evento.post_title }} {{ 'MENU_CONGRESSO_PROGRAMACAO' | translate}}" ng-init="carregarEvento(true)">
+<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate}}" ng-init="carregarEvento(true)">
 	<ion-nav-buttons side="right">
 		<button class="button button-icon" ng-class="{ 'ion-android-star' : favoritado, 'ion-android-star-outline'  : !favoritado }" ng-click="favorito(evento)"></button>
 	</ion-nav-buttons>
@@ -24,7 +24,7 @@
 				</div>
 
 				<div class="item item-body" ng-if="evento.post_content">
-					<div class="noticia content" ng-bind-html="evento.post_content"></div>
+					<div class="noticia content" ng-bind-html="evento.post_content | externalLinks"></div>
 				</div>
 			</ion-list>
 		</div>

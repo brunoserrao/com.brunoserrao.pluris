@@ -21,4 +21,11 @@ angular.module('starter.controllers', ['http.services','popup.services','share.s
 			},500);
 		}
 	});
-});
+})
+.filter('externalLinks', function($sce, $sanitize) {
+	return function(text) {
+		var regex = /href="([\S]+)"/g;
+		var newString = $sanitize(text).replace(regex, "href= \"#\" onclick=\"window.open('$1', '_blank', 'location=yes')\"");
+		return $sce.trustAsHtml(newString);
+	}
+ });
