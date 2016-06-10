@@ -5,6 +5,11 @@
 			<ion-nav-buttons side="left">
 				<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
 			</ion-nav-buttons>
+
+			<ion-nav-buttons side="right">
+				<notificacao-contador contador="contador"></notificacao-contador>
+			</ion-nav-buttons>
+
 		</ion-nav-bar>
 		<ion-nav-view name="menuContent"></ion-nav-view>
 	</ion-side-menu-content>
@@ -16,7 +21,6 @@
 		</ion-header-bar>
 		
 		<ion-content>
-			<!-- LOGO -->
 			<div id="menu-logo" class="padding">
 				<a menu-close href="#app/home">
 					<img src="img/logo.svg" alt="Pluris 2016" class="logo">
@@ -24,7 +28,7 @@
 			</div>
 
 			<menu-directive></menu-directive>
-			
+
 		</ion-content>
 	</ion-side-menu>
 </ion-side-menus>
