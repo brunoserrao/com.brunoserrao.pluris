@@ -9162,3 +9162,7 @@ a {
 #calendar .monthview-primary-with-event {
   background-color: #444;
   color: #fff; }
+
+.notificacao .badge {
+  top: -7px;
+  left: -11px; }

@@ -5,6 +5,7 @@ angular.module('onesignal.services', [])
     var init = function(){
         if (typeof ionic.Platform.device().available !== 'undefined') {
             window.plugins.OneSignal.init("b69e6a23-9185-43f4-9746-17886415f661",{googleProjectNumber: "749121535538"}, additionalData);
+            window.plugins.OneSignal.enableNotificationsWhenActive(true);
         }
     }
 
@@ -19,7 +20,7 @@ angular.module('onesignal.services', [])
     var subscribe = function(subscribe){
         window.plugins.OneSignal.setSubscription(subscribe);
     }
-    
+
     return {
         init : init,
         alert : alert,
