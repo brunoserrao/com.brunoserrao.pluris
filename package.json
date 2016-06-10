@@ -23,7 +23,6 @@
     "cordova-plugin-whitelist",
     "onesignal-cordova-plugin",
     "cordova-plugin-camera",
-    "cordova-plugin-inappbrowser",
     "cordova-plugin-network-information",
     {
       "locator": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
@@ -35,7 +34,8 @@
     },
     "cordova-plugin-google-analytics",
     "cordova-plugin-crosswalk-webview",
-    "cordova-plugin-calendar"
+    "cordova-plugin-calendar",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "ios",
