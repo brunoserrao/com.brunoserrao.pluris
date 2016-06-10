@@ -1,4 +1,11 @@
 <ion-view view-title="{{ 'CONGRESSO' | translate }}" ng-init="atualizarHome(true)">
+	<!--
+	<ion-nav-buttons side="right">
+		<button class="notificacao button button-icon ion-ios-bell" ng-click="notificacoes(evento)">
+			<span class="badge badge-assertive">0</span>
+		</button>
+	</ion-nav-buttons>
+	-->
 	<ion-content>
 		<ion-refresher
 			on-refresh="atualizarHome(false)">
@@ -39,7 +46,7 @@
 
 			<div class="item item-image" ng-if="pagina.thumbnail">
 				<a href="#app/pagina/{{ pagina.ID }}" title="{{ pagina.post_title }}">
-					<img class="full-image" src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
+					<img class="full-image" ng-src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
 				</a>
 			</div>
 
@@ -62,7 +69,7 @@
 			</div>
 
 			<a ng-repeat="noticia in noticias" class="item item-avatar" href="#app/noticia/{{ noticia.ID }}" title="{{ noticia.post_title }}">
-				<img class="full-image" src="{{ noticia.thumbnail }}" alt="{{ noticia.post_title }}">
+				<img class="full-image" ng-src="{{ noticia.thumbnail }}" alt="{{ noticia.post_title }}">
 				<p>{{ noticia.post_date }}.</p>
 				<h2>{{ noticia.post_title }}</h2>
 			</a>

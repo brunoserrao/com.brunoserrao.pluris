@@ -12,7 +12,7 @@
 
 				<div class="item item-image" ng-if="noticia.thumbnail">
 					<a href="#app/noticia/{{ noticia.ID }}" title="{{ noticia.post_title }}">
-						<img class="full-image" src="{{ noticia.thumbnail }}" alt="{{ noticia.title }}">
+						<img class="full-image" ng-src="{{ noticia.thumbnail }}" alt="{{ noticia.title }}">
 					</a>
 				</div>
 
