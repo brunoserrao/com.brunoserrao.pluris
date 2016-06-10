@@ -1,12 +1,11 @@
 'use strict';
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar','onesignal.services'])
 
-.run(function ($ionicPlatform, $timeout) {
+.run(function ($ionicPlatform, $timeout, OneSingalService) {
 	$ionicPlatform.ready(function () {
 		if (window.cordova && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
 			cordova.plugins.Keyboard.disableScroll(true);
-
 		}
 
 		if (window.StatusBar) {
@@ -14,19 +13,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		}
 
 		if (navigator.splashscreen) {
-			setTimeout(function() {
+			$timeout(function() {
 				navigator.splashscreen.hide();
-			}, 100);
+			}, 2000);
 		}
 
-		// TODO: Notifications actions
-		if (typeof ionic.Platform.device().available !== 'undefined') {
-			var notificationOpenedCallback = function(jsonData) {
-				console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-			};
-
-			window.plugins.OneSignal.init("b69e6a23-9185-43f4-9746-17886415f661",{googleProjectNumber: "749121535538"},notificationOpenedCallback);
-		}
+		OneSingalService.init();
 	});
 })
 
