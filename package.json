@@ -33,10 +33,10 @@
       "id": "cordova-plugin-x-toast"
     },
     "cordova-plugin-google-analytics",
-    "cordova-plugin-crosswalk-webview",
     "cordova-plugin-calendar",
     "cordova-plugin-inappbrowser",
-    "cordova-plugin-nativeaudio"
+    "cordova-plugin-nativeaudio",
+    "cordova-plugin-crosswalk-webview"
   ],
   "cordovaPlatforms": [
     "ios",
