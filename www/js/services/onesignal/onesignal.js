@@ -1,6 +1,6 @@
 angular.module('onesignal.services', [])
 
-.factory('OneSingalService', function($ionicPlatform, $state, $rootScope, StorageService){
+.factory('OneSignalService', function($ionicPlatform, $state, StorageService){
 
     var init = function(){
         notificacoes = StorageService.get('notificacoes');
@@ -12,7 +12,7 @@ angular.module('onesignal.services', [])
         
         if (typeof ionic.Platform.device().available !== 'undefined') {
             window.plugins.OneSignal.init("b69e6a23-9185-43f4-9746-17886415f661",{googleProjectNumber: "749121535538"}, additionalData);
-            window.plugins.OneSignal.enableInAppAlertNotification(true);
+            window.plugins.OneSignal.enableInAppAlertNotification(false);
             window.plugins.OneSignal.enableNotificationsWhenActive(false);
         }
 
@@ -27,7 +27,6 @@ angular.module('onesignal.services', [])
         notificacoes.reverse();
         notificacoes.push(jsonData);
         StorageService.set('notificacoes',  notificacoes);
-        $rootScope.contador = notificacoes.length;
 
         if (Object.keys(jsonData.additionalData).length) {
             if (!jsonData.isActive) {
@@ -45,43 +44,3 @@ angular.module('onesignal.services', [])
         subscribe : subscribe
     }
 })
-.directive('notificacaoContador', function(){
-    return {
-        restrict: 'EA',
-        replace: true,
-        scope: {
-            contador : '='
-        },
-        templateUrl: 'templates/contador/contador.html',
-        controller: function($scope, $state, $ionicListDelegate, $rootScope, $ionicPopover, $timeout, StorageService){
-
-            $scope.notificacoes = StorageService.get('notificacoes');
-            $scope.contador = $scope.notificacoes.length;
-
-            $ionicPopover.fromTemplateUrl('templates/popover/notificacoes.html', {
-                scope: $scope
-            }).then(function(popover) {
-                $scope.popover = popover;
-            });
-
-            $scope.openPopover = function($event) {
-                $scope.popover.show($event);
-            };
-
-            $scope.clickNotificacao = function(notificacao, index){
-                $state.go(notificacao.additionalData.redirect,{ 'id' : notificacao.additionalData.id });
-                $scope.popover.hide();
-                $scope.deletarNotificacao(index);
-            }
-
-            $scope.deletarNotificacao = function(index, notificacao){
-                $scope.notificacoes.splice(index,1);
-                $scope.contador = $scope.notificacoes.length;
-
-                $timeout(function(){
-                    StorageService.set('notificacoes', $scope.notificacoes);
-                },100)
-            }
-        }
-    }
-});

@@ -9164,5 +9164,6 @@ a {
   color: #fff; }
 
 .notificacao .badge {
-  top: -35px;
-  left: 10px; }
+  position: absolute;
+  top: -5px;
+  right: -5px; }

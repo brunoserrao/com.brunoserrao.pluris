@@ -1,7 +1,7 @@
 'use strict';
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','ui.rCalendar','onesignal.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','notificacaoDirective','ui.rCalendar'])
 
-.run(function ($ionicPlatform, $timeout, OneSingalService) {
+.run(function ($ionicPlatform, $timeout) {
 	$ionicPlatform.ready(function () {
 		if (window.cordova && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -17,8 +17,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				navigator.splashscreen.hide();
 			}, 2000);
 		}
-
-		OneSingalService.init();
 	});
 })
 

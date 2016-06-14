@@ -9,7 +9,7 @@ angular.module('menuDirective', [])
 		},
 		replace: false,
 		templateUrl: 'templates/menu/menu-directive.html',
-		controller: function($scope, $translate, $ionicSideMenuDelegate, $location) {
+		controller: function($scope, $translate, $location) {
 
 			var state = $scope.state || false;
 
