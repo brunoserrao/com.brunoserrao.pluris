@@ -13,7 +13,7 @@
 				</div>
 
 				<div class="item item-image" ng-if="pagina.thumbnail">
-					<img class="full-image" ng-src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
+					<img class="full-image" fallback-src loading-src ng-src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
 				</div>
 
 				<div class="item item-body">				
