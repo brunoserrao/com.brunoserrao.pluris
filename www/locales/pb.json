@@ -48,5 +48,6 @@
 	"CALENDARIO_DATA_HORA_FINAL" : "Final",
 	"EVENTO_REMOVIDO_DA_AGENDA" : "Evento removido do seu calendário",
 	"EVENTO_ADICIONADO_NA_AGENDA" : "Evento adicionado ao seu calendário",
-	"TRADUCAO_MENSAGEM" : "Use os ícones abaixo para alterar o idioma do aplicativo."
+	"TRADUCAO_MENSAGEM" : "Use os ícones abaixo para alterar o idioma do aplicativo.",
+	"NENHUMA_NOTIFICACAO" : "Nenhuma nova notificação"
 }
