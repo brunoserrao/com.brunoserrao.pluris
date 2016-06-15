@@ -40,14 +40,14 @@ angular.module('notificacaoDirective', [])
             $scope.deletarNotificacao = function(notificacao, index){
                 $scope.notificacoes.splice(index,1);
                 StorageService.set('notificacoes', $scope.notificacoes);
-                
-                $timeout(function(){
-                    $scope.$broadcast("broadcastNotificationReceiver");
-                },500);
+                $scope.contador = $scope.notificacoes.length;
             }
 
             $scope.$on("broadcastNotificationReceiver", function (event, args) {
-                window.plugins.NativeAudio.play( 'notificacao' );
+                if( window.plugins && window.plugins.NativeAudio ) {
+                    window.plugins.NativeAudio.play( 'notificacao' );
+                }
+                
                 $scope.notificacoes = StorageService.get('notificacoes');
                 $scope.contador = $scope.notificacoes.length;
             });
