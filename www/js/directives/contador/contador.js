@@ -8,11 +8,16 @@ angular.module('notificacaoDirective', [])
             notificacoes : '='
         },
         templateUrl: 'templates/contador/contador.html',
-        controller: function($scope, $state, $ionicPopover, $timeout, StorageService){
+        controller: function($scope, $timeout, $state, $ionicPopover, $ionicPlatform, $cordovaNativeAudio, StorageService){
+            $ionicPlatform.ready(function() {
+                if( window.plugins && window.plugins.NativeAudio ) {
+                    window.plugins.NativeAudio.preloadSimple( 'notificacao', 'sounds/notificacao.mp3');
+                }
+            })
+
             $scope.notificacoes = StorageService.get('notificacoes');
 
             if ($scope.notificacoes) {
-                $scope.notificacoes.reverse();
                 $scope.contador = $scope.notificacoes.length;
             }
             
@@ -33,9 +38,18 @@ angular.module('notificacaoDirective', [])
 
             $scope.deletarNotificacao = function(index, notificacao){
                 $scope.notificacoes.splice(index,1);
-                $scope.contador = $scope.notificacoes.length;
                 StorageService.set('notificacoes', $scope.notificacoes);
+                
+                $timeout(function(){
+                    $scope.$broadcast("broadcastNotificationReceiver");
+                },500);
             }
+
+            $scope.$on("broadcastNotificationReceiver", function (event, args) {
+                window.plugins.NativeAudio.play( 'notificacao' );
+                $scope.notificacoes = StorageService.get('notificacoes');
+                $scope.contador = $scope.notificacoes.length;
+            });
         }
     }
 });

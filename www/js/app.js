@@ -1,5 +1,5 @@
 'use strict';
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','notificacaoDirective','ui.rCalendar'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','notificacaoDirective','ui.rCalendar','dcbImgFallback'])
 
 .run(function ($ionicPlatform, $timeout) {
 	$ionicPlatform.ready(function () {
