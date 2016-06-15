@@ -34,9 +34,10 @@ angular.module('notificacaoDirective', [])
             $scope.clickNotificacao = function(notificacao, index){
                 $state.go(notificacao.additionalData.redirect,{ 'id' : notificacao.additionalData.id });
                 $scope.popover.hide();
+                $scope.deletarNotificacao(notificacao, index);
             }
 
-            $scope.deletarNotificacao = function(index, notificacao){
+            $scope.deletarNotificacao = function(notificacao, index){
                 $scope.notificacoes.splice(index,1);
                 StorageService.set('notificacoes', $scope.notificacoes);
                 

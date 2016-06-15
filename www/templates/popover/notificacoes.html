@@ -4,7 +4,7 @@
 			<ion-item class="item-remove-animate" ng-if="notificacoes.length" ng-repeat="notificacao in notificacoes" ng-click="clickNotificacao(notificacao, $index)">
 				<p>{{ notificacao.additionalData.title }}</p>
 				<h2>{{ notificacao.message }}</h2>
-				<ion-option-button class="button-assertive icon ion-ios-close" ng-click="deletarNotificacao($index, notificacao)" ></ion-option-button>
+				<ion-option-button class="button-assertive icon ion-ios-close" ng-click="deletarNotificacao(notificacao, $index)" ></ion-option-button>
 			</ion-item>
 
 			<ion-item ng-if="!notificacoes.length">
