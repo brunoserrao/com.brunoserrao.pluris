@@ -17,11 +17,6 @@ angular.module('onesignal.services', [])
             notificacoes = [];
             StorageService.set('notificacoes', notificacoes);
         }
-
-        // for (var id_teste = 0; id_teste < 10; id_teste++) {
-        //     jsonData = {"message": id_teste + " - Mensagem em Português","additionalData":{"redirect":"app.programacao/id","id": id_teste,"title":"Titulo em Português 13/06/2016 16:53:39"},"isActive":false};
-        //     additionalData(jsonData);   
-        // }
     }
 
     var additionalData = function(jsonData) {
@@ -29,11 +24,11 @@ angular.module('onesignal.services', [])
         notificacoes.push(jsonData);
         StorageService.set('notificacoes',  notificacoes);
 
-        // if (Object.keys(jsonData.additionalData).length) {
-        //     if (!jsonData.isActive) {
-        //         $state.go(jsonData.additionalData.redirect,{ 'id' : jsonData.additionalData.id });
-        //     }
-        // }
+        if (Object.keys(jsonData.additionalData).length) {
+            if (!jsonData.isActive) {
+                $state.go(jsonData.additionalData.redirect,{ 'id' : jsonData.additionalData.id });
+            }
+        }
 
         $timeout(function(){
             $rootScope.$broadcast("broadcastNotificationReceiver");
