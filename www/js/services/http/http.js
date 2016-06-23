@@ -6,8 +6,7 @@ angular.module('http.services', [])
     function request(method,end_point, data, loading, callback) {
         var lang = $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
         var concat = end_point.indexOf('?') > 1 ? '&' : '/?';
-        var api = 'https://pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat + 'lang=' + lang;
-
+        var api = 'https://10.0.0.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat + 'lang=' + lang;
 
         if (loading) {
             $ionicLoading.show({

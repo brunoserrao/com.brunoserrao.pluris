@@ -22,13 +22,14 @@
 	"MENU_ES" : "Español",
 	"MENU_SOCIAL_NETWORK" : "Redes sociales",
 
-	"MENU_INSCREVER" : "Suscribir",
+	"MENU_INSCREVER" : "Inscripción",
 
 	"LEIA_MAIS" : "ler mais",
 	"NOTICIAS" : "Noticias",
 
 	"MENU_APOIO" : "Apoyo",
 	"MENU_ORGANIZACAO" : "Organización",
+	"MENU_AGENCIA_OFICIAL": "Agencia Oficial",
 
 	"ORGANIZACAO_PERMANENTE" : "Organización permanente",
 	"ORGANIZACAO_LOCAL" : "Organization local",
