@@ -9167,3 +9167,6 @@ a {
   position: absolute;
   top: -5px;
   right: -5px; }
+
+.bar-header {
+  background-color: transparent; }

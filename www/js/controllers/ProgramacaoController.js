@@ -34,7 +34,7 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 				StorageService.set('programacao-eventos',$scope.calendar.events);
 			} else {
-				scope.calendar.events = StorageService.get('programacao-eventos');
+				$scope.calendar.events = StorageService.get('programacao-eventos');
 			}
 
 			$scope.$broadcast('scroll.refreshComplete');
