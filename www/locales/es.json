@@ -11,15 +11,18 @@
 
 	"MENU_LOCAL" : "Local",
 	"MENU_LOCAL_CIDADE" : "La ciudad de Maceió",
-	"MENU_LOCAL_CONFERENCIA" : "Local del congresso",
+	"MENU_LOCAL_CONFERENCIA" : "Local",
 
 	"MENU_DATAS_IMPORTANTES": "Fechas relevantes",
 	"MENU_NOTICIAS": "Noticias",
 	"MENU_GALERIA": "Galería",
 	"MENU_ANAIS": "Anales",
 	"MENU_FALE_CONOSCO": "Contáctenos",
-	"MENU_MAIS_OPCOES": "Mas opciones",
+	"MENU_MAIS_OPCOES": "Opciones",
 	"MENU_PERGUNTE": "Ask",
+	"MENU_FORUNS": "Forum",
+	"MENU_AGENDA_CULTURAL": "Eventos",
+	"MENU_FALE_CONOSCO": "Hable con nosotros",
 
 	"MENU_IDIOMAS_CONFIG" : "Idiomas",
 	"MENU_PT" : "Portugués",
@@ -34,7 +37,7 @@
 
 	"MENU_APOIO" : "Apoyo",
 	"MENU_ORGANIZACAO" : "Organización",
-	"MENU_AGENCIA_OFICIAL": "Agencia Oficial",
+	"MENU_AGENCIA_OFICIAL": "Agencia de turismo",
 
 	"ORGANIZACAO_PERMANENTE" : "Organización permanente",
 	"ORGANIZACAO_LOCAL" : "Organization local",

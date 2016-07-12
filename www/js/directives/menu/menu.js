@@ -54,12 +54,12 @@ angular.module('menuDirective', [])
 			$scope.menus = [
 				{
 					title : $translate.instant('MENU_HOME'),
-					ionClass : 'ion-ios-home-outline',
+					ionClass : 'ion-ios-home',
 					href : '#/app/home',
 				},
 				{
 					title : $translate.instant('MENU_CONGRESSO'),
-					ionClass : 'ion-ios-people-outline',
+					ionClass : 'ion-ios-people',
 					items : [
 						{
 							title : $translate.instant('MENU_CONGRESSO_APRESENTACAO'),
@@ -85,7 +85,7 @@ angular.module('menuDirective', [])
 				},
 				{
 					title : $translate.instant('MENU_LOCAL'),
-					ionClass : 'ion-ios-location-outline',
+					ionClass : 'ion-ios-location',
 					items : [
 						{
 							title : $translate.instant('MENU_LOCAL_CIDADE'),
@@ -99,12 +99,32 @@ angular.module('menuDirective', [])
 				},
 				{
 					title : $translate.instant('MENU_NOTICIAS'),
-					ionClass : 'ion-ios-paper-outline',
+					ionClass : 'ion-ios-paper',
 					href : '#/app/noticias'
 				},
 				{
+					title : $translate.instant('MENU_ANAIS'),
+					ionClass : 'ion-ios-copy',
+					href : '#/app/anais',
+				},
+				{
+					title : $translate.instant('MENU_GALERIA'),
+					ionClass : 'ion-ios-camera',
+					href : '#/app/galeria',
+				},
+				{
+					title : $translate.instant('MENU_FORUNS'),
+					ionClass : 'ion-ios-chatboxes',
+					href : '#/app/foruns',
+				},
+				{
+					title : $translate.instant('MENU_AGENDA_CULTURAL'),
+					ionClass : 'ion-happy',
+					href : '#/app/pagina/257'
+				},
+				{
 					title : $translate.instant('MENU_IDIOMAS_CONFIG'),
-					ionClass : 'ion-ios-world-outline',
+					ionClass : 'ion-ios-world',
 					href : '#/app/configuracao'
 				}
 			];

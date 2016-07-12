@@ -18,8 +18,11 @@
 	"MENU_GALERIA" : "Gallery",
 	"MENU_ANAIS": "Annals",
 	"MENU_FALE_CONOSCO": "Contact us",
-	"MENU_MAIS_OPCOES": "More options",
+	"MENU_MAIS_OPCOES": "Options",
 	"MENU_PERGUNTE": "Perguntar",
+	"MENU_FORUNS": "Forum",
+	"MENU_AGENDA_CULTURAL": "Events",
+	"MENU_FALE_CONOSCO": "Contact us",
 
 	"MENU_IDIOMAS_CONFIG": "Languages",
 	"MENU_PT": "Portuguese",
@@ -34,7 +37,7 @@
 
 	"MENU_APOIO": "Support",
 	"MENU_ORGANIZACAO": "Organization",
-	"MENU_AGENCIA_OFICIAL": "Official Agency",
+	"MENU_AGENCIA_OFICIAL": "Official tourism agency",
 
 	"ORGANIZACAO_PERMANENTE": "Permanent organization",
 	"ORGANIZACAO_LOCAL": "Local organization",

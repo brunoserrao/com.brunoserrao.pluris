@@ -1,13 +1,9 @@
-<ion-view view-title="" ng-init="atualizarHome(true)">
+<ion-view view-title="{{ 'MENU_HOME' | translate }}">
 	<ion-nav-buttons side="right">
 		<notificacao-directive contador="contador"></notificacao-directive>
 	</ion-nav-buttons>
 	
 	<ion-content scroll="false">
-		<ion-refresher
-			on-refresh="atualizarHome(false)">
-		</ion-refresher>
-
 		<div class="row">
 			<div class="col">
 				<div class="logo">
@@ -18,7 +14,7 @@
 
 		<div class="row">
 			<div class="col text-center">
-				<a href="#" onclick="window.open('https://pluris2016.fundepes.br/', '_blank', 'zoom=no'); return false;">
+				<a href="#" title="{{ 'MENU_INSCREVER' | translate }}" onclick="window.open('https://pluris2016.fundepes.br/', '_blank', 'zoom=no'); return false;">
 					<button class="icon button button-block button-royal icon-left ion-compose">
 						{{ 'MENU_INSCREVER' | translate }}
 					</button>
@@ -29,67 +25,62 @@
 		<div id="home-buttons">
 			<div class="row row-top">
 				<div class="col text-center">
-					<a href="#">
-						<button class="icon button button-clear button-royal button-large ion-calendar"></button><br />
+					<a href="#app/programacao" title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}">
+						<button class="icon button button-clear button-royal button-large ion-ios-calendar"></button><br />
 						{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}
 					</a>
 				</div>
 				<div class="col text-center">
-					<a href="#">
+					<a href="#app/noticias" title="{{ 'MENU_NOTICIAS' | translate }}">
 						<button class="icon button button-clear button-royal button-large ion-ios-paper"></button><br />
 						{{ 'MENU_NOTICIAS' | translate }}
 					</a>
 				</div>
 				<div class="col text-center">
-					<a href="#">
-						<button class="icon button button-clear button-royal button-large ion-location"></button><br />
+					<a href="#/app/pagina/235" title="{{ 'MENU_LOCAL_CONFERENCIA' | translate }}">
+						<button class="icon button button-clear button-royal button-large ion-ios-location"></button><br />
 						{{ 'MENU_LOCAL_CONFERENCIA' | translate }}
 					</a>
 				</div>
 				<div class="col text-center">
-					<a href="#">
-						<button class="icon button button-clear button-royal button-large ion-images"></button><br />
-						{{ 'MENU_GALERIA' | translate }}
+					<a href="#app/anais" title="{{ 'MENU_ANAIS' | translate }}">
+						<button class="icon button button-clear button-royal button-large ion-ios-copy"></button><br />
+						{{ 'MENU_ANAIS' | translate }}
 					</a>
 				</div>
 			</div>
 
 			<div class="row row-top">
 				<div class="col text-center">
-					<a href="#">
-						<button class="icon button button-clear button-royal button-large ion-document-text"></button><br />
-						{{ 'MENU_ANAIS' | translate }}
+					<a href="#app/foruns" title="{{ 'MENU_FORUNS' | translate }}">
+						<button class="icon button button-clear button-royal button-large ion-ios-chatboxes"></button><br />
+						{{ 'MENU_FORUNS' | translate }}
 					</a>
 				</div>
 				<div class="col text-center">
-					<a href="#">
-						<button class="icon button button-clear button-royal button-large ion-help"></button><br />
-						{{ 'MENU_PERGUNTE' | translate }}
+					<a href="#app/galeria" title="{{ 'MENU_GALERIA' | translate }}">
+						<button class="icon button button-clear button-royal button-large ion-ios-camera"></button><br />
+						{{ 'MENU_GALERIA' | translate }}
 					</a>
 				</div>
 				<div class="col text-center">
-					<a href="#">
-						<button class="icon button button-clear button-royal button-large ion-chatbubble"></button><br />
-						{{ 'MENU_FALE_CONOSCO' | translate }}
+					<a href="#app/pagina/257" title="{{ 'MENU_AGENDA_CULTURAL' | translate }}">
+						<button class="icon button button-clear button-royal button-large ion-happy"></button><br />
+						{{ 'MENU_AGENDA_CULTURAL' | translate }}
 					</a>
 				</div>
 				<div class="col text-center">
-					<a href="#">
-						<button class="icon button button-clear button-royal button-large ion-plus-round"></button><br />
+					<a href="#" title="{{ 'MENU_MAIS_OPCOES' | translate }}" menu-toggle="left">
+						<button class="icon button button-clear button-royal button-large ion-ios-plus"></button><br />
 						{{ 'MENU_MAIS_OPCOES' | translate }}
 					</a>
 				</div>
 			</div>
 		</div>
 
-		<div class="bar bar-footer bar-royal">
-			<button class="button button-clear icon ion-android-chat"></button>
-			
-			<button class="button button-clear">
-				7º Congresso Luso-Brasileiro<br />
-				para o Planejamento Urbano<br />
-				Regional, Integrado e<br />
-				Sustentável
+		<div class="bar bar-footer bar-right bar-royal">
+			<button class="button button-clear icon ion-email">
+				{{ 'MENU_FALE_CONOSCO' | translate }}
 			</button>
 		</div>
 	</ion-content>
