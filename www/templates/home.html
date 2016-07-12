@@ -3,7 +3,7 @@
 		<notificacao-directive contador="contador"></notificacao-directive>
 	</ion-nav-buttons>
 	
-	<ion-content>
+	<ion-content scroll="false">
 		<ion-refresher
 			on-refresh="atualizarHome(false)">
 		</ion-refresher>
@@ -17,64 +17,80 @@
 		</div>
 
 		<div class="row">
-			<div class="col">
+			<div class="col text-center">
 				<a href="#" onclick="window.open('https://pluris2016.fundepes.br/', '_blank', 'zoom=no'); return false;">
-					<button class="button button-full button-royal icon-left ion-compose">
+					<button class="icon button button-block button-royal icon-left ion-compose">
 						{{ 'MENU_INSCREVER' | translate }}
 					</button>
-				</a>	
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col">
-				<a href="#/app/programacao">
-					<button class="button button-full button-royal icon-left ion-ios-calendar-outline">
-						{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}
-					</button>
-				</a>	
-			</div>
-		</div>
-
-		<div class="list card" ng-if="pagina">
-			<div class="item">
-				<h2>{{ pagina.post_title }}</h2>
-			</div>
-
-			<div class="item item-image" ng-if="pagina.thumbnail">
-				<a href="#app/pagina/{{ pagina.ID }}" title="{{ pagina.post_title }}">
-					<img class="full-image" fallback-src loading-src ng-src="{{ pagina.thumbnail }}" alt="{{ pagina.post_title }}">
 				</a>
 			</div>
-
-			<div class="item item-body" ng-if="pagina.post_excerpt">
-				<p>
-					{{ pagina.post_excerpt }}
-				</p>
-			</div>
-
-			<a href="#app/pagina/{{ pagina.ID }}" class="item item-icon-left royal"  title="{{ LEIA_MAIS | translate }}">
-				<i class="icon ion-ios-paper"></i>{{ 'LEIA_MAIS' | translate }}
-			</a>
 		</div>
 
-		<div class="list card" ng-if="noticias">
-			<div class="item">
-				<h2 class="title">
-					{{ 'NOTICIAS' | translate }}
-				</h2>
+		<div id="home-buttons">
+			<div class="row row-top">
+				<div class="col text-center">
+					<a href="#">
+						<button class="icon button button-clear button-royal button-large ion-calendar"></button><br />
+						{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}
+					</a>
+				</div>
+				<div class="col text-center">
+					<a href="#">
+						<button class="icon button button-clear button-royal button-large ion-ios-paper"></button><br />
+						{{ 'MENU_NOTICIAS' | translate }}
+					</a>
+				</div>
+				<div class="col text-center">
+					<a href="#">
+						<button class="icon button button-clear button-royal button-large ion-location"></button><br />
+						{{ 'MENU_LOCAL_CONFERENCIA' | translate }}
+					</a>
+				</div>
+				<div class="col text-center">
+					<a href="#">
+						<button class="icon button button-clear button-royal button-large ion-images"></button><br />
+						{{ 'MENU_GALERIA' | translate }}
+					</a>
+				</div>
 			</div>
 
-			<a ng-repeat="noticia in noticias" class="item item-avatar" href="#app/noticia/{{ noticia.ID }}" title="{{ noticia.post_title }}">
-				<img class="full-image" fallback-src loading-src ng-src="{{ noticia.thumbnail }}" alt="{{ noticia.post_title }}">
-				<p>{{ noticia.post_date }}.</p>
-				<h2>{{ noticia.post_title }}</h2>
-			</a>
+			<div class="row row-top">
+				<div class="col text-center">
+					<a href="#">
+						<button class="icon button button-clear button-royal button-large ion-document-text"></button><br />
+						{{ 'MENU_ANAIS' | translate }}
+					</a>
+				</div>
+				<div class="col text-center">
+					<a href="#">
+						<button class="icon button button-clear button-royal button-large ion-help"></button><br />
+						{{ 'MENU_PERGUNTE' | translate }}
+					</a>
+				</div>
+				<div class="col text-center">
+					<a href="#">
+						<button class="icon button button-clear button-royal button-large ion-chatbubble"></button><br />
+						{{ 'MENU_FALE_CONOSCO' | translate }}
+					</a>
+				</div>
+				<div class="col text-center">
+					<a href="#">
+						<button class="icon button button-clear button-royal button-large ion-plus-round"></button><br />
+						{{ 'MENU_MAIS_OPCOES' | translate }}
+					</a>
+				</div>
+			</div>
+		</div>
 
-			<a class="item item-icon-left royal" href="#app/noticias" title="{{ LEIA_MAIS | translate }}">
-				<i class="icon ion-ios-paper"></i>
-				{{ 'LEIA_MAIS' | translate }}
-			</a>
+		<div class="bar bar-footer bar-royal">
+			<button class="button button-clear icon ion-android-chat"></button>
+			
+			<button class="button button-clear">
+				7º Congresso Luso-Brasileiro<br />
+				para o Planejamento Urbano<br />
+				Regional, Integrado e<br />
+				Sustentável
+			</button>
 		</div>
 	</ion-content>
 </ion-view>

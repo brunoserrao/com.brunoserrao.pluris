@@ -15,6 +15,11 @@
 
 	"MENU_DATAS_IMPORTANTES": "Importants dates",
 	"MENU_NOTICIAS": "News",
+	"MENU_GALERIA" : "Gallery",
+	"MENU_ANAIS": "Annals",
+	"MENU_FALE_CONOSCO": "Contact us",
+	"MENU_MAIS_OPCOES": "More options",
+	"MENU_PERGUNTE": "Perguntar",
 
 	"MENU_IDIOMAS_CONFIG": "Languages",
 	"MENU_PT": "Portuguese",
