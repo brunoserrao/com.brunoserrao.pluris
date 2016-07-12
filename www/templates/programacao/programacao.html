@@ -1,4 +1,4 @@
-<ion-view view-title="{{ viewTitle | translate }} - {{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }} " ng-init="carregarProgramacao(true)">
+<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }} " ng-init="carregarProgramacao(true)">
 	<ion-nav-buttons side="right">
 		<button class="button button-icon ion-android-more-vertical" ng-click="popover.show($event)" ></button>
 	</ion-nav-buttons>
@@ -7,6 +7,10 @@
 		<ion-refresher
 			on-refresh="carregarProgramacao(false)">
 		</ion-refresher>
+
+		<h3 class="padding">
+			{{ viewTitle | translate }}
+		</h3>
 
 		<div class="row">
 			<div class="col">
