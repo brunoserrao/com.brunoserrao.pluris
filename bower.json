@@ -17,7 +17,8 @@
     "angular-local-storage": "^0.2.7",
     "flag-icon-css": "^2.3.1",
     "ionic-calendar": "^0.2.5",
-    "angular-img-fallback": "^0.1.4"
+    "angular-img-fallback": "^0.1.4",
+    "ion-gallery": "^0.1.14"
   },
   "resolutions": {
     "angular": "1.4.3"

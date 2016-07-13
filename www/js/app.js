@@ -1,5 +1,5 @@
 'use strict';
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','notificacaoDirective','ui.rCalendar','dcbImgFallback'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','notificacaoDirective','ui.rCalendar','dcbImgFallback','ion-gallery'])
 
 .run(function ($ionicPlatform, $timeout) {
 	$ionicPlatform.ready(function () {
@@ -21,7 +21,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 })
 
 .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
-
 	$translateProvider
 		.useStaticFilesLoader({
 			prefix: 'locales/',
@@ -119,6 +118,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				menuContent: {
 					templateUrl: 'templates/configuracao/configuracao.html',
 					controller: 'ConfiguracaoController'
+				}
+			}
+		})
+
+		.state('app.galeria', {
+			url: '/galeria',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/galeria/galeria.html',
+					controller: 'GaleriaController'
 				}
 			}
 		})
