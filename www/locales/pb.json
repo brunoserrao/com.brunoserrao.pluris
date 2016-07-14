@@ -30,7 +30,7 @@
 	"MENU_ES": "Espanhol",
 	"MENU_SOCIAL_NETWORK": "Redes Sociais",
 
-	"MENU_INSCREVER": "Inscrever-se",
+	"MENU_INSCREVER": "Inscreva-se",
 
 	"LEIA_MAIS": "Leia mais",
 	"NOTICIAS": "Notícias",
@@ -58,5 +58,14 @@
 	"EVENTO_REMOVIDO_DA_AGENDA" : "Evento removido do seu calendário",
 	"EVENTO_ADICIONADO_NA_AGENDA" : "Evento adicionado ao seu calendário",
 	"TRADUCAO_MENSAGEM" : "Use os ícones abaixo para alterar o idioma do aplicativo.",
-	"NENHUMA_NOTIFICACAO" : "Nenhuma nova notificação"
+	"NENHUMA_NOTIFICACAO" : "Nenhuma nova notificação",
+
+	"USUARIO_LOGIN" : "Login",
+	"USUARIO_ESQUECI_A_SENHA" : "Esqueci a senha",
+	"USUARIO_CRIAR_CONTA" : "Criar conta",
+	"FORM_LOGIN_USERNAME" : "E-mail",
+	"FORM_LOGIN_PASSWORD" : "Senha",
+	"FORM_LOGIN_CRIAR_CONTA" : "Criar a conta",
+	"FORM_LOGIN_PASSWORD_CONFIRM" :  "Confirmar senha",
+	"FORM_LOGIN_RECUPERAR_SENHA" : "Recuperar a senha"
 }

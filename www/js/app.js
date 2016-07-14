@@ -132,6 +132,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				}
 			}
 		})
+
+		.state('app.login', {
+			url: '/usuario/login',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/usuario/login.html',
+					controller: 'UsuarioController'
+				}
+			}
+		})
+
+		.state('app.esqueci-a-senha', {
+			url: '/usuario/esqueci-a-senha',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/usuario/esqueci-a-senha.html',
+					controller: 'UsuarioController'
+				}
+			}
+		})
+
+		.state('app.criar-conta', {
+			url: '/usuario/criar-conta',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/usuario/criar-conta.html',
+					controller: 'UsuarioController'
+				}
+			}
+		})
 	
 	$urlRouterProvider.otherwise('/app/home');
 });

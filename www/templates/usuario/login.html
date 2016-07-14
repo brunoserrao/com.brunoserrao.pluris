@@ -1,0 +1,32 @@
+<ion-view view-title="{{ 'USUARIO_LOGIN' | translate }}">
+	<ion-content class="padding">
+		<div class="text-center padding login">
+			<img src="img/logo-bola.png" alt="{{ 'CONGRESSO' | translate }} logo" class="logo">
+		</div>
+		
+		<div class="list list-inset">
+			<label class="item item-input">
+				<input type="email" name="username" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
+			</label>
+			<label class="item item-input">
+				<input type="password" name="password" placeholder="{{ 'FORM_LOGIN_PASSWORD' | translate }}">
+			</label>
+		</div>
+
+		<button class="button button-block button-royal" ng-click="login()">{{ 'USUARIO_LOGIN' | translate }}</button>
+
+		<p class="text-center">
+			<a href="#app/usuario/esqueci-a-senha" title="{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}">
+				<button class="button button-clear button-royal">
+					{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}
+				</button>
+			</a>
+			
+			<a href="#app/usuario/criar-conta" title="{{ 'USUARIO_CRIAR_CONTA' | translate }}">
+				<button class="button button-clear button-royal">
+					{{ 'USUARIO_CRIAR_CONTA' | translate }}
+				</button>
+			</a>
+		</p>
+	</ion-content>
+</ion-view>

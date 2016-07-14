@@ -1,7 +1,7 @@
 'use strict';
 angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','paginas.services','eventos.services','toast.services','storage.services','onesignal.services'])
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $translate, $translateLocalStorage, ShareService, OneSignalService) {
+.controller('AppCtrl', function ($rootScope, $scope, $ionicModal, $timeout, $translate, $translateLocalStorage, ShareService, OneSignalService, StorageService) {
 
 	// Share function
 	$scope.share = function(post) {
@@ -21,6 +21,9 @@ angular.module('starter.controllers', ['http.services','popup.services','share.s
 			},500);
 		}
 	});
+
+	// User
+	$rootScope.user = StorageService.get('user');
 
 	// OneSignal Init
 	OneSignalService.init();

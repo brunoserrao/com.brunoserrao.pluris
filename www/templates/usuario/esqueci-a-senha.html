@@ -1,0 +1,15 @@
+<ion-view view-title="{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}">
+	<ion-content class="padding">
+		<div class="text-center padding login">
+			<img src="img/logo-bola.png" alt="{{ 'CONGRESSO' | translate }} logo" class="logo">
+		</div>
+		
+		<div class="list list-inset">
+			<label class="item item-input">
+				<input type="email" name="username" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
+			</label>
+		</div>
+
+		<button class="button button-block button-royal" ng-click="login()">{{ 'FORM_LOGIN_RECUPERAR_SENHA' | translate }}</button>
+	</ion-content>
+</ion-view>

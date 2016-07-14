@@ -58,5 +58,14 @@
 	"EVENTO_REMOVIDO_DA_AGENDA" : "Evento añadido en su calendario",
 	"EVENTO_ADICIONADO_NA_AGENDA" : "Evento añadido en su calendario",
 	"TRADUCAO_MENSAGEM" : "Utilice los iconos de abajo para cambiar el idioma de la aplicación.",
-	"NENHUMA_NOTIFICACAO" : "Sin nueva notificación"
+	"NENHUMA_NOTIFICACAO" : "Sin nueva notificación",
+
+	"USUARIO_LOGIN" : "Login",
+	"USUARIO_ESQUECI_A_SENHA" : "Contraseña olvidada",
+	"USUARIO_CRIAR_CONTA" : "Crear una cuenta",
+	"FORM_LOGIN_USERNAME" : "E-mail",
+	"FORM_LOGIN_PASSWORD" : "Contraseña",
+	"FORM_LOGIN_CRIAR_CONTA" : "Crear cuenta",
+	"FORM_LOGIN_PASSWORD_CONFIRM" :  "Confirmar contraseña",
+	"FORM_LOGIN_RECUPERAR_SENHA" : "Restablecer la contraseña"
 }

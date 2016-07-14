@@ -30,7 +30,12 @@ a{
 }
 
 #menu-logo img, .home-content .logo img {
-	width: 95%;
+	width: 65%;
+}
+
+.login img {
+    width: 50%;
+    margin-top: 20PX;
 }
 
 .button-menu-inscrever{
@@ -101,6 +106,34 @@ a{
 	right: -5px;
 }
 
-.bar-header{
-	background-color: transparent;
+.bar.bar-profile {
+    height: 195px;
+}
+
+.bar .profile {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.profile .name {
+    color: #FFFFFF;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.profile-picture {
+    border-radius: 50%;
+}
+
+.menu .user-logged
+{
+    top: 194px;
 }
