@@ -18,7 +18,7 @@
 		<ion-header-bar class="bar-profile bar-royal" ng-if="user">
 			<div class="profile">
 				<a href="#app/usuario/login" menu-close>
-					<img class="profile-picture" ng-src="{{ user.avatar.url }}" />
+					<img class="profile-picture" fallback-src loading-src ng-src="{{ user.avatar.url }}" />
 				</a>
 				<h3 class="name">{{ user.user_nicename }}</h3>
 				<p>{{ user.user_email }}</p>

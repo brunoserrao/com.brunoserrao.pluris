@@ -1,5 +1,5 @@
 'use strict';
-angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','notificacaoDirective','ui.rCalendar','dcbImgFallback','ion-gallery'])
+angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate', 'ngCookies','ngCordova','menuDirective','notificacaoDirective','ui.rCalendar','dcbImgFallback','ion-gallery','base64'])
 
 .run(function ($ionicPlatform, $timeout) {
 	$ionicPlatform.ready(function () {
@@ -128,6 +128,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			views: {
 				menuContent: {
 					templateUrl: 'templates/galeria/galeria.html',
+					controller: 'GaleriaController'
+				}
+			}
+		})
+
+		.state('app.galeria/foto', {
+			url: '/galeria/foto',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/galeria/foto.html',
 					controller: 'GaleriaController'
 				}
 			}

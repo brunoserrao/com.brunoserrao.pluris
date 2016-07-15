@@ -67,5 +67,10 @@
 	"FORM_LOGIN_PASSWORD" : "Password",
 	"FORM_LOGIN_CRIAR_CONTA" : "Create account",
 	"FORM_LOGIN_PASSWORD_CONFIRM" :  "Confirm password",
-	"FORM_LOGIN_RECUPERAR_SENHA" : "Recovery password"
+	"FORM_LOGIN_RECUPERAR_SENHA" : "Recovery password",
+
+	"FOTO_CAMERA" : "Camera",
+	"FOTO_ALBUM" : "Photo album",
+	"FOTO_CONFIRMAR" : "Publish",
+	"FORM_UPLOAD_TITULO_FOTO" : "Tell us about this picture"
 }

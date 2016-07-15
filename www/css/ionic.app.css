@@ -9197,3 +9197,11 @@ a {
 
 .menu .user-logged {
   top: 194px; }
+
+#photo-buttons {
+  position: absolute;
+  width: 100%;
+  bottom: 0px; }
+
+#photo-panel img.placeholder {
+  width: 100%; }

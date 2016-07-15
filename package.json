@@ -19,7 +19,6 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-whitelist",
     "onesignal-cordova-plugin",
     "cordova-plugin-camera",
     "cordova-plugin-network-information",
@@ -36,7 +35,8 @@
     "cordova-plugin-inappbrowser",
     "cordova-plugin-nativeaudio",
     "cordova-plugin-crosswalk-webview",
-    "cordova-plugin-console"
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist"
   ],
   "cordovaPlatforms": [
     "ios",

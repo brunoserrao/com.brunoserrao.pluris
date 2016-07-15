@@ -1,10 +1,12 @@
 <ion-view view-title="{{ 'MENU_GALERIA' | translate }}" ng-init="carregarGaleria(true)">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon ion-camera" ng-click="openModal()"></button>
+	</ion-nav-buttons>
 	<ion-content scroll="true">
 		<ion-refresher
 			on-refresh="carregarGaleria(false)">
 		</ion-refresher>
 		<div class="padding">
-			<!-- <h3>Fotos da galera</h3> -->
 			<div ng-if="texto" ng-bind-html="texto | externalLinks">></div>
 		</div>
 		<ion-gallery nf-if="items" ion-gallery-items="items" ion-gallery-row="4" ion-gallery-toggle="true" ion-zoom-events="false"></ion-gallery>

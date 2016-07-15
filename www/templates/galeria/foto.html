@@ -1,0 +1,64 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-royal">
+		<h1 class="title">{{ 'MENU_GALERIA' | translate }}</h1>
+		<button class="button button-icon ion-android-close" ng-click="modal.hide()"></button>
+	</ion-header-bar>
+	
+	<ion-content scroll="false">
+		<div id="photo-panel" class="padding">
+			<img ng-src="{{ imgURI }}" alt="" class="placeholder" id="photo"/>
+		</div>
+
+		<div id="photo-buttons" class="">
+			<div class="buttons-source" ng-if="!status">
+				<div class="row">
+					<div class="col">
+						<button class="button button-block button-royal" ng-click="takePhoto(1)">
+							{{ 'FOTO_CAMERA' | translate }}
+						</button>
+					
+						<button class="button button-block button-royal" ng-click="takePhoto(2)">
+							{{ 'FOTO_ALBUM' | translate }}
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<form name="myForm" novalidate="" ng-submit="upload()">
+				<div class="buttons-actions" ng-if="status">
+					<div class="row">
+						<div class="col">
+							<label class="item item-input">
+								<input type="text" autocomplete="off" maxlength="200" name="title" ng-model="title" ng-trim="false" placeholder="{{ 'FORM_UPLOAD_TITULO_FOTO' | translate }}">
+							</label>
+						</div>
+					</div>
+
+					<!--
+					<div class="row">
+						<div class="col">
+							<div role="alert">
+								<span class="error" ng-show="myForm.$error.required">
+									{{ 'FOTO_CAMPO_OBRIGATORIO' | translate }}
+								</span>
+							</div>
+						</div>
+					</div>
+					-->
+					
+					<div class="row">
+						<div class="col col-75">
+							<button type="submit" class="icon icon-left ion-thumbsup button button-block button-balanced">
+								{{ 'FOTO_CONFIRMAR' | translate }}
+							</button>
+						</div>
+
+						<div class="col">
+							<button class="icon icon-center ion-thumbsdown button button-block button-assertive" ng-click="reset()"></button>	
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-modal-view>
