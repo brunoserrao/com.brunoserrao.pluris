@@ -1,0 +1,23 @@
+<ion-view view-title="{{ 'USUARIO_LOGIN' | translate }}">
+	<ion-content>
+		<div class="profile bar bar-royal" ng-if="user">
+			<div class="row">
+				<div class="col text-center">					
+					<img class="profile-picture" fallback-src loading-src ng-src="{{ user.avatar.url }}" />
+					<h3 class="name">{{ user.user_nicename }}</h3>
+					<p>
+						{{ user.user_email }}
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-if="user">
+			<div class="col text-center">
+				<button class="button button-clear button-royal" ng-click="logout()" >
+					{{ 'USUARIO_LOGOUT_MENSAGEM' | translate }}
+				</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

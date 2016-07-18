@@ -9172,6 +9172,10 @@ a {
   top: -5px;
   right: -5px; }
 
+.profile {
+  height: 200px;
+  position: relative; }
+
 .bar.bar-profile {
   height: 195px; }
 

@@ -5,15 +5,9 @@ angular.module('http.services', [])
 
     function request(method,end_point, data, loading, callback) {
         var lang = $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
-        var concat = '';
+        var concat = end_point.indexOf('?') > 1 ? '&lang=' + lang : '/?lang=' + lang;
+        var api = 'http://10.0.0.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat;
 
-        if (method == 'GET') {
-            concat = end_point.indexOf('?') > 1 ? '&lang=' + lang : '/?lang=' + lang;
-            end_point = end_point + concat;
-        }
-
-        var api = 'http://localhost/pluris2016.fundepes.br/wp-json/api/v1' + end_point;
-        
         var user = StorageService.get('user');
         var headers = new Headers();
 

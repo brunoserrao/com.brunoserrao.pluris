@@ -60,6 +60,7 @@
 	"TRADUCAO_MENSAGEM" : "Use the icons below to change the app language.",
 	"NENHUMA_NOTIFICACAO" : "No new notification",
 
+	"FORM_LOGIN_NAME" : "Name and last name",
 	"USUARIO_LOGIN" : "Login",
 	"USUARIO_LOGOUT_MENSAGEM" : "Logout account",
 	"USUARIO_SAIR" : "Logout",
@@ -75,6 +76,7 @@
 	"FORM_LOGIN_USERNAME_EMAIL" : "Username must be an email address",
 	"FORM_LOGIN_PREENCHER_SENHA" : "Password is required",
 	"FORM_LOGIN_FALHA" : "Invalid username or password",
+	"FORM_CADASTRO_FALHA" : "Email in use. Try recover password",
 
 	"FOTO_CAMERA" : "Camera",
 	"FOTO_ALBUM" : "Photo album",

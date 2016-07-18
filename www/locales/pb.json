@@ -66,6 +66,7 @@
 	"USUARIO_ESQUECI_A_SENHA" : "Esqueci a senha",
 	"USUARIO_CRIAR_CONTA" : "Criar conta",
 	
+	"FORM_LOGIN_NAME" : "Nome e sobrenome",
 	"FORM_LOGIN_USERNAME" : "E-mail",
 	"FORM_LOGIN_PASSWORD" : "Senha",
 	"FORM_LOGIN_CRIAR_CONTA" : "Criar a conta",
@@ -75,6 +76,7 @@
 	"FORM_LOGIN_USERNAME_EMAIL" : "O usuário de ver um e-mail",
 	"FORM_LOGIN_PREENCHER_SENHA" : "Senha é requerido",
 	"FORM_LOGIN_FALHA" : "Login senha inválidos",
+	"FORM_CADASTRO_FALHA" : "E-mail já cadastrado. Tente recuperar a senha",
 
 	"FOTO_CAMERA" : "Câmera",
 	"FOTO_ALBUM" : "Álbum de fotos",

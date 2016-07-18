@@ -144,7 +144,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
-		.state('app.login', {
+		.state('app.usuario/login', {
 			url: '/usuario/login',
 			cache: false,
 			views: {
@@ -155,7 +155,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
-		.state('app.esqueci-a-senha', {
+		.state('app.usuario/perfil', {
+			url: '/usuario/perfil',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/usuario/perfil.html',
+					controller: 'UsuarioController'
+				}
+			}
+		})
+
+		.state('app.usuario/esqueci-a-senha', {
 			url: '/usuario/esqueci-a-senha',
 			cache: false,
 			views: {
@@ -166,7 +177,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
-		.state('app.criar-conta', {
+		.state('app.usuario/criar-conta', {
 			url: '/usuario/criar-conta',
 			cache: false,
 			views: {

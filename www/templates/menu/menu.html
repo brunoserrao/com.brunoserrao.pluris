@@ -12,15 +12,14 @@
 	<ion-side-menu side="left">
 		<ion-header-bar class="bar-profile bar-royal" ng-if="user">
 			<div class="profile">
-				<a href="#app/usuario/login" menu-close>
+				<a href="#app/usuario/perfil" menu-close>
 					<img class="profile-picture" fallback-src loading-src ng-src="{{ user.avatar.url }}" />
 					<h3 class="name">{{ user.user_nicename }}</h3>
 				</a>
-				<p class="">
-					<a href="#app/usuario/perfil" class="button button-clear" title="">
-						{{ user.user_email }}
-					</a>
-				</p>
+				
+				<a href="#app/usuario/perfil" class="button button-clear" title="" menu-close>
+					{{ user.user_email }}
+				</a>
 			</div>
 		</ion-header-bar>
 
