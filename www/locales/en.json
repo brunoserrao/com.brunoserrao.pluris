@@ -61,13 +61,20 @@
 	"NENHUMA_NOTIFICACAO" : "No new notification",
 
 	"USUARIO_LOGIN" : "Login",
+	"USUARIO_LOGOUT_MENSAGEM" : "Logout account",
+	"USUARIO_SAIR" : "Logout",
 	"USUARIO_ESQUECI_A_SENHA" : "Forgot Password",
 	"USUARIO_CRIAR_CONTA" : "Create account",
+	
 	"FORM_LOGIN_USERNAME" : "E-mail",
 	"FORM_LOGIN_PASSWORD" : "Password",
 	"FORM_LOGIN_CRIAR_CONTA" : "Create account",
 	"FORM_LOGIN_PASSWORD_CONFIRM" :  "Confirm password",
 	"FORM_LOGIN_RECUPERAR_SENHA" : "Recovery password",
+	"FORM_LOGIN_PREENCHER_USERNAME" : "Username is required",
+	"FORM_LOGIN_USERNAME_EMAIL" : "Username must be an email address",
+	"FORM_LOGIN_PREENCHER_SENHA" : "Password is required",
+	"FORM_LOGIN_FALHA" : "Invalid username or password",
 
 	"FOTO_CAMERA" : "Camera",
 	"FOTO_ALBUM" : "Photo album",

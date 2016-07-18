@@ -8,11 +8,11 @@ angular.module('http.services', [])
         var concat = '';
 
         if (method == 'GET') {
-            concat = end_point.indexOf('?') > 1 ? '&' : '/?' + 'lang=' + lang;
+            concat = end_point.indexOf('?') > 1 ? '&lang=' + lang : '/?lang=' + lang;
             end_point = end_point + concat;
         }
 
-        var api = 'http://10.0.0.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point;
+        var api = 'http://localhost/pluris2016.fundepes.br/wp-json/api/v1' + end_point;
         
         var user = StorageService.get('user');
         var headers = new Headers();
@@ -43,8 +43,6 @@ angular.module('http.services', [])
             },
             function errorCallback(response){
                 var errorMessage = $translate.instant('ERRO_SERVIDOR') + ' : ' + response.status;
-                
-                ToastService.message(errorMessage);
 
                 if (typeof ionic.Platform.device().available !== 'undefined'){
                     $timeout(function(){
@@ -54,6 +52,8 @@ angular.module('http.services', [])
                 
                 if (callback) {
                     callback();
+                } else {
+                    ToastService.message(errorMessage);
                 }
             }
         ).finally(function(){

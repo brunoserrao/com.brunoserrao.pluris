@@ -1,32 +1,69 @@
 <ion-view view-title="{{ 'USUARIO_LOGIN' | translate }}">
-	<ion-content class="padding">
+	<ion-content>
 		<div class="text-center padding login">
 			<img src="img/pluris.png" alt="{{ 'CONGRESSO' | translate }} logo" class="logo">
 		</div>
-		
-		<div class="list list-inset">
-			<label class="item item-input">
-				<input type="email" name="username" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
-			</label>
-			<label class="item item-input">
-				<input type="password" name="password" placeholder="{{ 'FORM_LOGIN_PASSWORD' | translate }}">
-			</label>
+
+		<div ng-if="user">
+			<ion-header-bar class="bar-profile bar-royal" ng-if="user">
+				<div class="profile">
+					<a href="#app/usuario/profile" menu-close>
+						<img class="profile-picture" fallback-src loading-src ng-src="{{ user.avatar.url }}" />
+						<h3 class="name">{{ user.user_nicename }}</h3>
+					</a>
+					<p class="">
+						<a href="#app/usuario/perfil" class="button button-clear" title="">
+							{{ user.user_email }}
+						</a>
+					</p>
+				</div>
+			</ion-header-bar>
+
+			<div class="padding text-center">
+				<button class="button button-clear button-royal" ng-click="logout()" >
+					{{ 'USUARIO_LOGOUT_MENSAGEM' | translate }}
+				</button>
+			</div>
 		</div>
 
-		<button class="button button-block button-royal" ng-click="login()">{{ 'USUARIO_LOGIN' | translate }}</button>
+		<div ng-if="!user" class="form-login">
+			<form name="formLogin" novalidate ng-submit="login()">
+				<div class="list list-inset">
+					<label class="item item-input">
+						<input type="email" name="username" ng-model="username" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
+					</label>
 
-		<p class="text-center">
-			<a href="#app/usuario/esqueci-a-senha" title="{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}">
-				<button class="button button-clear button-royal">
-					{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}
-				</button>
-			</a>
-			
-			<a href="#app/usuario/criar-conta" title="{{ 'USUARIO_CRIAR_CONTA' | translate }}">
-				<button class="button button-clear button-royal">
-					{{ 'USUARIO_CRIAR_CONTA' | translate }}
-				</button>
-			</a>
-		</p>
+					<label class="item item-input">
+						<input type="password" name="password" ng-model="password" required autocomplete="off" placeholder="{{ 'FORM_LOGIN_PASSWORD' | translate }}">
+					</label>
+				</div>
+
+				<div class="padding">
+					<button type="submit" class="button button-block button-royal" ng-disabled="formLogin.$invalid">
+						{{ 'USUARIO_LOGIN' | translate }}
+					</button>
+				</div>
+			</form>
+
+			<div class="padding assertive" ng-if="formLogin.$submitted && formLogin.$invalid">
+				<p ng-show="formLogin.username.$error.required">* {{ 'FORM_LOGIN_PREENCHER_USERNAME' | translate }}</p>
+				<p ng-show="formLogin.username.$invalid && !formLogin.username.$pristine">* {{ 'FORM_LOGIN_USERNAME_EMAIL' | translate }}</p>
+				<p ng-show="formLogin.password.$error.required">* {{ 'FORM_LOGIN_PREENCHER_SENHA' | translate }}</p>
+			</div>
+
+			<p class="text-center">
+				<a href="#app/usuario/esqueci-a-senha" title="{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}">
+					<button class="button button-clear button-royal">
+						{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}
+					</button>
+				</a>
+				
+				<a href="#app/usuario/criar-conta" title="{{ 'USUARIO_CRIAR_CONTA' | translate }}">
+					<button class="button button-clear button-royal">
+						{{ 'USUARIO_CRIAR_CONTA' | translate }}
+					</button>
+				</a>
+			</p>
+		</div>
 	</ion-content>
 </ion-view>

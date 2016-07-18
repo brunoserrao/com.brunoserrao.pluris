@@ -10,27 +10,31 @@
 	</ion-side-menu-content>
 
 	<ion-side-menu side="left">
-		
-		<ion-header-bar class="bar-royal" ng-if="!user">
-			<h1 class="title">Pluris 2016</h1>
-		</ion-header-bar>
-
 		<ion-header-bar class="bar-profile bar-royal" ng-if="user">
 			<div class="profile">
 				<a href="#app/usuario/login" menu-close>
 					<img class="profile-picture" fallback-src loading-src ng-src="{{ user.avatar.url }}" />
+					<h3 class="name">{{ user.user_nicename }}</h3>
 				</a>
-				<h3 class="name">{{ user.user_nicename }}</h3>
-				<p>{{ user.user_email }}</p>
+				<p class="">
+					<a href="#app/usuario/perfil" class="button button-clear" title="">
+						{{ user.user_email }}
+					</a>
+				</p>
+			</div>
+		</ion-header-bar>
+
+		<ion-header-bar class="bar-profile bar-royal" ng-if="!user">
+			<div class="profile">
+				<a href="#app/usuario/login" menu-close>
+					<img class="profile-picture" src="img/logo-bola.png" />
+					<h3 class="name">{{ 'CONGRESSO' | translate }}</h3>
+					<p class="uppercased">{{ 'USUARIO_LOGIN' | translate }} / {{ 'USUARIO_CRIAR_CONTA' | translate }}</p>
+				</a>
 			</div>
 		</ion-header-bar>
 		
-		<ion-content ng-class="user ? 'user-logged' : 'has-header'">
-			<div id="menu-logo" class="item text-center">
-				<a menu-close href="#app/home">
-					<img src="img/logo.svg" alt="Pluris 2016" class="logo">
-				</a>
-			</div>
+		<ion-content class="user-logged">
 			<menu-directive></menu-directive>
 		</ion-content>
 	</ion-side-menu>

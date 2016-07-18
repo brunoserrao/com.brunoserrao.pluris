@@ -61,13 +61,20 @@
 	"NENHUMA_NOTIFICACAO" : "Nenhuma nova notificação",
 
 	"USUARIO_LOGIN" : "Login",
+	"USUARIO_LOGOUT_MENSAGEM" : "Sair da conta",
+	"USUARIO_SAIR" : "Sair",
 	"USUARIO_ESQUECI_A_SENHA" : "Esqueci a senha",
 	"USUARIO_CRIAR_CONTA" : "Criar conta",
+	
 	"FORM_LOGIN_USERNAME" : "E-mail",
 	"FORM_LOGIN_PASSWORD" : "Senha",
 	"FORM_LOGIN_CRIAR_CONTA" : "Criar a conta",
 	"FORM_LOGIN_PASSWORD_CONFIRM" :  "Confirmar senha",
 	"FORM_LOGIN_RECUPERAR_SENHA" : "Recuperar a senha",
+	"FORM_LOGIN_PREENCHER_USERNAME" : "Usuário é requerido",
+	"FORM_LOGIN_USERNAME_EMAIL" : "O usuário de ver um e-mail",
+	"FORM_LOGIN_PREENCHER_SENHA" : "Senha é requerido",
+	"FORM_LOGIN_FALHA" : "Login senha inválidos",
 
 	"FOTO_CAMERA" : "Câmera",
 	"FOTO_ALBUM" : "Álbum de fotos",

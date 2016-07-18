@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		.state('app', {
 			url: '/app',
 			abstract: true,
-			templateUrl: 'templates/menu.html',
+			templateUrl: 'templates/menu/menu.html',
 			controller: 'AppCtrl'
 		})
 
@@ -50,7 +50,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			cache: false,
 			views: {
 				menuContent: {
-					templateUrl: 'templates/home.html',
+					templateUrl: 'templates/home/home.html',
 					controller: 'HomeController'
 				}
 			}
