@@ -21,11 +21,11 @@
 					<div class="forum content" ng-bind-html="forum.post_content | externalLinks"></div>
 				</div>
 
-				<div class="item item-divider" ng-if="comentarios">
+				<div class="item item-divider" ng-if="comentarios.length > 0">
 					<h2>Comentários</h2>
 				</div>
 
-				<div ng-if="forum.post_content">
+				<div ng-if="comentarios">
 					<div ng-repeat="comentario in comentarios">
 						<div class="list item-text-wrap">
 							<a class="item item-avatar" href="#">
@@ -35,6 +35,12 @@
 							</a>
 						</div>
 					</div>
+				</div>
+
+				<div ng-if="comentarios.length <= 0" class="padding">
+					<button class="button button-block button-royal" ng-click="openModal()">
+						{{ 'FORUM_BOTAO_COMENTAR' | translate }}
+					</button>
 				</div>
 			</ion-list>
 		</div>

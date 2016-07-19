@@ -4,6 +4,7 @@ angular.module('starter.controllers')
 	$scope.paged = 1;
 	$scope.items_disponiveis = true;
 	$scope.artigos = [];
+	$scope.descricao = '';
 
 	$scope.carregarArtigos = function(loading){
 		ArtigosService.artigos($scope.paged, loading, function(result){
@@ -11,11 +12,13 @@ angular.module('starter.controllers')
 				for (var i = 0; i < result.data.length; i++) {
 					$scope.artigos.push(result.data[i]);
 				}
+
+				$scope.paging = result.paging;
+				$scope.descricao = result.descricao;
 				
 				StorageService.set('artigos',$scope.artigos);
 				StorageService.set('artigos-paging',$scope.paging);
-
-				$scope.paging = result.paging;
+				StorageService.set('artigos-descricao',$scope.descricao);
 
 				if ( result.paging.actual_page == result.paging.total_pages  ) {
 					$scope.items_disponiveis = false;
@@ -29,6 +32,7 @@ angular.module('starter.controllers')
 			} else {
 				$scope.artigos = StorageService.get('artigos');
 				$scope.paging = StorageService.get('artigos-paging');
+				$scope.descriao = StorageService.get('artigos-descriao');
 				$scope.items_disponiveis = false;
 			}
 		});

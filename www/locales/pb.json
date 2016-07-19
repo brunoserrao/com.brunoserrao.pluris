@@ -17,12 +17,11 @@
 	"MENU_NOTICIAS": "Notícias",
 	"MENU_GALERIA": "Galeria",
 	"MENU_ANAIS": "Anais",
-	"MENU_FALE_CONOSCO": "Fale Conosco",
+	"MENU_FALE_CONOSCO": "Fale conosco",
 	"MENU_MAIS_OPCOES": "Opções",
 	"MENU_PERGUNTE": "Pergunte",
 	"MENU_FORUNS": "Fórum",
-	"MENU_AGENDA_CULTURAL": "Eventos",
-	"MENU_FALE_CONOSCO": "Fale conosco",
+	"MENU_AGENDA_CULTURAL": "Agenda cultural",
 
 	"MENU_IDIOMAS_CONFIG": "Idiomas",
 	"MENU_PT": "Português",
@@ -84,5 +83,7 @@
 	"FOTO_CONFIRMAR" : "Publicar",
 	"FORM_UPLOAD_TITULO_FOTO" : "Descreva a sua foto",
 
-	"FORM_PESQUISAR" : "Pesquisar..."
+	"FORM_PESQUISAR" : "Pesquisar...",
+
+	"FORUM_BOTAO_COMENTAR" : "Envie o seu comentário"
 }

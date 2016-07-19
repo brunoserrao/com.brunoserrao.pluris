@@ -32,19 +32,28 @@ angular.module('starter.controllers')
 	$scope.carregarForuns = function(loading){
 		ForunsService.foruns($scope.paged, loading, function(result){
 			if (result) {
+				$scope.foruns = [];
+				
 				for (var i = 0; i < result.data.length; i++) {
 					$scope.foruns.push(result.data[i]);
 				}
 				
+				$scope.paging = result.paging;
+				$scope.descricao = result.descricao;
+				
 				StorageService.set('foruns',$scope.foruns);
 				StorageService.set('foruns-paging',$scope.paging);
-
-				$scope.paging = result.paging;
+				StorageService.set('foruns-descricao',$scope.descricao);
 			} else {
 				$scope.foruns = StorageService.get('Foruns');
 				$scope.paging = StorageService.get('Foruns-paging');
+				$scope.descriao = StorageService.get('foruns-descriao');
 				$scope.items_disponiveis = false;
 			}
+
+			$timeout(function(){
+				$scope.$broadcast('scroll.refreshComplete');
+			}, 500);
 		});
 	}
 

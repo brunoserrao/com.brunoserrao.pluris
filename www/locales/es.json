@@ -21,8 +21,7 @@
 	"MENU_MAIS_OPCOES": "Opciones",
 	"MENU_PERGUNTE": "Ask",
 	"MENU_FORUNS": "Forum",
-	"MENU_AGENDA_CULTURAL": "Eventos",
-	"MENU_FALE_CONOSCO": "Hable con nosotros",
+	"MENU_AGENDA_CULTURAL": "Eventos culturales",
 
 	"MENU_IDIOMAS_CONFIG" : "Idiomas",
 	"MENU_PT" : "Portugués",
@@ -84,5 +83,7 @@
 	"FOTO_CONFIRMAR" : "Publicar",
 	"FORM_UPLOAD_TITULO_FOTO" : "Cuéntanos acerca de esta foto",
 
-	"FORM_PESQUISAR" : "Buscar..."
+	"FORM_PESQUISAR" : "Buscar...",
+
+	"FORUM_BOTAO_COMENTAR" : "Envíe su comentario"
 }
