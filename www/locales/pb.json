@@ -85,5 +85,12 @@
 
 	"FORM_PESQUISAR" : "Pesquisar...",
 
-	"FORUM_BOTAO_COMENTAR" : "Envie o seu comentário"
+	"FORUM_BOTAO_COMENTAR" : "Envie o seu comentário",
+
+	"FORM_CONTATO_ASSUNTO" : "Assunto",
+	"FORM_CONTATO_MENSAGEM" : "Mensagem",
+	"FORM_CONTATO_ENVIAR" : "Enviar",
+	"FORM_CONTATO_ENVIADO" : "Mensagem enviada com sucesso",
+	"FORM_CONTATO_ENVIADO_TEXTO" : "A sua mensagem foi encaminhada para os administradores do Pluris 2016. Em breve retornaremos o contato.",
+	"FORM_CONTATO_ENVIAR_OUTRO" : "Enviar outra mensagem"
 }

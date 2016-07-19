@@ -231,6 +231,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				}
 			}
 		})
+
+		.state('app.contato', {
+			url: '/contato',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/contato/index.html',
+					controller: 'ContatoController'
+				}
+			}
+		})
 	
 	$urlRouterProvider.otherwise('/app/home');
 });

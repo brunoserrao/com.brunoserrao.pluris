@@ -1,0 +1,45 @@
+<ion-view view-title="{{ 'MENU_FALE_CONOSCO' | translate }}">
+	<ion-content>
+		<div class="text-center padding login">
+			<img src="img/pluris.png" alt="{{ 'CONGRESSO' | translate }} logo" class="logo">
+		</div>
+		
+		<form name="formContato" novalidate ng-submit="contato()" ng-if="!enviado">
+			<div class="list list-inset">
+				<label class="item item-input">
+					<input type="text" name="assunto" ng-model="assunto" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="{{ 'FORM_CONTATO_ASSUNTO' | translate }}">
+				</label>
+
+				<label class="item item-input">
+					<textarea rows="5" cols="1" name="mensagem" ng-model="mensagem" required autocomplete="off" placeholder="{{ 'FORM_CONTATO_MENSAGEM' | translate }}"></textarea>
+				</label>
+			</div>
+
+			<div class="padding">
+				<button type="submit" class="button button-block button-royal" ng-disabled="formContato.$invalid">
+					{{ 'FORM_CONTATO_ENVIAR' | translate }}
+				</button>
+			</div>
+		</form>
+
+		<div ng-if="enviado">
+			<div class="list card">
+				<div class="item item-body text-center">
+					<h2>{{ 'FORM_CONTATO_ENVIADO' | translate }}</h2>
+
+					<p>
+						{{ 'FORM_CONTATO_ENVIADO_TEXTO' | translate }}
+					</p>	
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<button  class="button button-block button-royal" ng-click="reiniciar()">
+						{{ 'FORM_CONTATO_ENVIAR_OUTRO' | translate }}
+					</button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

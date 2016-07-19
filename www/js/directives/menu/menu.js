@@ -126,6 +126,11 @@ angular.module('menuDirective', [])
 					title : $translate.instant('MENU_IDIOMAS_CONFIG'),
 					ionClass : 'ion-ios-world',
 					href : '#/app/configuracao'
+				},
+				{
+					title : $translate.instant('MENU_FALE_CONOSCO'),
+					ionClass : 'ion-email',
+					href : '#/app/contato'
 				}
 			];
 		}
