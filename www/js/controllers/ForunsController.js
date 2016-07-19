@@ -71,10 +71,10 @@ angular.module('starter.controllers')
 
 	$scope.comentar = function(loading){
 		var id = $stateParams.id;
-
+		
 		var data = {
 			"id" : id,
-			"comentario" : formComentario.comentario.value
+			"comentario" : formComentario.comentario.value.replace(/\n/g,"<br>")
 		}
 		
 		ForunsService.comentar(id, data, loading, function(result){
