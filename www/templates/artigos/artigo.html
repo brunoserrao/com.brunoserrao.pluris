@@ -1,0 +1,30 @@
+<ion-view view-title="{{ 'MENU_ANAIS' | translate }}" ng-init="carregarArtigo(true)">
+	<ion-content>
+		<ion-refresher
+			on-refresh="carregarArtigo(false)">
+		</ion-refresher>
+
+		 <div class="list card" ng-if="artigo">
+			<ion-list>
+				<div class="item">
+					<h2>{{ artigo.post_title }}</h2>
+				</div>
+
+				<div class="item item-image" ng-if="artigo.thumbnail">
+					<img class="full-image" fallback-src loading-src ng-src="{{ artigo.thumbnail }}" alt="{{ artigo.post_title }}">
+				</div>
+
+				<div class="item item-body" ng-if="artigo.post_content">
+					<div class="artigo content" ng-bind-html="artigo.post_content | externalLinks"></div>
+				</div>
+
+				<div class="item tabs tabs-icon tabs-icon-left">
+					<a class="tab-item" href="#" ng-click="share(artigo)" title="{{ 'SHARE' | translate }}">
+						<i class="icon ion-android-share-alt"></i>
+					</a>
+				</div>
+			</ion-list>
+		</div>
+
+	</ion-content>
+</ion-view>

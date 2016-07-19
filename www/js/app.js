@@ -187,6 +187,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				}
 			}
 		})
+
+		.state('app.artigos', {
+			url: '/artigos',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/artigos/index.html',
+					controller: 'ArtigosController'
+				}
+			}
+		})
+
+		.state('app.artigos/id', {
+			url: '/artigos/:id',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/artigos/artigo.html',
+					controller: 'ArtigosController'
+				}
+			}
+		})
 	
 	$urlRouterProvider.otherwise('/app/home');
 });

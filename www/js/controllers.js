@@ -1,5 +1,5 @@
 'use strict';
-angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','paginas.services','eventos.services','toast.services','storage.services','onesignal.services'])
+angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','artigos.services','paginas.services','eventos.services','toast.services','storage.services','onesignal.services'])
 
 .controller('AppCtrl', function ($rootScope, $scope, $ionicModal, $timeout, $translate, $translateLocalStorage, ShareService, OneSignalService, StorageService) {
 

@@ -1,0 +1,24 @@
+<ion-view view-title="{{ 'MENU_ANAIS' | translate }}" ng-init="carregarArtigos()">
+	<ion-header-bar class="bar bar-subheader item-input-inset"> 
+		<label class="item-input-wrapper search">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input placeholder="{{ 'FORM_PESQUISAR' | translate }}" ng-model="pesquisar" type="text"> 
+		</label>
+	</ion-header-bar>
+	
+	<ion-content>
+		 <div ng-repeat="artigo in artigos | filter:pesquisar">
+			<ion-item href="#/app/artigos/{{artigo.ID}}">
+				
+				{{ artigo.post_title }}
+				
+				<div class="item-icon-right item-note">
+					<i class="icon ion-ios-arrow-right"></i>
+				</div>
+			</ion-item>
+		 </div>
+
+		<ion-infinite-scroll ng-if="items_disponiveis" on-infinite="carregarArtigos(false)" distance="10%"></ion-infinite-scroll>
+
+	</ion-content>
+</ion-view>

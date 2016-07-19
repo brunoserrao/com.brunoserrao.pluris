@@ -65,6 +65,7 @@
 	"USUARIO_SAIR" : "Cerrar sesión",
 	"USUARIO_ESQUECI_A_SENHA" : "Contraseña olvidada",
 	"USUARIO_CRIAR_CONTA" : "Crear una cuenta",
+	"USUARIO_PERFIL" : "Perfil",
 	
 	"FORM_LOGIN_NAME" : "Nombre y apellido",
 	"FORM_LOGIN_USERNAME" : "E-mail",
@@ -81,5 +82,7 @@
 	"FOTO_CAMERA" : "Cámera",
 	"FOTO_ALBUM" : "Álbum de fotos",
 	"FOTO_CONFIRMAR" : "Publicar",
-	"FORM_UPLOAD_TITULO_FOTO" : "Cuéntanos acerca de esta foto"
+	"FORM_UPLOAD_TITULO_FOTO" : "Cuéntanos acerca de esta foto",
+
+	"FORM_PESQUISAR" : "Buscar..."
 }

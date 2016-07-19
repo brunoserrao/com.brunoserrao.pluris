@@ -10,21 +10,22 @@ angular.module('starter.controllers')
 			if (result) {
 				for (var i = 0; i < result.data.length; i++) {
 					$scope.noticias.push(result.data[i]);
-					StorageService.set('noticias',$scope.noticias);
-					StorageService.set('noticias-paging',$scope.noticias);
 				}
-
+				
+				StorageService.set('noticias',$scope.noticias);
+				StorageService.set('noticias-paging',$scope.paging);
+			
 				$scope.paging = result.paging;
 
 				if ( result.paging.actual_page == result.paging.total_pages  ) {
 					$scope.items_disponiveis = false;
+				} else {
+					$scope.paged = result.paging.actual_page + 1;
 				}
 
 				$timeout(function(){
 					$scope.$broadcast('scroll.infiniteScrollComplete');	
 				}, 500);
-				
-				$scope.paged++;
 			} else {
 				$scope.noticias = StorageService.get('noticias');
 				$scope.paging = StorageService.get('noticias-paging');

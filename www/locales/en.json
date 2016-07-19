@@ -66,6 +66,7 @@
 	"USUARIO_SAIR" : "Logout",
 	"USUARIO_ESQUECI_A_SENHA" : "Forgot Password",
 	"USUARIO_CRIAR_CONTA" : "Create account",
+	"USUARIO_PERFIL" : "Profile",
 	
 	"FORM_LOGIN_USERNAME" : "E-mail",
 	"FORM_LOGIN_PASSWORD" : "Password",
@@ -81,5 +82,7 @@
 	"FOTO_CAMERA" : "Camera",
 	"FOTO_ALBUM" : "Photo album",
 	"FOTO_CONFIRMAR" : "Publish",
-	"FORM_UPLOAD_TITULO_FOTO" : "Tell us about this picture"
+	"FORM_UPLOAD_TITULO_FOTO" : "Tell us about this picture",
+
+	"FORM_PESQUISAR" : "Search..."
 }
