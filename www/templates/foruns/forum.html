@@ -1,0 +1,43 @@
+<ion-view view-title="{{ 'MENU_FORUNS' | translate }}" ng-init="carregarForum(true)">
+	<ion-content>
+		<ion-refresher
+			on-refresh="carregarForum(false)">
+		</ion-refresher>
+
+		 <div class="list card" ng-if="forum">
+			<ion-list>
+				<div class="item">
+					<h2>{{ forum.post_title }}</h2>
+				</div>
+
+				<div class="item item-image" ng-if="forum.thumbnail">
+					<img class="full-image" fallback-src loading-src ng-src="{{ forum.thumbnail }}" alt="{{ forum.post_title }}">
+				</div>
+
+				<div class="item item-body" ng-if="forum.post_content">
+					<div class="forum content" ng-bind-html="forum.post_content | externalLinks"></div>
+				</div>
+
+				<div class="item">
+					<h2>Deixe o seu comentário</h2>
+				</div>
+
+				<div class="item">
+					<form name="formComentario" novalidate ng-submit="comentar()" ng-if="forum">
+						<div class="list list-inset">
+							<label class="item item-input">
+								<textarea rows="5" cols="1" name="comentario" ng-model="comentario" required placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}"></textarea>
+							</label>
+						</div>
+
+						<div class="padding">
+							<button type="submit" class="button button-block button-royal" ng-disabled="formComentario.$invalid">
+								Comentar
+							</button>
+						</div>
+					</form>
+				</div>
+			</ion-list>
+		</div>		
+	</ion-content>
+</ion-view>

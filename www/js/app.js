@@ -209,6 +209,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 				}
 			}
 		})
+
+		.state('app.foruns', {
+			url: '/foruns',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/foruns/index.html',
+					controller: 'ForunsController'
+				}
+			}
+		})
+
+		.state('app.foruns/id', {
+			url: '/foruns/:id',
+			cache: false,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/foruns/forum.html',
+					controller: 'ForunsController'
+				}
+			}
+		})
 	
 	$urlRouterProvider.otherwise('/app/home');
 });

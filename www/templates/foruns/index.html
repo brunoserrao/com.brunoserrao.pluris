@@ -1,0 +1,19 @@
+<ion-view view-title="{{ 'MENU_FORUNS' | translate }}" ng-init="carregarForuns()">
+	<ion-content>
+
+		<div class="text-center padding login">
+			<img src="img/pluris.png" alt="Pluris 2016 logo" class="logo">
+		</div>
+
+		 <div class="padding" ng-repeat="forum in foruns | filter:pesquisar">
+			<ion-item href="#/app/foruns/{{forum.ID}}">
+				
+				{{ forum.post_title }}
+				
+				<div class="item-icon-right item-note">
+					<i class="icon ion-ios-arrow-right"></i>
+				</div>
+			</ion-item>
+		 </div>
+	</ion-content>
+</ion-view>
