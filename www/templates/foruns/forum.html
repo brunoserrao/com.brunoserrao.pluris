@@ -1,4 +1,7 @@
 <ion-view view-title="{{ 'MENU_FORUNS' | translate }}" ng-init="carregarForum(true)">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon ion-compose" ng-click="openModal()"></button>
+	</ion-nav-buttons>
 	<ion-content>
 		<ion-refresher
 			on-refresh="carregarForum(false)">
@@ -18,26 +21,22 @@
 					<div class="forum content" ng-bind-html="forum.post_content | externalLinks"></div>
 				</div>
 
-				<div class="item">
-					<h2>Deixe o seu comentário</h2>
+				<div class="item item-divider" ng-if="comentarios">
+					<h2>Comentários</h2>
 				</div>
 
-				<div class="item">
-					<form name="formComentario" novalidate ng-submit="comentar()" ng-if="forum">
-						<div class="list list-inset">
-							<label class="item item-input">
-								<textarea rows="5" cols="1" name="comentario" ng-model="comentario" required placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}"></textarea>
-							</label>
+				<div ng-if="forum.post_content">
+					<div ng-repeat="comentario in comentarios">
+						<div class="list">
+							<a class="item item-avatar" href="#">
+								<img src="img/logo-bola.png">
+								<h2>{{ comentario.comment_author }}</h2>
+								<p>{{ comentario.comment_content }}</p>
+							</a>
 						</div>
-
-						<div class="padding">
-							<button type="submit" class="button button-block button-royal" ng-disabled="formComentario.$invalid">
-								Comentar
-							</button>
-						</div>
-					</form>
+					</div>
 				</div>
 			</ion-list>
-		</div>		
+		</div>
 	</ion-content>
 </ion-view>

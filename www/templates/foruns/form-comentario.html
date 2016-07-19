@@ -1,0 +1,22 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-royal">
+		<h1 class="title">{{ 'MENU_FORUNS' | translate }}</h1>
+		<button class="button button-icon ion-android-close" ng-click="modal.hide()"></button>
+	</ion-header-bar>
+	
+	<ion-content scroll="false">
+		<form name="formComentario" novalidate ng-submit="comentar(true)" ng-if="forum">
+			<div class="list list-inset">
+				<label class="item item-input">
+					<textarea rows="5" cols="1" name="comentario" ng-model="comentario" required placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}"></textarea>
+				</label>
+			</div>
+
+			<div class="padding">
+				<button type="submit" class="button button-block button-royal" ng-disabled="formComentario.$invalid">
+					Comentar
+				</button>
+			</div>
+		</form>
+	</ion-content>
+</ion-modal-view>

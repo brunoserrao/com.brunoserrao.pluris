@@ -14,8 +14,15 @@ angular.module('foruns.services', [])
         });
     }
 
+    function comentar(id, data, loading, callback) {
+        RequestService.request('POST','/foruns/comentar', data, loading, function(result){
+            callback(result)
+        });
+    }
+
     return {
         foruns : foruns,
-        forum : forum
+        forum : forum,
+        comentar : comentar
     }
 });
