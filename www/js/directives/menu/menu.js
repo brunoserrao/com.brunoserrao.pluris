@@ -105,7 +105,7 @@ angular.module('menuDirective', [])
 				{
 					title : $translate.instant('MENU_ANAIS'),
 					ionClass : 'ion-ios-copy',
-					href : '#/app/anais',
+					href : '#/app/artigos',
 				},
 				{
 					title : $translate.instant('MENU_GALERIA'),
@@ -119,7 +119,7 @@ angular.module('menuDirective', [])
 				},
 				{
 					title : $translate.instant('MENU_AGENDA_CULTURAL'),
-					ionClass : 'ion-happy',
+					ionClass : 'ion-film-marker',
 					href : '#/app/pagina/257'
 				},
 				{
