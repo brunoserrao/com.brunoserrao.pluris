@@ -25,7 +25,7 @@ angular.module('starter.controllers')
 				});
 				
 				delete $rootScope.user;
-				StorageService.remove('user');
+				StorageService.clear();
 
 				$state.go('app.usuario/login');
 			} else {
