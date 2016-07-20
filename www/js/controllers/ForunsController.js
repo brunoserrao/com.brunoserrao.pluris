@@ -1,6 +1,6 @@
 'use strict';
 angular.module('starter.controllers')
-.controller('ForunsController', function($rootScope, $scope, $timeout, $stateParams, $translate, $ionicModal, ForunsService, StorageService, ToastService){
+.controller('ForunsController', function($rootScope, $scope, $timeout, $state, $stateParams, $translate, $ionicModal, ForunsService, StorageService, ToastService){
 	$scope.paged = 1;
 	$scope.items_disponiveis = true;
 	$scope.foruns = [];
