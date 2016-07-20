@@ -9172,34 +9172,20 @@ a {
   top: -5px;
   right: -5px; }
 
-.profile {
-  height: 200px;
-  position: relative; }
+.profile.profile-royal {
+  padding: 5px;
+  background-color: #48887B; }
 
-.bar.bar-profile {
-  height: 195px; }
-
-.bar .profile {
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 0;
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  padding-top: 10px; }
-
-.profile .name {
-  color: #FFFFFF;
-  margin-top: 10px !important;
-  margin-bottom: 10px !important; }
+.profile .name, .profile .email {
+  color: #fff;
+  /*margin-top: 10px !important;*/
+  /*margin-bottom: 10px !important;*/ }
 
 .profile-picture {
   border-radius: 50%;
   width: 95px;
-  height: 95px; }
+  height: 95px;
+  margin-top: 10px; }
 
 .menu .user-logged {
   top: 194px; }

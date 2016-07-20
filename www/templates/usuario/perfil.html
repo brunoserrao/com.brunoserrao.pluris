@@ -1,13 +1,11 @@
 <ion-view view-title="{{ 'USUARIO_PERFIL' | translate }}">
 	<ion-content>
-		<div class="profile bar bar-royal" ng-if="user">
+		<div class="profile profile-royal" ng-if="user">
 			<div class="row">
 				<div class="col text-center">					
 					<img class="profile-picture" fallback-src loading-src ng-src="{{ user.avatar.url }}" />
-					<h3 class="name">{{ user.user_nicename }}</h3>
-					<p>
-						{{ user.user_email }}
-					</p>
+					<h4 class="name">{{ user.display_name }}</h4>
+					<p class="email">{{ user.user_email }}</p>
 				</div>
 			</div>
 		</div>

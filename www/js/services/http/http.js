@@ -9,7 +9,6 @@ angular.module('http.services', [])
         var api = 'https://pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat;
 
         var user = StorageService.get('user');
-        var headers = new Headers();
 
         if (loading) {
             $ionicLoading.show({
