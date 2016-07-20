@@ -6,10 +6,10 @@
 		
 		<div class="list card" ng-if="noticia">
 			<ion-list>
-				<div class="item item-avatar">
+				<div class="item item-avatar item-text-wrap">
 					<img src="img/logo-bola.png">
 					<h2>{{ noticia.post_title }}</h2>
-					<p>{{ 'CONGRESSO' | translate }}</p>
+					<p>{{ noticia.post_date }}</p>
 				</div>
 
 				<div class="item item-image" ng-if="noticia.thumbnail">
