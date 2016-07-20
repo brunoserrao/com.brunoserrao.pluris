@@ -3,13 +3,34 @@
 		<div class="text-center padding login">
 			<img src="img/pluris.png" alt="{{ 'CONGRESSO' | translate }} logo" class="logo">
 		</div>
-		
-		<div class="list list-inset">
-			<label class="item item-input">
-				<input type="email" name="username" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
-			</label>
-		</div>
 
-		<button class="button button-block button-royal" ng-click="login()">{{ 'FORM_LOGIN_RECUPERAR_SENHA' | translate }}</button>
+		<form name="formRecuperarSenha" novalidate ng-submit="recuperarSenha()" ng-if="!recuperar">
+			<div class="list list-inset">
+				<label class="item item-input">
+					<input type="email" name="username" ng-model="username" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
+				</label>
+			</div>
+
+			<button type="submit" class="button button-block button-royal" ng-disabled="formRecuperarSenha.$invalid" >{{ 'FORM_LOGIN_RECUPERAR_SENHA' | translate }}</button>
+		</form>
+
+		<div ng-if="recuperar">
+			<div class="row text-center">
+				<div class="col">
+					<h4>{{ 'FORM_RECUPERAR_MENSAGEM_TITULO' | translate }}</h4>
+					<p>
+						{{ 'FORM_RECUPERAR_MENSAGEM' | translate:emailData }}
+					</p>
+				</div>
+			</div>	
+
+			<div class="row">
+				<div class="col text-center">
+					<button class="button button-block button-royal" ng-click="goBack()" >
+						{{ 'FORM_RECUPERAR_SENHA_IR_PARA_LOGIN' | translate }}
+					</button>
+				</div>
+			</div>
+		</div>
 	</ion-content>
 </ion-view>

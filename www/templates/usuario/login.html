@@ -22,12 +22,6 @@
 			</div>
 		</form>
 
-		<div class="padding assertive" ng-if="formLogin.$submitted && formLogin.$invalid">
-			<p ng-show="formLogin.username.$error.required">* {{ 'FORM_LOGIN_PREENCHER_USERNAME' | translate }}</p>
-			<p ng-show="formLogin.username.$invalid && !formLogin.username.$pristine">* {{ 'FORM_LOGIN_USERNAME_EMAIL' | translate }}</p>
-			<p ng-show="formLogin.password.$error.required">* {{ 'FORM_LOGIN_PREENCHER_SENHA' | translate }}</p>
-		</div>
-
 		<div class="text-center">
 			<a href="#app/usuario/criar-conta" title="{{ 'USUARIO_CRIAR_CONTA' | translate }}">
 				<button class="button button-clear button-royal">

@@ -92,5 +92,9 @@
 	"FORM_CONTATO_ENVIAR" : "Enviar",
 	"FORM_CONTATO_ENVIADO" : "Mensagem enviada com sucesso",
 	"FORM_CONTATO_ENVIADO_TEXTO" : "A sua mensagem foi encaminhada para os administradores do Pluris 2016. Em breve retornaremos o contato.",
-	"FORM_CONTATO_ENVIAR_OUTRO" : "Enviar outra mensagem"
+	"FORM_CONTATO_ENVIAR_OUTRO" : "Enviar outra mensagem",
+
+	"FORM_RECUPERAR_SENHA_IR_PARA_LOGIN" : "Ir para página de login",
+	"FORM_RECUPERAR_MENSAGEM_TITULO" : "Verificar o seu email",
+	"FORM_RECUPERAR_MENSAGEM" : "Um email foi enviado para a conta {{ email }} com um link para que você possa inserir uma nova senha."
 }

@@ -92,5 +92,8 @@
 	"FORM_CONTATO_ENVIAR" : "Enviar",
 	"FORM_CONTATO_ENVIADO" : "Message sent successfully",
 	"FORM_CONTATO_ENVIADO_TEXTO" : "Your message has been sent to the administrators of Pluris 2016. Soon we will return the contact.",
-	"FORM_CONTATO_ENVIAR_OUTRO" : "Send another message"
+	"FORM_CONTATO_ENVIAR_OUTRO" : "Send another message",
+
+	"FORM_RECUPERAR_SENHA_IR_PARA_LOGIN" : "Go to login page",
+	"FORM_RECUPERAR_MENSAGEM" : "An email was sent to the account {{ email }} mail with a link so you can enter a new password"
 }

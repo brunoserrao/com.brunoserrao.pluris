@@ -51,12 +51,37 @@ angular.module('starter.controllers')
 	}
 
 	$scope.setUser = function(result){
+		$rootScope.user = result.data.usuario;
+		StorageService.set('user', $rootScope.user);
+
 		$ionicHistory.nextViewOptions({
 			disableBack: true
 		});
 		
-		$rootScope.user = result.data.usuario;
-		StorageService.set('user', $rootScope.user);
 		$state.go('app.home');
+	}
+
+	$scope.recuperar = false;
+	$scope.emailData = {}
+		
+	$scope.recuperarSenha = function(){
+		var data = {
+			username : formRecuperarSenha.username.value
+		}
+
+		RequestService.request('POST','/recuperar-senha',data , true, function(result){
+			if (result) {
+				$scope.recuperar = true;
+				$scope.emailData = {
+					email : result.data
+				};
+			} else {
+				ToastService.message($translate.instant('FORM_LOGIN_FALHA'));
+			}
+		});
+	}
+
+	$scope.goBack = function(){
+		$ionicHistory.goBack(-1);
 	}
 });
