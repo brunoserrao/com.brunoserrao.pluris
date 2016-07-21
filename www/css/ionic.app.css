@@ -9177,9 +9177,7 @@ a {
   background-color: #48887B; }
 
 .profile .name, .profile .email {
-  color: #fff;
-  /*margin-top: 10px !important;*/
-  /*margin-bottom: 10px !important;*/ }
+  color: #fff; }
 
 .profile-picture {
   border-radius: 50%;
@@ -9203,3 +9201,6 @@ a .uppercased {
 
 #photo-panel img.placeholder {
   width: 100%; }
+
+.forum-content {
+  margin-top: 10px; }

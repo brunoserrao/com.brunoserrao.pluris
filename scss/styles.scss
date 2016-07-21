@@ -117,8 +117,6 @@ a{
 
 .profile .name, .profile .email {
     color: $light;
-    /*margin-top: 10px !important;*/
-    /*margin-bottom: 10px !important;*/
 }
 
 .profile-picture {
@@ -148,4 +146,8 @@ a .uppercased{
 
 #photo-panel img.placeholder{
 	width: 100%;
+}
+
+.forum-content{
+	margin-top: 10px;
 }

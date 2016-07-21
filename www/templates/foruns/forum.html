@@ -17,12 +17,12 @@
 					<img class="full-image" fallback-src loading-src ng-src="{{ forum.thumbnail }}" alt="{{ forum.post_title }}">
 				</div>
 
-				<div class="item item-body" ng-if="forum.post_content">
+				<div class="item item-text-wrap" ng-if="forum.post_content">
 					<div class="forum content" ng-bind-html="forum.post_content | externalLinks"></div>
 				</div>
 
 				<div class="item item-divider" ng-if="comentarios.length > 0">
-					<h2>Comentários</h2>
+					<h2>{{ 'FORUM_COMENTARIOS' | translate}}</h2>
 				</div>
 
 				<div ng-if="comentarios">
@@ -30,8 +30,9 @@
 						<div class="list item-text-wrap">
 							<a class="item item-avatar" href="#">
 								<img src="img/logo-bola.png">
+								<span class="item-note">{{ comentario.comment_format_date }}</span>
 								<h2>{{ comentario.comment_author }}</h2>
-								<p class="content" ng-bind-html="comentario.comment_content | externalLinks"></p>
+								<p class="forum-content" ng-bind-html="comentario.comment_content | externalLinks"></p>
 							</a>
 						</div>
 					</div>
