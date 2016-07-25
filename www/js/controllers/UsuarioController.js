@@ -11,6 +11,7 @@ angular.module('starter.controllers')
 		RequestService.request('POST','/validar',data , true, function(result){
 			if (result) {
 				$scope.setUser(result);
+				ToastService.message($translate.instant('FORM_LOGIN_OK',{nome : result.data.usuario.display_name}));
 			} else {
 				ToastService.message($translate.instant('FORM_LOGIN_FALHA'));
 			}
