@@ -77,6 +77,7 @@
 	"FORM_LOGIN_PREENCHER_SENHA" : "Senha é requerido",
 	"FORM_LOGIN_FALHA" : "Login senha inválidos",
 	"FORM_CADASTRO_FALHA" : "E-mail já cadastrado. Tente recuperar a senha",
+	"FORM_LOGIN_OK" : "Seja bem vindo {{ nome }}",
 
 	"FOTO_CAMERA" : "Câmera",
 	"FOTO_ALBUM" : "Álbum de fotos",
@@ -97,5 +98,9 @@
 
 	"FORM_RECUPERAR_SENHA_IR_PARA_LOGIN" : "Ir para página de login",
 	"FORM_RECUPERAR_MENSAGEM_TITULO" : "Verificar o seu email",
-	"FORM_RECUPERAR_MENSAGEM" : "Um email foi enviado para a conta {{ email }} com um link para que você possa inserir uma nova senha."
+	"FORM_RECUPERAR_MENSAGEM" : "Um email foi enviado para a conta {{ email }} com um link para que você possa inserir uma nova senha.",
+
+	"PROGRAMACAO_1_DIA" : "1º Dia",
+	"PROGRAMACAO_2_DIA" : "2º Dia",
+	"PROGRAMACAO_3_DIA" : "3º Dia"
 }

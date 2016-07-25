@@ -1,29 +1,37 @@
-<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }} " ng-init="carregarProgramacao(true)">
-	<ion-nav-buttons side="right">
-		<button class="button button-icon ion-android-more-vertical" ng-click="popover.show($event)" ></button>
-	</ion-nav-buttons>
-
-	<ion-content id="calendar">
+<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }} " ng-init="carregarProgramacao(1, true)">
+	<ion-content>
 		<ion-refresher
-			on-refresh="carregarProgramacao(false)">
+			on-refresh="carregarProgramacao(aba_ativa, true)">
 		</ion-refresher>
 
-		<h3 class="padding">
-			{{ viewTitle | translate }}
-		</h3>
-
-		<div class="row">
-			<div class="col">
-				<calendar
-					ng-if="calendar.events"
-					ng-model="calendar.currentDate" 
-					calendar-mode="calendar.mode" 
-					event-source="calendar.events"
-					range-changed="reloadSource(startTime, endTime)"
-					event-selected="onEventSelected(event)" title-changed="onViewTitleChanged(title)"
-					time-selected="onTimeSelected(selectedTime)" step="30">
-				</calendar>
+		<div class="list card" ng-if="eventos">
+			<div class="item item-avatar item-text-wrap">
+				<img src="img/logo-bola.png">
+				<h2>{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}</h2>
+				<p>{{ descricao }}</p>
 			</div>
+
+			<a ng-repeat="evento in eventos | filter:pesquisar" class="item item-list item-icon-right" href="#/app/programacao/{{evento.ID}}" title="{{ evento.post_title }}">
+				{{ evento.post_title }}
+				<i class="icon item-note ion-ios-arrow-right"></i>
+			</a>
 		</div>
 	</ion-content>
+
+	<div class="tabs-striped tabs-color-royal">
+		<div class="tabs tabs-icon-left">
+			<a class="tab-item" ng-class="{ active : aba_ativa == 1 }" ng-click="carregarDia(1)">
+				<i class="icon ion-ios-calendar"></i>
+				{{ 'PROGRAMACAO_1_DIA' | translate }}
+			</a>
+			<a class="tab-item" ng-class="{ active : aba_ativa == 2 }" ng-click="carregarDia(2)">
+				<i class="icon ion-ios-calendar"></i>
+				{{ 'PROGRAMACAO_2_DIA' | translate }}
+			</a>
+			<a class="tab-item" ng-class="{ active : aba_ativa == 3 }" ng-click="carregarDia(3)">
+				<i class="icon ion-ios-calendar"></i>
+				{{ 'PROGRAMACAO_3_DIA' | translate }}
+			</a>
+		</div>
+	</div>
 </ion-view>
