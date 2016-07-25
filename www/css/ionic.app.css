@@ -9101,8 +9101,9 @@ a {
   text-align: center; }
 
 .pane {
-  background-image: url(../img/background.png);
-  background-position: center center; }
+  background-image: url(../img/bg_aplicativo_2.jpg);
+  background-position: center center;
+  background-size: auto 100%; }
 
 .logo img {
   max-width: 100%;
@@ -9118,7 +9119,7 @@ a {
   width: 65%; }
 
 .login img {
-  width: 80%;
+  width: 100%;
   margin-top: 20PX; }
 
 .button-menu-inscrever {
@@ -9204,3 +9205,23 @@ a .uppercased {
 
 .forum-content {
   margin-top: 10px; }
+
+.no-padding {
+  padding: 0px; }
+
+#home-buttons .button-large {
+  min-height: 50px; }
+
+/*
+#bar-footer-home{
+	text-align: center;
+    height: 70px;
+}
+
+#bar-footer-home img{
+	width: 50%;
+    height: auto;
+    position: absolute;
+    right: 10px;
+}
+*/
