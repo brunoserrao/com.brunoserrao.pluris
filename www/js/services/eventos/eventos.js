@@ -2,8 +2,12 @@ angular.module('eventos.services', [])
 
 .factory('EventosService', function(RequestService){
     
-    function eventos(paged,loading, callback) {
-       RequestService.request('GET','/eventos', false, loading, function(result){
+    function eventos(day,loading, callback) {
+        data = {
+            day : day
+        };
+        
+        RequestService.request('POST','/eventos', data, loading, function(result){
             callback(result)
         });
     }
