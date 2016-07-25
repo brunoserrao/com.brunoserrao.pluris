@@ -35,7 +35,6 @@
     "cordova-plugin-inappbrowser",
     "cordova-plugin-nativeaudio",
     "cordova-plugin-crosswalk-webview",
-    "cordova-plugin-console",
     "cordova-plugin-whitelist"
   ],
   "cordovaPlatforms": [
