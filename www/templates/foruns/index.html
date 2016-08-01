@@ -18,7 +18,8 @@
 				<p>{{ descricao }}</p>
 			</div>
 
-			<a ng-repeat="forum in foruns | filter:pesquisar" class="item item-list item-icon-right" href="#/app/foruns/{{forum.ID}}">
+			<a ng-repeat="forum in foruns | filter:pesquisar" class="item item-avatar item-list item-icon-right" href="#/app/foruns/{{forum.ID}}">
+				<img fallback-src loading-src ng-src="{{ forum.thumbnail }}">
 				{{ forum.post_title }}
 				<i class="icon item-note ion-ios-arrow-right"></i>
 			</a>

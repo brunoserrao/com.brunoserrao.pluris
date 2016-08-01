@@ -54,12 +54,12 @@ angular.module('menuDirective', [])
 			$scope.menus = [
 				{
 					title : $translate.instant('MENU_HOME'),
-					ionClass : 'ion-ios-home',
+					ionClass : 'ion-ios-home-outline',
 					href : '#/app/home',
 				},
 				{
 					title : $translate.instant('MENU_CONGRESSO'),
-					ionClass : 'ion-ios-people',
+					ionClass : 'ion-ios-people-outline',
 					items : [
 						{
 							title : $translate.instant('MENU_CONGRESSO_APRESENTACAO'),
@@ -85,7 +85,7 @@ angular.module('menuDirective', [])
 				},
 				{
 					title : $translate.instant('MENU_LOCAL'),
-					ionClass : 'ion-ios-location',
+					ionClass : 'ion-ios-location-outline',
 					items : [
 						{
 							title : $translate.instant('MENU_LOCAL_CIDADE'),
@@ -99,37 +99,37 @@ angular.module('menuDirective', [])
 				},
 				{
 					title : $translate.instant('MENU_NOTICIAS'),
-					ionClass : 'ion-ios-paper',
+					ionClass : 'ion-ios-paper-outline',
 					href : '#/app/noticias'
 				},
 				{
 					title : $translate.instant('MENU_ANAIS'),
-					ionClass : 'ion-ios-copy',
+					ionClass : 'ion-ios-copy-outline',
 					href : '#/app/artigos',
 				},
 				{
 					title : $translate.instant('MENU_GALERIA'),
-					ionClass : 'ion-ios-camera',
+					ionClass : 'ion-ios-camera-outline',
 					href : '#/app/galeria',
 				},
 				{
 					title : $translate.instant('MENU_FORUNS'),
-					ionClass : 'ion-ios-chatboxes',
+					ionClass : 'ion-ios-chatboxes-outline',
 					href : '#/app/foruns',
 				},
 				{
 					title : $translate.instant('MENU_AGENDA_CULTURAL'),
-					ionClass : 'ion-film-marker',
+					ionClass : 'ion-ios-film-outline',
 					href : '#/app/pagina/257'
 				},
 				{
 					title : $translate.instant('MENU_IDIOMAS_CONFIG'),
-					ionClass : 'ion-ios-world',
+					ionClass : 'ion-ios-world-outline',
 					href : '#/app/configuracao'
 				},
 				{
 					title : $translate.instant('MENU_FALE_CONOSCO'),
-					ionClass : 'ion-email',
+					ionClass : 'ion-ios-email-outline',
 					href : '#/app/contato'
 				}
 			];

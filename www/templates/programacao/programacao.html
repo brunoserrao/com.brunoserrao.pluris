@@ -1,9 +1,5 @@
 <ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }} " ng-init="carregarProgramacao(1, true)">
 	<ion-content>
-		<ion-refresher
-			on-refresh="carregarProgramacao(aba_ativa, true)">
-		</ion-refresher>
-
 		<div class="list card" ng-if="eventos">
 			<div class="item item-avatar item-text-wrap">
 				<img src="img/logo-bola.png">
@@ -16,6 +12,8 @@
 				<i class="icon item-note ion-ios-arrow-right"></i>
 			</a>
 		</div>
+
+		<div class="list card" ng-if="eventos"></div>
 	</ion-content>
 
 	<div class="tabs-striped tabs-color-royal">
