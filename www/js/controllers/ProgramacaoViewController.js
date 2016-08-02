@@ -28,17 +28,19 @@ angular.module('starter.controllers')
 			var chave = 'favorito-evento-' + evento.ID;
 			var evento_chave = StorageService.get(chave);
 
-			window.plugins.calendar.hasReadWritePermission(
-				function(result) {
+			window.plugins.calendar.hasReadWritePermission(function(result){
+				if (!result) {
+					window.plugins.calendar.requestReadWritePermission();
+				}
+			});
+
+			window.plugins.calendar.hasReadWritePermission(function(result) {
 					if (result) {
 						if (evento_chave) {
 							$scope.removerFavorito(evento, chave);
 						} else {
 							$scope.adicionarFavorito(evento, chave);
 						}
-					} else {
-						window.plugins.calendar.requestReadWritePermission();
-						$scope.favorito(evento);
 					}
 				}
 			);
