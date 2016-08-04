@@ -1,4 +1,4 @@
-<ion-view view-title="{{ 'MENU_ANAIS' | translate }}">
+<ion-view view-title="{{ 'MENU_ANAIS' | translate }}" ng-init="carregarArtigos(true)">>
 	<ion-header-bar class="bar bar-subheader item-input-inset"> 
 		<label class="item-input-wrapper search">
 			<i class="icon ion-search placeholder-icon"></i>
@@ -7,10 +7,6 @@
 	</ion-header-bar>
 	
 	<ion-content>
-		<ion-refresher
-			on-refresh="carregarArtigos(false)">
-		</ion-refresher>
-		
 		<div class="list card" ng-if="artigos">
 			<div class="item item-avatar item-text-wrap">
 				<img src="img/logo-bola.png">

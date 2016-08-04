@@ -4,13 +4,12 @@ angular.module('starter.controllers')
 
 	$scope.enviado = false;
 
-	$scope.verificarLogado = function(){
+	$scope.contato = function(){
 		if(!$scope.user){
 			$state.go('app.usuario/login');
+			return;
 		}
-	}
 
-	$scope.contato = function(){
 		var data = {
 			assunto : formContato.assunto.value,
 			mensagem : formContato.mensagem.value

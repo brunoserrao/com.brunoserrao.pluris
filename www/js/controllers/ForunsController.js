@@ -33,8 +33,6 @@ angular.module('starter.controllers')
 
 		ForunsService.foruns($scope.paged, loading, function(result){
 			if (result) {
-				$scope.foruns = [];
-				
 				for (var i = 0; i < result.data.length; i++) {
 					$scope.foruns.push(result.data[i]);
 				}

@@ -36,9 +36,9 @@ angular.module('starter.controllers')
 				$scope.descriao = StorageService.get('artigos-descriao');
 				$scope.items_disponiveis = false;
 
-				$scope.$broadcast('scroll.infiniteScrollComplete');	
-
-				console.log(result);
+				$timeout(function(){
+					$scope.$broadcast('scroll.infiniteScrollComplete');	
+				}, 500);
 			}
 		});
 	}
