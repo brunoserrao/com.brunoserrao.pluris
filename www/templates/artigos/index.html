@@ -7,6 +7,10 @@
 	</ion-header-bar>
 	
 	<ion-content>
+		<ion-refresher
+			on-refresh="carregarArtigos(false)">
+		</ion-refresher>
+		
 		<div class="list card" ng-if="artigos">
 			<div class="item item-avatar item-text-wrap">
 				<img src="img/logo-bola.png">
