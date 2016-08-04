@@ -6,7 +6,7 @@ angular.module('http.services', [])
     function request(method,end_point, data, loading, callback) {
         var lang = $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
         var concat = end_point.indexOf('?') > 1 ? '&lang=' + lang : '/?lang=' + lang;
-        var api = 'https://pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat;
+        var api = 'http://10.0.0.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat;
 
         var user = StorageService.get('user');
 
@@ -35,19 +35,14 @@ angular.module('http.services', [])
                 }
             },
             function errorCallback(response){
-                var errorMessage = $translate.instant('ERRO_SERVIDOR') + ' : ' + response.status;
-
-                if (typeof ionic.Platform.device().available !== 'undefined'){
-                    $timeout(function(){
-                        window.analytics.trackException(errorMessage, true);
-                    },500);
+                if (response.status == 500) {
+                    var errorMessage = $translate.instant('ERRO_SERVIDOR') + ' : ' + response.status;
+                    ToastService.message(errorMessage);
                 }
                 
                 if (callback) {
                     callback();
-                } else {
-                    ToastService.message(errorMessage);
-                }
+                } 
             }
         ).finally(function(){
             $timeout(function () {

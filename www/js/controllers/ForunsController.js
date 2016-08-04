@@ -1,11 +1,7 @@
 'use strict';
 angular.module('starter.controllers')
 .controller('ForunsController', function($rootScope, $scope, $timeout, $state, $stateParams, $translate, $ionicModal, ForunsService, StorageService, ToastService){
-	$scope.paged = 1;
-	$scope.items_disponiveis = true;
-	$scope.foruns = [];
-	$scope.comentarios = [];
-
+	
 	$ionicModal.fromTemplateUrl('templates/foruns/form-comentario.html', {
 		scope: $scope,
 		animation: 'slide-in-up'
@@ -30,6 +26,11 @@ angular.module('starter.controllers')
 	});
 
 	$scope.carregarForuns = function(loading){
+		$scope.paged = 1;
+		$scope.items_disponiveis = true;
+		$scope.foruns = [];
+		$scope.comentarios = [];
+
 		ForunsService.foruns($scope.paged, loading, function(result){
 			if (result) {
 				$scope.foruns = [];
@@ -38,15 +39,11 @@ angular.module('starter.controllers')
 					$scope.foruns.push(result.data[i]);
 				}
 				
-				$scope.paging = result.paging;
 				$scope.descricao = result.descricao;
-				
 				StorageService.set('foruns',$scope.foruns);
-				StorageService.set('foruns-paging',$scope.paging);
 				StorageService.set('foruns-descricao',$scope.descricao);
 			} else {
 				$scope.foruns = StorageService.get('Foruns');
-				$scope.paging = StorageService.get('Foruns-paging');
 				$scope.descriao = StorageService.get('foruns-descriao');
 				$scope.items_disponiveis = false;
 			}

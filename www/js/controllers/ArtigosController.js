@@ -1,12 +1,13 @@
 'use strict';
 angular.module('starter.controllers')
 .controller('ArtigosController', function($scope, $timeout, $stateParams, ArtigosService, StorageService){
-	$scope.paged = 1;
-	$scope.items_disponiveis = true;
-	$scope.artigos = [];
-	$scope.descricao = '';
-
+	
 	$scope.carregarArtigos = function(loading){
+		$scope.paged = 1;
+		$scope.items_disponiveis = true;
+		$scope.artigos = [];
+		$scope.descricao = '';
+
 		ArtigosService.artigos($scope.paged, loading, function(result){
 			if (result) {
 				for (var i = 0; i < result.data.length; i++) {
@@ -34,6 +35,10 @@ angular.module('starter.controllers')
 				$scope.paging = StorageService.get('artigos-paging');
 				$scope.descriao = StorageService.get('artigos-descriao');
 				$scope.items_disponiveis = false;
+
+				$scope.$broadcast('scroll.infiniteScrollComplete');	
+
+				console.log(result);
 			}
 		});
 	}
