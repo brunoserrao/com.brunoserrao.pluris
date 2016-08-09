@@ -13,17 +13,25 @@
 		</div>
 
 		<div class="row">
-			<div class="col text-center">
+			<!-- <div class="col col-10"></div> -->
+			<div class="col">
 				<a href="#" title="{{ 'MENU_INSCREVER' | translate }}" onclick="window.open('https://pluris2016.fundepes.br/', '_blank', 'zoom=no'); return false;">
 					<button class="icon button button-block button-royal icon-left ion-compose">
 						{{ 'MENU_INSCREVER' | translate }}
 					</button>
 				</a>
 			</div>
+			<!-- <div class="col col-10"></div> -->
 		</div>
 
 		<div id="home-buttons">
 			<div class="row row-top">
+				<div class="col text-center no-padding">
+					<a href="#app/pagina/2" title="{{ 'MENU_CONGRESSO_APRESENTACAO' | translate }}">
+						<button class="icon button button-clear button-royal button-large ion-ios-bookmarks"></button><br />
+						{{ 'CONGRESSO' | translate }}
+					</a>
+				</div>
 				<div class="col text-center no-padding">
 					<a href="#app/programacao" title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}">
 						<button class="icon button button-clear button-royal button-large ion-ios-calendar"></button><br />
@@ -42,15 +50,15 @@
 						{{ 'MENU_LOCAL_CONFERENCIA' | translate }}
 					</a>
 				</div>
+			</div>
+
+			<div class="row row-top">
 				<div class="col text-center no-padding">
 					<a href="#app/artigos" title="{{ 'MENU_ANAIS' | translate }}">
 						<button class="icon button button-clear button-royal button-large ion-ios-copy"></button><br />
 						{{ 'MENU_ANAIS' | translate }}
 					</a>
 				</div>
-			</div>
-
-			<div class="row row-top">
 				<div class="col text-center no-padding">
 					<a href="#app/foruns" title="{{ 'MENU_FORUNS' | translate }}">
 						<button class="icon button button-clear button-royal button-large ion-ios-chatboxes"></button><br />
@@ -69,19 +77,13 @@
 						{{ 'MENU_AGENDA_CULTURAL' | translate }}
 					</a>
 				</div>
-				<div class="col text-center no-padding">
-					<a href="#app/contato" title="{{ 'MENU_FALE_CONOSCO' | translate }}">
-						<button class="icon button button-clear button-royal button-large ion-email"></button><br />
-						{{ 'MENU_FALE_CONOSCO' | translate }}
-					</a>
-				</div>
 			</div>
 		</div>
 	</ion-content>
-
-	<!--
-	<div class="bar bar-footer bar-royal">
-		<img src="img/texto.svg" alt="">
+	
+	<div id="bar-footer-pluris" class="bar bar-footer bar-royal">
+		<a href="#app/contato" class="button button-clear icon icon-left ion-email" title="{{ 'MENU_FALE_CONOSCO' | translate }}">
+			&nbsp; {{ 'MENU_FALE_CONOSCO' | translate }}
+		</a>
 	</div>
-	-->
 </ion-view>

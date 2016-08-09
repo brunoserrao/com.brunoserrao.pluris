@@ -14,10 +14,15 @@ angular.module('menuDirective', [])
 			var state = $scope.state || false;
 
 			$scope.isActive = function(menu) {
-				if (menu.href && $location.path().indexOf(menu.href) !== -1) {
-					return 'active';
-				} else if (state && $state.includes(state) && $stateParams.id == menu.id) {
-					return 'active';
+				var path = menu.href;
+
+				if (path !== undefined) {
+					path = path.substring(1);
+					var location = $location.path();
+					
+					if (location == path) {
+						return 'active';
+					}
 				}
 			}
 

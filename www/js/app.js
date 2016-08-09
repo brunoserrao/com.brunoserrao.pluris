@@ -15,7 +15,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 		if (navigator.splashscreen) {
 			$timeout(function() {
 				navigator.splashscreen.hide();
-			}, 2000);
+			}, 3000);
 		}
 	});
 })
@@ -47,7 +47,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.home', {
 			url: '/home',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/home/home.html',
@@ -58,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.noticias', {
 			url: '/noticias',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/noticias/index.html',
@@ -69,7 +69,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.noticias/id', {
 			url: '/noticia/:id',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/noticias/noticia.html',
@@ -80,7 +80,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.apresentacao', {
 			url: '/pagina/:id',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/paginas/pagina.html',
@@ -91,7 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.programacao', {
 			url: '/programacao',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/programacao/programacao.html',
@@ -102,7 +102,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.programacao/id', {
 			url: '/programacao/:id',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/programacao/evento.html',
@@ -113,7 +113,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.configuracao', {
 			url: '/configuracao',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/configuracao/configuracao.html',
@@ -124,7 +124,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.galeria', {
 			url: '/galeria',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/galeria/galeria.html',
@@ -135,7 +135,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.galeria/foto', {
 			url: '/galeria/foto',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/galeria/foto.html',
@@ -146,7 +146,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.usuario/login', {
 			url: '/usuario/login',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/usuario/login.html',
@@ -157,7 +157,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.usuario/perfil', {
 			url: '/usuario/perfil',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/usuario/perfil.html',
@@ -168,7 +168,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.usuario/esqueci-a-senha', {
 			url: '/usuario/esqueci-a-senha',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/usuario/esqueci-a-senha.html',
@@ -179,7 +179,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.usuario/criar-conta', {
 			url: '/usuario/criar-conta',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/usuario/criar-conta.html',
@@ -190,7 +190,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.artigos', {
 			url: '/artigos',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/artigos/index.html',
@@ -201,7 +201,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.artigos/id', {
 			url: '/artigos/:id',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/artigos/artigo.html',
@@ -212,7 +212,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.foruns', {
 			url: '/foruns',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/foruns/index.html',
@@ -223,7 +223,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.foruns/id', {
 			url: '/foruns/:id',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/foruns/forum.html',
@@ -234,7 +234,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 
 		.state('app.contato', {
 			url: '/contato',
-			cache: false,
+			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/contato/index.html',

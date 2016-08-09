@@ -1,25 +1,23 @@
 <ion-view view-title="{{ 'MENU_IDIOMAS_CONFIG' | translate }}" ng-init="init()">
-	<ion-content>
-		<div class="padding">
-			<div class="card">
-				<div class="item item-text-wrap">
-					{{ 'TRADUCAO_MENSAGEM' | translate }}
-				</div>
+	<ion-content>		
+		<div class="card">
+			<div class="item item-text-wrap">
+				{{ 'TRADUCAO_MENSAGEM' | translate }}
 			</div>
-
-			<ion-list>
-				<ion-radio ng-click="switchLanguage('pb')" ng-model="language" ng-value="'pb'">
-					<span class="flag-icon flag-icon-br"></span> {{ 'MENU_PT' | translate }}
-				</ion-radio>
-
-				<ion-radio ng-click="switchLanguage('en')" ng-model="language" ng-value="'en'">
-					<span class="flag-icon flag-icon-us"></span> {{ 'MENU_EN' | translate }}
-				</ion-radio>
-
-				<ion-radio ng-click="switchLanguage('es')" ng-model="language" ng-value="'es'">
-					<span class="flag-icon flag-icon-es"></span> {{ 'MENU_ES' | translate }}
-				</ion-radio>
-			</ion-list>
 		</div>
+
+		<ion-list>
+			<ion-radio ng-click="switchLanguage('pb')" ng-model="language" ng-value="'pb'">
+				<span class="flag-icon flag-icon-br"></span> {{ 'MENU_PT' | translate }}
+			</ion-radio>
+
+			<ion-radio ng-click="switchLanguage('en')" ng-model="language" ng-value="'en'">
+				<span class="flag-icon flag-icon-us"></span> {{ 'MENU_EN' | translate }}
+			</ion-radio>
+
+			<ion-radio ng-click="switchLanguage('es')" ng-model="language" ng-value="'es'">
+				<span class="flag-icon flag-icon-es"></span> {{ 'MENU_ES' | translate }}
+			</ion-radio>
+		</ion-list>
 	</ion-content>
 </ion-view>

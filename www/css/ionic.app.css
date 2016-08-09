@@ -9214,3 +9214,19 @@ a .uppercased {
 
 .card {
   margin: auto; }
+
+.title.title-center.header-item {
+  color: #48887B; }
+
+#bar-footer-pluris {
+  background-image: url(../img/texto.svg);
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  background-position: 95%; }
+
+.bar.bar-clear .title {
+  color: #48887B; }
+
+#menu-list ion-item.active {
+  border-color: #ccc;
+  background-color: #D9D9D9; }
