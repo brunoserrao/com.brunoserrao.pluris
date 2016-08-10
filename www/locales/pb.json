@@ -100,9 +100,11 @@
 	"FORM_RECUPERAR_MENSAGEM_TITULO" : "Verificar o seu email",
 	"FORM_RECUPERAR_MENSAGEM" : "Um email foi enviado para a conta {{ email }} com um link para que você possa inserir uma nova senha.",
 
-	"PROGRAMACAO_1_DIA" : "1º Dia",
-	"PROGRAMACAO_2_DIA" : "2º Dia",
-	"PROGRAMACAO_3_DIA" : "3º Dia",
+	"PROGRAMACAO_1_DIA" : "5 de outubro 2016",
+	"PROGRAMACAO_2_DIA" : "6 de outubro 2016",
+	"PROGRAMACAO_3_DIA" : "7 de outubro 2016",
+
+	"PROGRAMACAO_DIA" : "{{ dia }} de outubro 2016",
 
 	"PROGRAMACAO_PALESTRAS" : "Palestras",
 	"PROGRAMACAO_SESSOES_TEMATICAS" : "Sessões temáticas",

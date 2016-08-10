@@ -122,8 +122,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
-		.state('app.evento/id', {
-			url: '/evento/:id',
+		.state('app.evento/id/categoria/categoria_id', {
+			url: '/evento/:id/categoria/:categoria_id',
 			cache: true,
 			views: {
 				menuContent: {

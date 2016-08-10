@@ -99,9 +99,11 @@
 	"FORM_RECUPERAR_SENHA_IR_PARA_LOGIN" : "Go to login page",
 	"FORM_RECUPERAR_MENSAGEM" : "An email was sent to the account {{ email }} mail with a link so you can enter a new password",
 
-	"PROGRAMACAO_1_DIA" : "1st Day",
-	"PROGRAMACAO_2_DIA" : "2nd day",
-	"PROGRAMACAO_3_DIA" : "3th day",
+	"PROGRAMACAO_1_DIA" : "October 5th, 2016",
+	"PROGRAMACAO_2_DIA" : "October 6th, 2016",
+	"PROGRAMACAO_3_DIA" : "October 7th, 2016",
+
+	"PROGRAMACAO_DIA" : "October {{ dia }}th, 2016",
 
 	"PROGRAMACAO_PALESTRAS" : "Palestras",
 	"PROGRAMACAO_SESSOES_TEMATICAS" : "Thematic sessions",

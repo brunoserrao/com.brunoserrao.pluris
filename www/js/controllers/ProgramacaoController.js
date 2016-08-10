@@ -1,35 +1,43 @@
 'use strict';
-angular.module('starter.controllers').controller('ProgramacaoController', function($scope, $stateParams, $timeout, EventosService, StorageService, RequestService){
+angular.module('starter.controllers').controller('ProgramacaoController', function($scope, $stateParams, $timeout, StorageService, RequestService){
 
 	$scope.dia = $stateParams.dia;
 	$scope.categoria_id = $stateParams.categoria_id;
 	
 	$scope.carregarProgramacao = function(loading) {
-		RequestService.request('GET','/programacao',null, loading, function(result){
-			if (result) {
-				$scope.descricao = result.descricao;
-				StorageService.set('programacao-descricao',result);
-			} else {
-				descricao = StorageService.get('programacao-descricao');
 
-				if (descricao) {
-					$scope.descricao  = StorageService.get('programacao-descricao');
+		$scope.data = {
+			dia : $scope.dia,
+			categoria_id : $scope.categoria_id
+		};
+
+		if (!$scope.descricao) {
+			RequestService.request('GET','/programacao',null, loading, function(result){
+				if (result) {
+					$scope.descricao = result.descricao;
+					StorageService.set('programacao-descricao',result);
+				} else {
+					descricao = StorageService.get('programacao-descricao');
+
+					if (descricao) {
+						$scope.descricao  = StorageService.get('programacao-descricao');
+					}
 				}
-			}
 
-			$timeout(function(){
-				$scope.$broadcast('scroll.refreshComplete');
-			}, 500);
-		});
+				$timeout(function(){
+					$scope.$broadcast('scroll.refreshComplete');
+				}, 500);
+			});
+		}
 	}
 
 	$scope.carregarProgramacaoDiaCategoria = function(loading) {
-		var data = {
-			'dia' : $scope.dia,
-			'categoria_id' : $scope.categoria_id
+		$scope.data = {
+			dia : $scope.dia,
+			categoria_id : $scope.categoria_id
 		};
 
-		RequestService.request('POST','/eventos', data, loading, function(result){
+		RequestService.request('POST','/eventos', $scope.data, loading, function(result){
 			if (result) {
 				$scope.eventos = result.data;
 			}
@@ -42,21 +50,39 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 	$scope.carregarEvento = function(loading) {
 		var id = $stateParams.id;
-		
-		EventosService.evento(id, loading,function(result){
+		var categoria_id = $stateParams.categoria_id;
+		var data = {
+			'id' : id,
+			'categoria_id' : categoria_id
+		};
+
+		RequestService.request('POST','/eventos', data, loading, function(result){
 			if (result) {
 				$scope.evento = result.data[0];
 				StorageService.set('evento-' + id, $scope.evento);
 			} else {
 				$scope.evento = StorageService.get('evento-' + id);
 			}
-
-			$scope.checarFavorito($scope.evento);
-
+			
 			$timeout(function(){
 				$scope.$broadcast('scroll.refreshComplete');
-			},500)
+			}, 500);
 		});
+		
+		// EventosService.evento(id, loading,function(result){
+		// 	if (result) {
+		// 		$scope.evento = result.data[0];
+		// 		StorageService.set('evento-' + id, $scope.evento);
+		// 	} else {
+		// 		$scope.evento = StorageService.get('evento-' + id);
+		// 	}
+
+		// 	$scope.checarFavorito($scope.evento);
+
+		// 	$timeout(function(){
+		// 		$scope.$broadcast('scroll.refreshComplete');
+		// 	},500)
+		// });
 	};
 
 
