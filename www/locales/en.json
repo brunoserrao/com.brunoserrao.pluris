@@ -101,5 +101,9 @@
 
 	"PROGRAMACAO_1_DIA" : "1st Day",
 	"PROGRAMACAO_2_DIA" : "2nd day",
-	"PROGRAMACAO_3_DIA" : "3th day"
+	"PROGRAMACAO_3_DIA" : "3th day",
+
+	"PROGRAMACAO_PALESTRAS" : "Palestras",
+	"PROGRAMACAO_SESSOES_TEMATICAS" : "Thematic sessions",
+	"PROGRAMACAO_EVENTOS_SOCIAIS" : "Social events"
 }

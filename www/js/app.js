@@ -100,13 +100,35 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
-		.state('app.programacao/id', {
-			url: '/programacao/:id',
+		.state('app.programacao/dia/id', {
+			url: '/programacao/dia/:dia',
+			cache: true,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/dia.html',
+					controller: 'ProgramacaoController'
+				}
+			}
+		})
+
+		.state('app.programacao/dia/id/categoria/categoria_id', {
+			url: '/programacao/dia/:dia/categoria/:categoria_id',
+			cache: true,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/categoria.html',
+					controller: 'ProgramacaoController'
+				}
+			}
+		})
+
+		.state('app.evento/id', {
+			url: '/evento/:id',
 			cache: true,
 			views: {
 				menuContent: {
 					templateUrl: 'templates/programacao/evento.html',
-					controller: 'ProgramacaoViewController'
+					controller: 'ProgramacaoController'
 				}
 			}
 		})
