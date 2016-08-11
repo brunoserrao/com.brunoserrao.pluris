@@ -1,7 +1,32 @@
 'use strict';
 angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','artigos.services','foruns.services','paginas.services','eventos.services','toast.services','storage.services','onesignal.services'])
 
-.controller('AppCtrl', function ($rootScope, $scope, $ionicModal, $timeout, $translate, $translateLocalStorage, $ionicPlatform, $ionicSideMenuDelegate, $state, $ionicHistory, ShareService, OneSignalService, StorageService) {
+.controller('AppCtrl', function ($rootScope, $scope, $ionicModal, $timeout, $translate, $translateLocalStorage, $ionicPlatform, $ionicSideMenuDelegate, $state, $ionicHistory, ShareService, OneSignalService, StorageService, RequestService) {
+
+	// Form data for the login modal
+	$scope.loginData = {};
+
+	// Create the login modal that we will use later
+	$ionicModal.fromTemplateUrl('templates/usuario/login.html', {
+		scope: $scope,
+		animation: 'slide-in-up'
+		}).then(function(modal) {
+		$scope.modal = modal;
+	});
+
+	// Triggered in the login modal to close it
+	$scope.closeLogin = function() {
+		$scope.modal.hide();
+	};
+
+	// Open the login modal
+	$scope.login = function() {
+		$scope.modal.show();
+	};
+
+	$scope.$on('$destroy', function() {
+		$scope.modal.remove();
+	});
 
 	// Share function
 	$scope.share = function(post) {
@@ -37,10 +62,6 @@ angular.module('starter.controllers', ['http.services','popup.services','share.s
 				$ionicHistory.goBack(-1);
 			} else {
 				$ionicSideMenuDelegate.toggleLeft();
-				// $ionicHistory.nextViewOptions({
-				// 	disableBack: true
-				// });
-				// $state.go('app.home');
 			}
 		}
 	}, 100);

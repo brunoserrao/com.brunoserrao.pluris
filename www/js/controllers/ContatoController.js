@@ -6,7 +6,7 @@ angular.module('starter.controllers')
 
 	$scope.contato = function(){
 		if(!$scope.user){
-			$state.go('app.usuario/login');
+			$scope.login();
 			return;
 		}
 
@@ -18,8 +18,7 @@ angular.module('starter.controllers')
 		RequestService.request('POST','/contato',data , true, function(result){
 			if (result) {
 				$scope.enviado = true;
-				formContato.assunto.value = '';
-				formContato.mensagem.value = '';
+				formContato.reset();
 			} else {
 				ToastService.message($translate.instant('FORM_LOGIN_FALHA'));
 			}

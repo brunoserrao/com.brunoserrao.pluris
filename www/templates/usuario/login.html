@@ -1,10 +1,15 @@
-<ion-view view-title="{{ 'USUARIO_LOGIN' | translate }}">
+<ion-modal-view>
+	<ion-header-bar class="bar-royal">
+	    <h1 class="title">{{ 'USUARIO_LOGIN' | translate }}</h1>
+	    <button class="button button-icon ion-android-close" ng-click="closeLogin()"></button>
+	  </ion-header-bar>
+
 	<ion-content>
 		<div class="text-center padding login">
 			<img src="img/logo-data-texto.png" alt="{{ 'CONGRESSO' | translate }} logo" class="logo">
 		</div>
 		
-		<form name="formLogin" novalidate ng-submit="login()">
+		<form name="formLogin" novalidate ng-submit="doLogin()" ng-controller="UsuarioController">
 			<div class="list list-inset">
 				<label class="item item-input">
 					<input type="email" name="username" ng-model="username" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
@@ -23,17 +28,17 @@
 		</form>
 
 		<div class="text-center">
-			<a href="#app/usuario/criar-conta" title="{{ 'USUARIO_CRIAR_CONTA' | translate }}">
+			<a href="#app/usuario/criar-conta" title="{{ 'USUARIO_CRIAR_CONTA' | translate }}" ng-click="closeLogin()">
 				<button class="button button-clear button-royal">
 					{{ 'USUARIO_CRIAR_CONTA' | translate }}
 				</button>
 			</a>
 
-			<a href="#app/usuario/esqueci-a-senha" title="{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}">
+			<a href="#app/usuario/esqueci-a-senha" title="{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}" ng-click="closeLogin()">
 				<button class="button button-clear button-royal">
 					{{ 'USUARIO_ESQUECI_A_SENHA' | translate }}
 				</button>
 			</a>
 		</div>
 	</ion-content>
-</ion-view>
+</ion-modal-view>

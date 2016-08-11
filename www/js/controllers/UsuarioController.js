@@ -2,7 +2,7 @@
 angular.module('starter.controllers')
 .controller('UsuarioController', function($rootScope, $scope, $translate, $state, $ionicHistory, StorageService, RequestService, ToastService){
 
-	$scope.login = function(){
+	$scope.doLogin = function(){
 		var data = {
 			username : formLogin.username.value,
 			password : formLogin.password.value
@@ -11,6 +11,8 @@ angular.module('starter.controllers')
 		RequestService.request('POST','/validar',data , true, function(result){
 			if (result) {
 				$scope.setUser(result);
+				formLogin.reset();
+				$scope.closeLogin();
 				ToastService.message($translate.instant('FORM_LOGIN_OK',{nome : result.data.usuario.display_name}));
 			} else {
 				ToastService.message($translate.instant('FORM_LOGIN_FALHA'));
@@ -28,7 +30,7 @@ angular.module('starter.controllers')
 				delete $rootScope.user;
 				StorageService.clear();
 
-				$state.go('app.usuario/login');
+				$state.go('app.home');
 			} else {
 				ToastService.message($translate.instant('FORM_LOGIN_FALHA'));
 			}
@@ -45,6 +47,7 @@ angular.module('starter.controllers')
 		RequestService.request('POST','/cadastro',data , true, function(result){
 			if (result) {
 				$scope.setUser(result);
+				formCadastro.reset();
 			} else {
 				ToastService.message($translate.instant('FORM_CADASTRO_FALHA'));
 			}
@@ -58,8 +61,6 @@ angular.module('starter.controllers')
 		$ionicHistory.nextViewOptions({
 			disableBack: true
 		});
-		
-		$state.go('app.home');
 	}
 
 	$scope.recuperar = false;

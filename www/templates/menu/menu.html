@@ -25,7 +25,7 @@
 			</div>
 
 			<div class="profile profile-royal text-center" ng-if="!user">
-				<a href="#app/usuario/login" menu-close>
+				<a ng-click="login()">
 					<img class="profile-picture" src="img/logo-bola.png" />
 					<h4 class="name">{{ 'CONGRESSO' | translate }}</h4>
 					<p class="email">{{ 'USUARIO_LOGIN' | translate }} / {{ 'USUARIO_CRIAR_CONTA' | translate }}</p>

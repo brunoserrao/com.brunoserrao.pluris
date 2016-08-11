@@ -15,7 +15,7 @@ angular.module('starter.controllers')
 
 	$scope.openModal = function() {
 		if(!$scope.user){
-			$state.go('app.usuario/login')
+			$scope.login();
 		} else {
 			$scope.modal.show();
 		}
@@ -60,7 +60,7 @@ angular.module('starter.controllers')
 	$scope.upload = function(){
 		var data = {
 			image : $scope.imgURI,
-			title : myForm.title.value
+			title : formUpload.title.value
 		}
 
 		RequestService.request('POST','/galeria/upload', data, true, function(result){
@@ -68,6 +68,7 @@ angular.module('starter.controllers')
 				$scope.carregarGaleria(true, function(){
 					$scope.closeModal();
 					$scope.reset();
+					formUpload.reset();
 				});
 			} else {
 				ToastService.message('Erro ao enviar a foto');

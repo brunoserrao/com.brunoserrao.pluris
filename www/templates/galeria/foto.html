@@ -1,7 +1,7 @@
 <ion-modal-view>
 	<ion-header-bar class="bar-royal">
 		<h1 class="title">{{ 'MENU_GALERIA' | translate }}</h1>
-		<button class="button button-icon ion-android-close" ng-click="modal.hide()"></button>
+		<button class="button button-icon ion-android-close" ng-click="closeModal()"></button>
 	</ion-header-bar>
 	
 	<ion-content scroll="false">
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 
-			<form name="myForm" novalidate ng-submit="upload()">
+			<form name="formUpload" novalidate ng-submit="upload()">
 				<div class="buttons-actions" ng-if="status">
 					<div class="row">
 						<div class="col">
