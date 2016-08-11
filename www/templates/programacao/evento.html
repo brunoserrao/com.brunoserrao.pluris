@@ -1,36 +1,54 @@
-<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate}}" ng-init="carregarEvento(true)">
+<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}" ng-init="carregarEvento(true)">
 	<ion-nav-buttons side="right">
-		<button class="button button-icon" ng-class="{ 'ion-android-star' : favoritado, 'ion-android-star-outline'  : !favoritado }" ng-click="favorito(evento)"></button>
+		<button class="button button-icon button-clear button-royal" ng-class="{ 'ion-android-star' : favoritado, 'ion-android-star-outline'  : !favoritado }" ng-click="favorito(evento)"></button>
 	</ion-nav-buttons>
+	
 	<ion-content>
 		<ion-refresher
 			on-refresh="carregarEvento(false)">
 		</ion-refresher>
 		
-		<div class="list card" ng-if="evento">
-			<ion-list>
-				<div class="item">
-					<h2>{{ evento.post_title }}</h2>
+		<div class="profile profile-royal" ng-if="evento">
+			<div class="row">
+				<div class="col text-center">					
+					<img class="profile-picture" fallback-src loading-src ng-src="{{ evento.thumbnail }}" />
+					<h4 class="name">{{ evento.post_excerpt }}</h4>
 				</div>
-
-				<div class="item item-icon-left">
-					<i class="icon ion-ios-calendar-outline"></i>
-					<strong>{{ 'CALENDARIO_DATA_HORA_INICIO' | translate }}: </strong> {{ evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] | date:'medium' }}
-				</div>
-
-				<div class="item item-icon-left">
-					<i class="icon ion-ios-calendar-outline"></i>
-					<strong>{{ 'CALENDARIO_DATA_HORA_FINAL' | translate }}: </strong> {{ evento.metas.date_end[0] +'T'+ evento.metas.time_end[0] | date:'medium' }}
-				</div>
-
-				<div class="item item-image" ng-if="evento.thumbnail">
-					<img class="full-image" fallback-src loading-src ng-src="{{ evento.thumbnail }}" alt="{{ evento.post_title }}">
-				</div>
-
-				<div class="item item-body" ng-if="evento.post_content">
-					<div class="noticia content" ng-bind-html="evento.post_content | externalLinks"></div>
-				</div>
-			</ion-list>
+			</div>
 		</div>
+
+		<ion-list ng-if="evento">
+			<div class="item item-text-wrap">
+				<h2>{{ evento.post_title }}</h2>
+			</div>
+
+			<div class="item item-icon-left">
+				<i class="icon ion-ios-calendar-outline"></i>
+				<strong>{{ 'DIA' | translate }}: </strong>
+				{{ 'DATA_FORMATO' | translate : {date : evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] } }}
+			</div>
+
+			<div class="item item-icon-left">
+				<i class="icon ion-clock"></i>
+				<strong>{{ 'CALENDARIO_DATA_HORA_INICIO' | translate }}: </strong>
+				{{ 'HORA_FORMATO' | translate : {date : evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] } }}
+			</div>
+
+			<div class="item item-icon-left">
+				<i class="icon ion-clock"></i>
+				<strong>{{ 'CALENDARIO_DATA_HORA_FINAL' | translate }}: </strong>
+				{{ 'HORA_FORMATO' | translate : {date : evento.metas.date_end[0] +'T'+ evento.metas.time_end[0] } }}
+			</div>
+
+			<div class="item item-body" ng-if="evento.post_content">
+				<div class="noticia content" ng-bind-html="evento.post_content | externalLinks"></div>
+			</div>
+
+			<div class="padding">
+				<button class="button button-block button-royal" ng-click="formEnviarPergunta()">
+					{{ 'ENVIAR_PERGUNTA' | translate }}
+				</button>
+			</div>
+		</ion-list>
 	</ion-content>
 </ion-view>

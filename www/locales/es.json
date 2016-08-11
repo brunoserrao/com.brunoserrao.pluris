@@ -44,7 +44,9 @@
 	"ALERTA_SEM_CONEXAO" : "Sin conexión a Internet. Inténtelo de nuevo más tarde.",
 	"ALERTA_TITULO" : "Atención",
 
-	"DATE_FORMAT": "{{date|date:'d.M.y'}}",
+	"DATA_FORMATO": "{{date|date:'d.M.y'}}",
+	"HORA_FORMATO": "{{date|date:'H:mm'}}",
+
 	"COMPARTILHAR": "Compartir este enlace",
 	"ERRO_SERVIDOR": "Sin conexión a Internet",
 
@@ -97,6 +99,7 @@
 	"FORM_CONTATO_ENVIAR_OUTRO" : "Enviar otro mensaje",
 
 	"FORM_RECUPERAR_SENHA_IR_PARA_LOGIN" : "Ir a la página de acceso",
+	"FORM_RECUPERAR_MENSAGEM_TITULO" : "Verificar o seu email",
 	"FORM_RECUPERAR_MENSAGEM" : "Un correo electrónico fue enviado a la cuenta de correo {{ email }} con un enlace para que pueda introducir una nueva contraseña.",
 
 	"PROGRAMACAO_1_DIA" : "5 de octubre de 2016",
@@ -104,8 +107,13 @@
 	"PROGRAMACAO_3_DIA" : "7 de octubre de 2016",
 
 	"PROGRAMACAO_DIA" : "{{ dia }} de octubre de 2016",
+	"DIA" : "Dia",
 
-	"PROGRAMACAO_PALESTRAS" : "Palestras",
+	"PROGRAMACAO_PALESTRAS" : "Conferencias",
 	"PROGRAMACAO_SESSOES_TEMATICAS" : "Sessiones temáticas",
-	"PROGRAMACAO_EVENTOS_SOCIAIS" : "Eventos sociais"
+	"PROGRAMACAO_EVENTOS_SOCIAIS" : "Eventos sociais",
+	"ENVIAR_PERGUNTA" : "Enviar una pergunta",
+	"ENVIAR" : "Enviar",
+	"PERGUNTA_ENVIADA_COM_SUCESSO" : "A sua pergunta foi enviada ao palestrante",
+	"FALHA_AO_ENVIAR_A_PERGUNTA" : "Se ha producido un error. Inténtalo de nuevo."
 }

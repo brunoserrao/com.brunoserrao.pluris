@@ -44,7 +44,9 @@
 	"ALERTA_SEM_CONEXAO" : "Sem conexão com a internet. Tente novamente.",
 	"ALERTA_TITULO" : "Alerta",
 
-	"DATE_FORMAT": "{{date|date:'d/M/y'}}",
+	"DATA_FORMATO": "{{date|date:'d/M/y'}}",
+	"HORA_FORMATO": "{{date|date:'H:M'}} h",
+
 	"COMPARTILHAR": "Compartilhar este link",
 	"ERRO_SERVIDOR": "Sem conexão com a internet",
 
@@ -105,8 +107,13 @@
 	"PROGRAMACAO_3_DIA" : "7 de outubro 2016",
 
 	"PROGRAMACAO_DIA" : "{{ dia }} de outubro 2016",
+	"DIA" : "Dia",
 
 	"PROGRAMACAO_PALESTRAS" : "Palestras",
 	"PROGRAMACAO_SESSOES_TEMATICAS" : "Sessões temáticas",
-	"PROGRAMACAO_EVENTOS_SOCIAIS" : "Eventos sociais"
+	"PROGRAMACAO_EVENTOS_SOCIAIS" : "Eventos sociais",
+	"ENVIAR_PERGUNTA" : "Enviar uma pergunta",
+	"ENVIAR" : "Enviar",
+	"PERGUNTA_ENVIADA_COM_SUCESSO" : "A sua pergunta foi enviada ao palestrante",
+	"FALHA_AO_ENVIAR_A_PERGUNTA" : "Houve um erro ao enviar a pergunta"
 }

@@ -1,8 +1,24 @@
 'use strict';
-angular.module('starter.controllers').controller('ProgramacaoController', function($scope, $stateParams, $timeout, StorageService, RequestService){
+angular.module('starter.controllers').controller('ProgramacaoController', function($rootScope, $scope, $stateParams, $timeout, $ionicModal, $translate, ToastService, StorageService, RequestService){
 
 	$scope.dia = $stateParams.dia;
 	$scope.categoria_id = $stateParams.categoria_id;
+	$scope.favoritado = false;
+
+	$ionicModal.fromTemplateUrl('templates/programacao/pergunta.html', {
+		scope: $scope,
+		animation: 'slide-in-up'
+	}).then(function(modal) {
+		$scope.modal = modal;
+	});
+
+	$scope.closeModal = function() {
+		$scope.modal.hide();
+	};
+	
+	$scope.$on('$destroy', function() {
+		$scope.modal.remove();
+	});
 	
 	$scope.carregarProgramacao = function(loading) {
 
@@ -52,9 +68,11 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 		var id = $stateParams.id;
 		var categoria_id = $stateParams.categoria_id;
 		var data = {
-			'id' : id,
-			'categoria_id' : categoria_id
+			id : id,
+			categoria_id : categoria_id
 		};
+
+		$scope.checarFavorito('favorito-evento-' + id);
 
 		RequestService.request('POST','/eventos', data, loading, function(result){
 			if (result) {
@@ -68,28 +86,45 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 				$scope.$broadcast('scroll.refreshComplete');
 			}, 500);
 		});
-		
-		// EventosService.evento(id, loading,function(result){
-		// 	if (result) {
-		// 		$scope.evento = result.data[0];
-		// 		StorageService.set('evento-' + id, $scope.evento);
-		// 	} else {
-		// 		$scope.evento = StorageService.get('evento-' + id);
-		// 	}
-
-		// 	$scope.checarFavorito($scope.evento);
-
-		// 	$timeout(function(){
-		// 		$scope.$broadcast('scroll.refreshComplete');
-		// 	},500)
-		// });
 	};
 
+	$scope.formEnviarPergunta = function() {
+		if(!$scope.user){
+			$scope.login();
+		} else {
+			$scope.modal.show();
+		}
+	}
+
+	$scope.enviarPergunta = function(loading) {
+		var id = $stateParams.id;
+		var categoria_id = $stateParams.categoria_id;
+		var data = {
+			id : id,
+			form : {
+				mensagem : formPergunta.mensagem.value
+			}
+		};
+
+		RequestService.request('POST','/eventos/enviar_pergunta', data, loading, function(result){
+			if (result) {
+				$scope.closeModal();
+				formPergunta.reset();
+				ToastService.message($translate.instant('PERGUNTA_ENVIADA_COM_SUCESSO'));
+			} else {
+				ToastService.message($translate.instant('FALHA_AO_ENVIAR_A_PERGUNTA'));
+			}
+			
+			$timeout(function(){
+				$scope.$broadcast('scroll.refreshComplete');
+			}, 500);
+		});
+	}
 
 	$scope.favorito = function(evento){
 		if (typeof ionic.Platform.device().available !== 'undefined'){
 			var chave = 'favorito-evento-' + evento.ID;
-			var evento_chave = StorageService.get(chave);
+			
 
 			window.plugins.calendar.hasReadWritePermission(function(result){
 				if (!result) {
@@ -99,7 +134,7 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 			window.plugins.calendar.hasReadWritePermission(function(result) {
 					if (result) {
-						if (evento_chave) {
+						if ($scope.favoritado) {
 							$scope.removerFavorito(evento, chave);
 						} else {
 							$scope.adicionarFavorito(evento, chave);
@@ -122,8 +157,11 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 		var success = function(id) {
 			StorageService.remove(chave);
-			$scope.checarFavorito(evento);
 			ToastService.message($translate.instant('EVENTO_REMOVIDO_DA_AGENDA'));
+
+			$timeout(function(){
+				$scope.checarFavorito(chave);
+			},500)
 		};
 		
 		var error = function(id) { 
@@ -145,8 +183,11 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 		var success = function(id) {
 			StorageService.set(chave, evento.ID);
-			$scope.checarFavorito(evento);
 			ToastService.message($translate.instant('EVENTO_ADICIONADO_NA_AGENDA'));
+
+			$timeout(function(){
+				$scope.checarFavorito(chave);
+			},500)
 		};
 		
 		var error = function(id) { 
@@ -156,8 +197,7 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 		window.plugins.calendar.createEvent(title,eventLocation,notes,startDate,endDate,success,error);
 	}
 
-	$scope.checarFavorito = function(evento){
-		var evento_chave = 'favorito-evento-' + evento.ID;
-		$scope.favoritado = StorageService.get(evento_chave) ? true : false;
+	$scope.checarFavorito = function(chave){
+		$scope.favoritado = StorageService.get(chave) ? true : false;
 	}
 });

@@ -4,13 +4,7 @@ angular.module('toast.services', [])
 
     function message(message){
         if (typeof ionic.Platform.device().available !== 'undefined') {
-            $cordovaToast
-                .show(message, 'long', 'bottom')
-                .then(function(success) {
-                    console.log('success: ' + success);
-                }, function (error) {
-                    console.log('error: ' + error);
-            });
+            $cordovaToast.show(message, 'long', 'bottom');
         } else {
             console.log(message);
         }

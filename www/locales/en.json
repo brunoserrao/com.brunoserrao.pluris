@@ -44,7 +44,9 @@
 	"ALERTA_SEM_CONEXAO" : "No internet connection. Try again later.",
 	"ALERTA_TITULO" : "Alert",
 
-	"DATE_FORMAT": "{{date|date:'M/d/y'}}",
+	"DATA_FORMATO": "{{date|date:'M/d/y'}}",
+	"HORA_FORMATO": "{{date|date:'h:mm a'}}",
+
 	"COMPARTILHAR": "Share this link",
 	"ERRO_SERVIDOR": "No internet connection",
 
@@ -97,6 +99,7 @@
 	"FORM_CONTATO_ENVIAR_OUTRO" : "Send another message",
 
 	"FORM_RECUPERAR_SENHA_IR_PARA_LOGIN" : "Go to login page",
+	"FORM_RECUPERAR_MENSAGEM_TITULO" : "Check your email",
 	"FORM_RECUPERAR_MENSAGEM" : "An email was sent to the account {{ email }} mail with a link so you can enter a new password",
 
 	"PROGRAMACAO_1_DIA" : "October 5th, 2016",
@@ -104,8 +107,13 @@
 	"PROGRAMACAO_3_DIA" : "October 7th, 2016",
 
 	"PROGRAMACAO_DIA" : "October {{ dia }}th, 2016",
+	"DIA" : "Day",
 
-	"PROGRAMACAO_PALESTRAS" : "Palestras",
+	"PROGRAMACAO_PALESTRAS" : "Speeches",
 	"PROGRAMACAO_SESSOES_TEMATICAS" : "Thematic sessions",
-	"PROGRAMACAO_EVENTOS_SOCIAIS" : "Social events"
+	"PROGRAMACAO_EVENTOS_SOCIAIS" : "Social events",
+	"ENVIAR_PERGUNTA" : "Send a question",
+	"ENVIAR" : "Send",
+	"PERGUNTA_ENVIADA_COM_SUCESSO" : "Your question has been sent to lecturer",
+	"FALHA_AO_ENVIAR_A_PERGUNTA" : "An error has occurred. Try again."
 }

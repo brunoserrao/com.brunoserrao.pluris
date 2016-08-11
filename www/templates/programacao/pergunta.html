@@ -1,0 +1,28 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-royal">
+		<h1 class="title">{{ 'ENVIAR_PERGUNTA' | translate }}</h1>
+		<button class="button button-icon ion-android-close" ng-click="closeModal()"></button>
+	</ion-header-bar>
+	
+	<ion-content>
+		<form name="formPergunta" novalidate ng-submit="enviarPergunta(true)">
+			<div class="buttons-actions">
+				<div class="row">
+					<div class="col">
+						<label class="item item-input">
+							<textarea rows="5" cols="1" name="mensagem" ng-model="mensagem" required autocomplete="off" placeholder="{{ 'FORM_CONTATO_MENSAGEM' | translate }}"></textarea>
+						</label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+						<button type="submit" class="button button-block button-royal" ng-disabled="formPergunta.$invalid">
+							{{ 'ENVIAR' | translate }}
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</ion-content>
+</ion-modal-view>
