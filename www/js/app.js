@@ -94,7 +94,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			cache: true,
 			views: {
 				menuContent: {
-					templateUrl: 'templates/programacao/programacao.html',
+					templateUrl: 'templates/programacao/dias.html',
 					controller: 'ProgramacaoController'
 				}
 			}
@@ -105,25 +105,58 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			cache: true,
 			views: {
 				menuContent: {
-					templateUrl: 'templates/programacao/dia.html',
+					templateUrl: 'templates/programacao/categorias.html',
 					controller: 'ProgramacaoController'
 				}
 			}
 		})
 
-		.state('app.programacao/dia/id/categoria/categoria_id', {
-			url: '/programacao/dia/:dia/categoria/:categoria_id',
+		.state('app.programacao/palestras/dia/id/categoria/categoria_id', {
+			url: '/programacao/palestras/dia/:dia/categoria/:categoria_id',
 			cache: true,
 			views: {
 				menuContent: {
-					templateUrl: 'templates/programacao/categoria.html',
+					templateUrl: 'templates/programacao/eventos.html',
 					controller: 'ProgramacaoController'
 				}
 			}
 		})
 
-		.state('app.evento/id/categoria/categoria_id', {
-			url: '/evento/:id/categoria/:categoria_id',
+		.state('app.programacao/programacao/sub-categoria/categoria/categoria_id', {
+			url: '/programacao/sub-categoria/:categoria_id',
+			cache: true,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/eventos.html',
+					controller: 'ProgramacaoController'
+				}
+			}
+		})		
+
+		.state('app.programacao/eventos-sociais/dia/id/categoria/categoria_id', {
+			url: '/programacao/eventos-sociais/dia/:dia/categoria/:categoria_id',
+			cache: true,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/eventos.html',
+					controller: 'ProgramacaoController'
+				}
+			}
+		})
+
+		.state('app.programacao/sessoes-tematicas/dia/id/categoria/categoria_id', {
+			url: '/programacao/sessoes-tematicas/dia/:dia/categoria/:categoria_id',
+			cache: true,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/sessoes-tematicas.html',
+					controller: 'ProgramacaoController'
+				}
+			}
+		})
+
+		.state('app.evento/id', {
+			url: '/evento/:id',
 			cache: true,
 			views: {
 				menuContent: {

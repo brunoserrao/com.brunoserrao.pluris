@@ -1,19 +1,19 @@
-<ion-view view-title="{{ 'PROGRAMACAO_DIA' | translate:data }}" ng-init="carregarProgramacaoDiaCategoria(true); carregarProgramacao(false);">
+<ion-view view-title="{{ 'PROGRAMACAO_DIA' | translate:data }}" ng-init="carregarEventos(true); carregarProgramacao(false);">
 	<ion-content>
 		<ion-refresher
-			on-refresh="carregarProgramacaoDiaCategoria(false)">
+			on-refresh="carregarEventos(false)">
 		</ion-refresher>
 
 		<div class="list card" ng-if="descricao">
 			<div class="item item-avatar item-text-wrap">
 				<img src="img/logo-bola.png">
 				<h2>{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}</h2>
-				<div ng-bind-html="descricao | externalLinks"></div>
+				<div ng-bind-html="descricao.descricao | externalLinks"></div>
 			</div>
 		</div>
 
 		<ion-list>
-			<ion-item ng-repeat="evento in eventos" href="#/app/evento/{{ evento.ID }}/categoria/{{ categoria_id }}">
+			<ion-item ng-repeat="evento in eventos" href="#/app/evento/{{ evento.ID }}">
 				{{ evento.post_title }}
 				<span class="item-icon-right">
 					<i class="icon item-note ion-ios-arrow-right"></i>

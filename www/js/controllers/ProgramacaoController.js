@@ -4,6 +4,7 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	$scope.dia = $stateParams.dia;
 	$scope.categoria_id = $stateParams.categoria_id;
 	$scope.favoritado = false;
+	$scope.categorias = [];
 
 	$ionicModal.fromTemplateUrl('templates/programacao/pergunta.html', {
 		scope: $scope,
@@ -27,27 +28,37 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 			categoria_id : $scope.categoria_id
 		};
 
+		$scope.descricao  = StorageService.get('programacao-descricao');
+
 		if (!$scope.descricao) {
 			RequestService.request('GET','/programacao',null, loading, function(result){
 				if (result) {
-					$scope.descricao = result.descricao;
+					$scope.descricao = result;
 					StorageService.set('programacao-descricao',result);
-				} else {
-					descricao = StorageService.get('programacao-descricao');
-
-					if (descricao) {
-						$scope.descricao  = StorageService.get('programacao-descricao');
-					}
 				}
-
-				$timeout(function(){
-					$scope.$broadcast('scroll.refreshComplete');
-				}, 500);
 			});
 		}
 	}
 
-	$scope.carregarProgramacaoDiaCategoria = function(loading) {
+	$scope.carregarCategorias = function(loading) {
+		$scope.data = {
+			dia : $scope.dia,
+			categoria_id : $scope.categoria_id
+		};
+
+		RequestService.request('GET','/eventos/categorias', $scope.data, loading, function(result){
+			if (result) {
+				$scope.categorias = result.data;
+				StorageService.set('programacao-categorias', $scope.categorias);
+			}
+			
+			$timeout(function(){
+				$scope.$broadcast('scroll.refreshComplete');
+			}, 500);
+		});
+	}
+
+	$scope.carregarEventos = function(loading) {
 		$scope.data = {
 			dia : $scope.dia,
 			categoria_id : $scope.categoria_id
@@ -66,15 +77,10 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 	$scope.carregarEvento = function(loading) {
 		var id = $stateParams.id;
-		var categoria_id = $stateParams.categoria_id;
-		var data = {
-			id : id,
-			categoria_id : categoria_id
-		};
 
 		$scope.checarFavorito('favorito-evento-' + id);
 
-		RequestService.request('POST','/eventos', data, loading, function(result){
+		RequestService.request('GET','/eventos/' + id, null, loading, function(result){
 			if (result) {
 				$scope.evento = result.data[0];
 				StorageService.set('evento-' + id, $scope.evento);

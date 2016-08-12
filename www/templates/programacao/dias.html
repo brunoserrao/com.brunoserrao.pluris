@@ -8,11 +8,11 @@
 			<div class="item item-avatar item-text-wrap">
 				<img src="img/logo-bola.png">
 				<h2>{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}</h2>
-				<div ng-bind-html="descricao | externalLinks"></div>
+				<div ng-bind-html="descricao.descricao | externalLinks"></div>
 			</div>
 
 			<ion-list>
-				<ion-item href="#/app/programacao/dia/5">
+				<ion-item href="#/app/programacao/dia/5" title="{{ 'PROGRAMACAO_1_DIA' | translate }}">
 					<span class="item-icon-left">
 						<i class="icon ion-ios-calendar-outline"></i>
 					</span>
@@ -24,7 +24,7 @@
 					</span>
 				</ion-item>
 
-				<ion-item href="#/app/programacao/dia/6">
+				<ion-item href="#/app/programacao/dia/6" title="{{ 'PROGRAMACAO_2_DIA' | translate }}">
 					<span class="item-icon-left">
 						<i class="icon ion-ios-calendar-outline"></i>
 					</span>
@@ -36,7 +36,7 @@
 					</span>
 				</ion-item>
 
-				<ion-item href="#/app/programacao/dia/7">
+				<ion-item href="#/app/programacao/dia/7" title="{{ 'PROGRAMACAO_3_DIA' | translate }}">
 					<span class="item-icon-left">
 						<i class="icon ion-ios-calendar-outline"></i>
 					</span>
