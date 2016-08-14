@@ -1,8 +1,7 @@
 'use strict';
 angular.module('starter.controllers').controller('ProgramacaoController', function($rootScope, $scope, $stateParams, $timeout, $ionicModal, $translate, ToastService, StorageService, RequestService){
 
-	$scope.dia = $stateParams.dia;
-	$scope.categoria_id = $stateParams.categoria_id;
+	
 	$scope.favoritado = false;
 	$scope.categorias = [];
 
@@ -22,8 +21,14 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	});
 	
 	$scope.carregarProgramacao = function(loading) {
+		StorageService.set('programacao-dia-selecionado', $stateParams.dia);
+		StorageService.set('programacao-categoria-selecionada', $stateParams.categoria_id);
+
+		$scope.dia =  $stateParams.dia;
+		$scope.categoria_id = $stateParams.categoria_id;
+
 		$scope.data = {
-			dia : $scope.dia,
+			dia : $stateParams.dia,
 			categoria_id : $scope.categoria_id
 		};
 
@@ -40,8 +45,9 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	}
 
 	$scope.carregarCategorias = function(loading) {
-		$scope.categoria_selecionada = StorageService.get('programacao-categoria-selecionada');
-		
+		$scope.dia =  StorageService.get('programacao-dia-selecionado');
+		$scope.categoria_id = StorageService.get('programacao-categoria-selecionada');
+
 		$scope.data = {
 			dia : $scope.dia,
 			categoria_id : $scope.categoria_id
@@ -64,7 +70,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	}
 
 	$scope.carregarEventos = function(loading) {
-		$scope.categoria_selecionada = StorageService.get('programacao-categoria-selecionada');
+		$scope.dia = StorageService.get('programacao-dia-selecionado');
+		$scope.categoria_id = StorageService.get('programacao-categoria-selecionada');
 
 		$scope.data = {
 			dia : $scope.dia,
