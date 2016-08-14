@@ -122,16 +122,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
-		.state('app.programacao/programacao/sub-categoria/categoria/categoria_id', {
+		.state('app.programacao/programacao/sub-categoria/categoria_id', {
 			url: '/programacao/sub-categoria/:categoria_id',
 			cache: true,
 			views: {
 				menuContent: {
-					templateUrl: 'templates/programacao/eventos.html',
+					templateUrl: 'templates/programacao/subcategorias-eventos.html',
 					controller: 'ProgramacaoController'
 				}
 			}
-		})		
+		})
+
+		.state('app.programacao/subcategoria/evento/:id', {
+			url: '/programacao/subcategoria/evento/:id',
+			cache: true,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/subcategoria-evento.html',
+					controller: 'ProgramacaoController'
+				}
+			}
+		})	
 
 		.state('app.programacao/eventos-sociais/dia/id/categoria/categoria_id', {
 			url: '/programacao/eventos-sociais/dia/:dia/categoria/:categoria_id',

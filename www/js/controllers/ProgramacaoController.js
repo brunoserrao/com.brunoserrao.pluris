@@ -22,7 +22,6 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	});
 	
 	$scope.carregarProgramacao = function(loading) {
-
 		$scope.data = {
 			dia : $scope.dia,
 			categoria_id : $scope.categoria_id
@@ -41,6 +40,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	}
 
 	$scope.carregarCategorias = function(loading) {
+		$scope.categoria_selecionada = StorageService.get('programacao-categoria-selecionada');
+		
 		$scope.data = {
 			dia : $scope.dia,
 			categoria_id : $scope.categoria_id
@@ -58,7 +59,13 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 		});
 	}
 
+	$scope.salvarCategoriaSelecionada = function(categoria){
+		StorageService.set('programacao-categoria-selecionada', categoria);
+	}
+
 	$scope.carregarEventos = function(loading) {
+		$scope.categoria_selecionada = StorageService.get('programacao-categoria-selecionada');
+
 		$scope.data = {
 			dia : $scope.dia,
 			categoria_id : $scope.categoria_id

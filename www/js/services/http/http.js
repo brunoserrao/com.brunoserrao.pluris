@@ -6,7 +6,7 @@ angular.module('http.services', [])
     function request(method,end_point, data, loading, callback) {
         var lang = $translateLocalStorage.get('NG_TRANSLATE_LANG_KEY');
         var concat = end_point.indexOf('?') > 1 ? '&lang=' + lang : '/?lang=' + lang;
-        var api = 'http://10.0.0.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat;
+        var api = 'http://192.168.1.200/pluris2016.fundepes.br/wp-json/api/v1' + end_point + concat;
 
         var user = StorageService.get('user');
 

@@ -1,4 +1,4 @@
-<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}" ng-init="carregarEvento(true)">
+<ion-view view-title="{{ 'PROGRAMACAO_SESSOES_TEMATICAS' | translate }}" ng-init="carregarEvento(true)">
 	<ion-nav-buttons side="right">
 		<button class="button button-icon button-clear button-royal" ng-class="{ 'ion-android-star' : favoritado, 'ion-android-star-outline'  : !favoritado }" ng-click="favorito(evento)"></button>
 	</ion-nav-buttons>
@@ -7,22 +7,13 @@
 		<ion-refresher
 			on-refresh="carregarEvento(false)">
 		</ion-refresher>
-		
-		<div class="profile profile-royal" ng-if="evento">
-			<div class="row">
-				<div class="col text-center">
-					<img class="profile-picture" fallback-src loading-src ng-src="{{ evento.thumbnail }}" />
-					<h4 class="name">{{ evento.post_excerpt }}</h4>
-				</div>
-			</div>
-		</div>
 
 		<ion-list ng-if="evento">
 			<div class="item item-text-wrap">
 				<h2>{{ evento.post_title }}</h2>
 			</div>
 
-			<div class="item item-icon-left">
+			<div class="item item-icon-left item-text-wrap">
 				<i class="icon ion-ios-calendar-outline"></i>
 				<strong>{{ 'DIA' | translate }}: </strong>
 				{{ 'DATA_FORMATO' | translate : {date : evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] } }}
@@ -42,14 +33,6 @@
 
 			<div class="item item-body" ng-if="evento.post_content">
 				<div class="noticia content" ng-bind-html="evento.post_content | externalLinks"></div>
-			</div>
-
-			<div class="row">
-				<div class="col">
-					<button class="button button-block button-royal" ng-click="formEnviarPergunta()">
-						{{ 'ENVIAR_PERGUNTA' | translate }}
-					</button>	
-				</div>
 			</div>
 		</ion-list>
 	</ion-content>

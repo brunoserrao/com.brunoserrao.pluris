@@ -2,7 +2,7 @@
 	<ion-header-bar class="bar-royal">
 	    <h1 class="title">{{ 'USUARIO_LOGIN' | translate }}</h1>
 	    <button class="button button-icon ion-android-close" ng-click="closeLogin()"></button>
-	  </ion-header-bar>
+	</ion-header-bar>
 
 	<ion-content>
 		<div class="text-center padding login">
@@ -12,11 +12,11 @@
 		<form name="formLogin" novalidate ng-submit="doLogin()" ng-controller="UsuarioController">
 			<div class="list list-inset">
 				<label class="item item-input">
-					<input type="email" name="username" ng-model="username" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
+					<input type="email" name="username" ng-model="username" required autocomplete="on" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="{{ 'FORM_LOGIN_USERNAME' | translate }}">
 				</label>
 
 				<label class="item item-input">
-					<input type="password" name="password" ng-model="password" required autocomplete="off" placeholder="{{ 'FORM_LOGIN_PASSWORD' | translate }}">
+					<input type="password" name="password" ng-model="password" required autocomplete="on" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="{{ 'FORM_LOGIN_PASSWORD' | translate }}">
 				</label>
 			</div>
 

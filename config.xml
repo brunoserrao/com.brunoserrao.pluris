@@ -8,7 +8,7 @@
   <author email="bruno@brunoserrao.com" href="http://www.brunoserrao.com/">
 		Bruno Serrao
 	</author>
-  <content src="http://10.0.0.200:8100" original-src="index.html"/>
+  <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
