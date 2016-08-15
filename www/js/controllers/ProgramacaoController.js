@@ -1,9 +1,6 @@
 'use strict';
 angular.module('starter.controllers').controller('ProgramacaoController', function($rootScope, $scope, $stateParams, $timeout, $ionicModal, $translate, ToastService, StorageService, RequestService){
-
-	
 	$scope.favoritado = false;
-	$scope.categorias = [];
 
 	$ionicModal.fromTemplateUrl('templates/programacao/pergunta.html', {
 		scope: $scope,
@@ -19,19 +16,12 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	$scope.$on('$destroy', function() {
 		$scope.modal.remove();
 	});
+
+	$scope.salvarDiaSelecionado = function(dia) {
+		StorageService.set('programacao-dia-selecionado', dia);
+	}
 	
 	$scope.carregarProgramacao = function(loading) {
-		StorageService.set('programacao-dia-selecionado', $stateParams.dia);
-		StorageService.set('programacao-categoria-selecionada', $stateParams.categoria_id);
-
-		$scope.dia =  $stateParams.dia;
-		$scope.categoria_id = $stateParams.categoria_id;
-
-		$scope.data = {
-			dia : $stateParams.dia,
-			categoria_id : $scope.categoria_id
-		};
-
 		$scope.descricao  = StorageService.get('programacao-descricao');
 
 		if (!$scope.descricao) {
@@ -46,12 +36,18 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 	$scope.carregarCategorias = function(loading) {
 		$scope.dia =  StorageService.get('programacao-dia-selecionado');
-		$scope.categoria_id = StorageService.get('programacao-categoria-selecionada');
+		$scope.categoria = StorageService.get('programacao-categoria-selecionada');
 
-		$scope.data = {
-			dia : $scope.dia,
-			categoria_id : $scope.categoria_id
-		};
+		if ($scope.categoria) {
+			$scope.data = {
+				dia : $scope.dia,
+				categoria_id : $scope.categoria.cat_ID
+			};
+		} else {
+			$scope.data = {
+				dia : $scope.dia
+			};
+		}		
 
 		RequestService.request('GET','/eventos/categorias', $scope.data, loading, function(result){
 			if (result) {
@@ -69,13 +65,38 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 		StorageService.set('programacao-categoria-selecionada', categoria);
 	}
 
+	$scope.salvarSubCategoriaSelecionada = function(categoria){
+		StorageService.set('programacao-subcategoria-selecionada', categoria);
+	}
+
 	$scope.carregarEventos = function(loading) {
 		$scope.dia = StorageService.get('programacao-dia-selecionado');
-		$scope.categoria_id = StorageService.get('programacao-categoria-selecionada');
-
+		$scope.categoria = StorageService.get('programacao-categoria-selecionada');
+		
 		$scope.data = {
 			dia : $scope.dia,
-			categoria_id : $scope.categoria_id
+			categoria_id : $scope.categoria.cat_ID
+		};
+
+		RequestService.request('POST','/eventos', $scope.data, loading, function(result){
+			if (result) {
+				$scope.eventos = result.data;
+			}
+			
+			$timeout(function(){
+				$scope.$broadcast('scroll.refreshComplete');
+			}, 500);
+		});
+	}
+
+	$scope.carregarSubEventos = function(loading) {
+		$scope.dia = StorageService.get('programacao-dia-selecionado');
+		$scope.subcategoria = StorageService.get('programacao-subcategoria-selecionada');
+		$scope.categoria = StorageService.get('programacao-categoria-selecionada');
+		
+		$scope.data = {
+			dia : $scope.dia,
+			categoria_id : $scope.subcategoria.cat_ID
 		};
 
 		RequestService.request('POST','/eventos', $scope.data, loading, function(result){
@@ -91,6 +112,15 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 	$scope.carregarEvento = function(loading) {
 		var id = $stateParams.id;
+
+		$scope.dia = StorageService.get('programacao-dia-selecionado');
+		$scope.subcategoria = StorageService.get('programacao-subcategoria-selecionada');
+		$scope.categoria = StorageService.get('programacao-categoria-selecionada');
+		
+		$scope.data = {
+			dia : $scope.dia,
+			categoria_id : $scope.categoria.cat_ID
+		};
 
 		$scope.checarFavorito('favorito-evento-' + id);
 
@@ -118,7 +148,6 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 	$scope.enviarPergunta = function(loading) {
 		var id = $stateParams.id;
-		var categoria_id = $stateParams.categoria_id;
 		var data = {
 			id : id,
 			form : {

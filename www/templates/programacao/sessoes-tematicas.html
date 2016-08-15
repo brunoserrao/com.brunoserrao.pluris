@@ -1,16 +1,13 @@
-<ion-view view-title="{{ 'PROGRAMACAO_DIA' | translate:data }}" ng-init="carregarProgramacao(false); carregarCategorias(true)">
+<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}" ng-init="carregarCategorias(true)">
 	<ion-content>
 		<ion-refresher
 			on-refresh="carregcarCategorias(false)">
 		</ion-refresher>
 		
-		<div class="list card" ng-if="descricao">
-			<div class="item item-avatar item-text-wrap">
-				<img src="img/logo-bola.png">
-				<h2>{{ categoria_selecionada.name }}</h2>
-				<p>{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}</p>
-			</div>
-		</div>
+		<ion-item class="item-divider text-center">
+			<h2>{{ categoria.name }}</h2>
+			<p>{{ 'PROGRAMACAO_DIA' | translate:data }}</p>
+		</ion-item>
 
 		<ion-list ng-if="categorias">
 			<div ng-repeat="categoria in categorias">
@@ -20,7 +17,7 @@
 							{{ subcategoria.name }}
 						</ion-item>
 
-						<ion-item ng-repeat="subsubcategoria in subcategoria.subcategory" href="#/app/programacao/sub-categoria/{{ subsubcategoria.cat_ID }}" ng-click="salvarCategoriaSelecionada(subsubcategoria)">
+						<ion-item ng-repeat="subsubcategoria in subcategoria.subcategory" href="#/app/programacao/sub-categoria/{{ subsubcategoria.cat_ID }}" ng-click="salvarSubCategoriaSelecionada(subcategoria)">
 							<span class="item-icon-left">
 								<i class="icon ion-ios-calendar-outline"></i>
 							</span>

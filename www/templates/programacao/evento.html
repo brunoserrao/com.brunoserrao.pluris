@@ -7,8 +7,8 @@
 		<ion-refresher
 			on-refresh="carregarEvento(false)">
 		</ion-refresher>
-		
-		<div class="profile profile-royal" ng-if="evento">
+
+		<div class="profile profile-royal" ng-if="categoria.cat_ID == 11">
 			<div class="row">
 				<div class="col text-center">
 					<img class="profile-picture" fallback-src loading-src ng-src="{{ evento.thumbnail }}" />
@@ -18,6 +18,11 @@
 		</div>
 
 		<ion-list ng-if="evento">
+			<ion-item class="item-divider text-center" ng-if="categoria.cat_ID == 13">
+				<h2>{{ categoria.name }}</h2>
+				<p>{{ 'PROGRAMACAO_DIA' | translate:data }}</p>
+			</ion-item>
+
 			<div class="item item-text-wrap">
 				<h2>{{ evento.post_title }}</h2>
 			</div>
@@ -44,7 +49,7 @@
 				<div class="noticia content" ng-bind-html="evento.post_content | externalLinks"></div>
 			</div>
 
-			<div class="row">
+			<div class="row" ng-if="categoria.cat_ID == 11">
 				<div class="col">
 					<button class="button button-block button-royal" ng-click="formEnviarPergunta()">
 						{{ 'ENVIAR_PERGUNTA' | translate }}

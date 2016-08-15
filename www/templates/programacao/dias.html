@@ -10,9 +10,10 @@
 				<h2>{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}</h2>
 				<div ng-bind-html="descricao.descricao | externalLinks"></div>
 			</div>
-
+		</div>
+		<div class="list card">
 			<ion-list>
-				<ion-item href="#/app/programacao/dia/5" title="{{ 'PROGRAMACAO_1_DIA' | translate }}">
+				<ion-item href="#/app/programacao/dia/5" title="{{ 'PROGRAMACAO_1_DIA' | translate }}" ng-click="salvarDiaSelecionado(5)">
 					<span class="item-icon-left">
 						<i class="icon ion-ios-calendar-outline"></i>
 					</span>
@@ -24,7 +25,7 @@
 					</span>
 				</ion-item>
 
-				<ion-item href="#/app/programacao/dia/6" title="{{ 'PROGRAMACAO_2_DIA' | translate }}">
+				<ion-item href="#/app/programacao/dia/6" title="{{ 'PROGRAMACAO_2_DIA' | translate }}" ng-click="salvarDiaSelecionado(6)">
 					<span class="item-icon-left">
 						<i class="icon ion-ios-calendar-outline"></i>
 					</span>
@@ -36,7 +37,7 @@
 					</span>
 				</ion-item>
 
-				<ion-item href="#/app/programacao/dia/7" title="{{ 'PROGRAMACAO_3_DIA' | translate }}">
+				<ion-item href="#/app/programacao/dia/7" title="{{ 'PROGRAMACAO_3_DIA' | translate }}" ng-click="salvarDiaSelecionado(7)">
 					<span class="item-icon-left">
 						<i class="icon ion-ios-calendar-outline"></i>
 					</span>
