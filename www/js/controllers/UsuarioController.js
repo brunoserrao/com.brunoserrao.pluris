@@ -1,6 +1,6 @@
 'use strict';
 angular.module('starter.controllers')
-.controller('UsuarioController', function($rootScope, $scope, $translate, $state, $ionicHistory, StorageService, RequestService, ToastService){
+.controller('UsuarioController', function($rootScope, $scope, $translate, $state, $ionicHistory, $ionicSideMenuDelegate, StorageService, RequestService, ToastService){
 
 	$scope.doLogin = function(){
 		var data = {
@@ -81,6 +81,12 @@ angular.module('starter.controllers')
 				ToastService.message($translate.instant('FORM_LOGIN_FALHA'));
 			}
 		});
+	}
+
+	$scope.closeMenu = function(){
+		if ($ionicSideMenuDelegate.isOpen()) {
+			$ionicSideMenuDelegate.toggleLeft();
+		}
 	}
 
 	$scope.goBack = function(){
