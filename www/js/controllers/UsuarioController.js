@@ -1,6 +1,6 @@
 'use strict';
 angular.module('starter.controllers')
-.controller('UsuarioController', function($rootScope, $scope, $translate, $state, $ionicHistory, $ionicSideMenuDelegate, StorageService, RequestService, ToastService){
+.controller('UsuarioController', function($rootScope, $scope, $timeout, $translate, $state, $ionicHistory, $ionicSideMenuDelegate, StorageService, RequestService, ToastService){
 
 	$scope.doLogin = function(){
 		var data = {
@@ -30,7 +30,9 @@ angular.module('starter.controllers')
 				delete $rootScope.user;
 				StorageService.clear();
 
-				$state.go('app.home');
+				$timeout(function(){
+					$state.go('app.home');
+				}, 500);
 			} else {
 				ToastService.message($translate.instant('FORM_LOGIN_FALHA'));
 			}
@@ -48,6 +50,10 @@ angular.module('starter.controllers')
 			if (result) {
 				$scope.setUser(result);
 				formCadastro.reset();
+
+				$timeout(function(){
+					$ionicHistory.goBack(-1);
+				}, 500);
 			} else {
 				ToastService.message($translate.instant('FORM_CADASTRO_FALHA'));
 			}
