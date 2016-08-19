@@ -89,12 +89,6 @@ angular.module('starter.controllers')
 		});
 	}
 
-	$scope.closeMenu = function(){
-		if ($ionicSideMenuDelegate.isOpen()) {
-			$ionicSideMenuDelegate.toggleLeft();
-		}
-	}
-
 	$scope.goBack = function(){
 		$ionicHistory.goBack(-1);
 	}

@@ -15,7 +15,21 @@ angular.module('starter.controllers', ['http.services','popup.services','share.s
 	});
 
 	// Triggered in the login modal to close it
-	$scope.closeLogin = function() {
+	$scope.closeLogin = function(go) {
+		if (go){
+			$state.go(go).then(function() {
+				if ($ionicSideMenuDelegate.isOpen()) {
+					$ionicSideMenuDelegate.toggleLeft();
+				}
+
+				$timeout(function(){
+					$scope.modal.hide();
+				},500)
+			});
+		} else {
+			$scope.modal.hide();
+		}
+
 		$scope.modal.hide();
 	};
 
