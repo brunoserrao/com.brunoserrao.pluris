@@ -34,8 +34,8 @@
     "cordova-plugin-calendar",
     "cordova-plugin-inappbrowser",
     "cordova-plugin-nativeaudio",
-    "cordova-plugin-crosswalk-webview",
-    "cordova-plugin-whitelist"
+    "cordova-plugin-whitelist",
+    "cordova-plugin-crosswalk-webview"
   ],
   "cordovaPlatforms": [
     "ios",
