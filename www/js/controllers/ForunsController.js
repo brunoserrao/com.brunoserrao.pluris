@@ -11,7 +11,7 @@ angular.module('starter.controllers')
 
 	$scope.openModal = function() {
 		if(!$scope.user){
-			$state.go('app.usuario/login')
+			$scope.login();
 		} else {
 			$scope.modal.show();
 		}
