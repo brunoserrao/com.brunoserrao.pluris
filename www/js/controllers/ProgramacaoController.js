@@ -49,15 +49,13 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 			};
 		}		
 
-		RequestService.request('GET','/eventos/categorias', $scope.data, loading, function(result){
+		RequestService.request('POST','/eventos/categorias', $scope.data, loading, function(result){
 			if (result) {
 				$scope.categorias = result.data;
 				StorageService.set('programacao-categorias', $scope.categorias);
 			}
-			
-			$timeout(function(){
-				$scope.$broadcast('scroll.refreshComplete');
-			}, 500);
+
+			$scope.hideLoading();
 		});
 	}
 
@@ -82,10 +80,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 			if (result) {
 				$scope.eventos = result.data;
 			}
-			
-			$timeout(function(){
-				$scope.$broadcast('scroll.refreshComplete');
-			}, 500);
+
+			$scope.hideLoading();
 		});
 	}
 
@@ -103,10 +99,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 			if (result) {
 				$scope.eventos = result.data;
 			}
-			
-			$timeout(function(){
-				$scope.$broadcast('scroll.refreshComplete');
-			}, 500);
+
+			$scope.hideLoading();
 		});
 	}
 
@@ -131,10 +125,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 			} else {
 				$scope.evento = StorageService.get('evento-' + id);
 			}
-			
-			$timeout(function(){
-				$scope.$broadcast('scroll.refreshComplete');
-			}, 500);
+
+			$scope.hideLoading();
 		});
 	};
 
@@ -163,10 +155,8 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 			} else {
 				ToastService.message($translate.instant('FALHA_AO_ENVIAR_A_PERGUNTA'));
 			}
-			
-			$timeout(function(){
-				$scope.$broadcast('scroll.refreshComplete');
-			}, 500);
+
+			$scope.hideLoading();
 		});
 	}
 
@@ -244,6 +234,12 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 		};
 
 		window.plugins.calendar.createEvent(title,eventLocation,notes,startDate,endDate,success,error);
+	}
+
+	$scope.hideLoading = function(){
+		$timeout(function(){
+			$scope.$broadcast('scroll.refreshComplete');
+		}, 500);
 	}
 
 	$scope.checarFavorito = function(chave){
