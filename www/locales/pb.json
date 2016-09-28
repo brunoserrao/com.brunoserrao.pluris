@@ -92,6 +92,8 @@
 
 	"FORUM_BOTAO_COMENTAR" : "Envie o seu comentário",
 	"FORUM_COMENTARIOS" : "Comentários",
+	"ERRO_AO_ENVIAR_COMENTARIO" : "Erro ao enviar o comentário. Tente novamente",
+	"COMENTARIO_ENVIADO" : "Comentário enviado. Aguardando aprovação.",
 
 	"FORM_CONTATO_ASSUNTO" : "Assunto",
 	"FORM_CONTATO_MENSAGEM" : "Mensagem",

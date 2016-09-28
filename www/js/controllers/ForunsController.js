@@ -83,8 +83,8 @@ angular.module('starter.controllers')
 		
 		ForunsService.comentar(id, data, loading, function(result){
 			if (result) {
-				$scope.carregarForum(true);
-				formComentario.comentario.value = '';
+				formComentario.reset();
+				ToastService.message($translate.instant('COMENTARIO_ENVIADO'));
 				
 				$timeout(function(){
 					$scope.closeModal();
