@@ -34,7 +34,8 @@
     "cordova-plugin-calendar",
     "cordova-plugin-nativeaudio",
     "cordova-plugin-whitelist",
-    "uk.co.workingedge.phonegap.plugin.launchnavigator"
+    "uk.co.workingedge.phonegap.plugin.launchnavigator",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "ios",
