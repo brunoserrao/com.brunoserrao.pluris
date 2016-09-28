@@ -97,8 +97,8 @@ angular.module('menuDirective', [])
 							href : '#/app/pagina/233'
 						},
 						{
-							title : $translate.instant('MENU_LOCAL_CONFERENCIA'),
-							href : '#/app/pagina/235'
+							title : $translate.instant('MENU_LOCAL_CONFERENCIA_COMPLETO'),
+							href : '#/app/local'
 						}
 					]
 				},

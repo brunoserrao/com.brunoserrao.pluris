@@ -11,24 +11,22 @@
 
 		<ion-list ng-if="categorias">
 			<div ng-repeat="categoria in categorias">
-				<div ng-if="categoria.subcategoria">
-					<div ng-repeat="subcategoria in categoria.subcategoria">
-						<ion-item  class="item-divider">
-							{{ subcategoria.name }}
-						</ion-item>
+				<div ng-repeat="subcategoria in categoria.subcategoria">
+					<ion-item  class="item-divider">
+						{{ subcategoria.name }}
+					</ion-item>
 
-						<ion-item ng-repeat="subsubcategoria in subcategoria.subcategoria" href="#/app/programacao/sub-categoria/{{ subsubcategoria.cat_ID }}" ng-click="salvarSubCategoriaSelecionada(subcategoria)">
-							<span class="item-icon-left">
-								<i class="icon ion-ios-calendar-outline"></i>
-							</span>
-							
-							{{ subsubcategoria.name }}
+					<ion-item ng-repeat="subsubcategoria in subcategoria.subcategoria" href="#/app/programacao/dia/{{ dia }}/subcategoria/{{ subsubcategoria.cat_ID }}" ng-click="salvarSubCategoriaSelecionada(subsubcategoria)">
+						<span class="item-icon-left">
+							<i class="icon ion-ios-calendar-outline"></i>
+						</span>
+						
+						{{ subsubcategoria.name }}
 
-							<span class="item-icon-right">
-								<i class="icon item-note ion-ios-arrow-right"></i>
-							</span>
-						</ion-item>
-					</div>
+						<span class="item-icon-right">
+							<i class="icon item-note ion-ios-arrow-right"></i>
+						</span>
+					</ion-item>
 				</div>
 			</div>
 		</ion-list>

@@ -12,6 +12,8 @@
 	"MENU_LOCAL": "Venue",
 	"MENU_LOCAL_CIDADE": "The city of Maceió",
 	"MENU_LOCAL_CONFERENCIA": "Venue",
+	"MENU_LOCAL_CONFERENCIA_COMPLETO": "Conference location",
+	"MENSAGEM_ABRIR_MAPA": "Tap to view the location",
 
 	"MENU_DATAS_IMPORTANTES": "Importants dates",
 	"MENU_NOTICIAS": "News",

@@ -12,6 +12,8 @@
 	"MENU_LOCAL" : "Local",
 	"MENU_LOCAL_CIDADE" : "La ciudad de Maceió",
 	"MENU_LOCAL_CONFERENCIA" : "Local",
+	"MENU_LOCAL_CONFERENCIA_COMPLETO": "Lugar de la conferencia",
+	"MENSAGEM_ABRIR_MAPA": "Toque para ver la ubicación",
 
 	"MENU_DATAS_IMPORTANTES": "Fechas relevantes",
 	"MENU_NOTICIAS": "Noticias",

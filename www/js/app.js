@@ -100,6 +100,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
+		.state('app.local', {
+			url: '/local',
+			cache: true,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/local/index.html',
+					controller: 'LocalController'
+				}
+			}
+		})
+
 		.state('app.programacao/dia/id', {
 			url: '/programacao/dia/:dia',
 			cache: true,
@@ -122,8 +133,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
-		.state('app.programacao/programacao/sub-categoria/categoria_id', {
-			url: '/programacao/sub-categoria/:categoria_id',
+		.state('app.programacao/programacao/dia/subcategoria/categoria_id', {
+			url: '/programacao/dia/:dia/subcategoria/:categoria_id',
 			cache: true,
 			views: {
 				menuContent: {

@@ -87,12 +87,15 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 
 	$scope.carregarSubEventos = function(loading) {
 		$scope.dia = StorageService.get('programacao-dia-selecionado');
-		$scope.subcategoria = StorageService.get('programacao-subcategoria-selecionada');
 		$scope.categoria = StorageService.get('programacao-categoria-selecionada');
+		$scope.subcategoria = StorageService.get('programacao-subcategoria-selecionada');
+
+		var dia = $stateParams.dia;
+		var categoria_id = $stateParams.categoria_id;
 		
 		$scope.data = {
-			dia : $scope.dia,
-			categoria_id : $scope.subcategoria.cat_ID
+			dia : dia,
+			categoria_id : categoria_id
 		};
 
 		RequestService.request('POST','/eventos', $scope.data, loading, function(result){

@@ -8,10 +8,11 @@
 			<ion-item class="item-divider text-center">
 				<h2>{{ categoria.name }}</h2>
 				<p>{{ 'PROGRAMACAO_DIA' | translate:data }}</p>
+				<p>{{ subcategoria.name }}</p>
 			</ion-item>
 			
 			<ion-item ng-repeat="evento in eventos" href="#/app/programacao/subcategoria/evento/{{ evento.ID }}">
-				{{ evento.post_title }}
+				{{ 'HORA_FORMATO' | translate : {date : evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] } }} - {{ evento.post_title }}
 				<span class="item-icon-right">
 					<i class="icon item-note ion-ios-arrow-right"></i>
 				</span>
