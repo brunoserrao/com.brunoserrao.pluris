@@ -32,10 +32,8 @@
     },
     "cordova-plugin-google-analytics",
     "cordova-plugin-calendar",
-    "cordova-plugin-inappbrowser",
     "cordova-plugin-nativeaudio",
-    "cordova-plugin-whitelist",
-    "cordova-plugin-crosswalk-webview"
+    "cordova-plugin-whitelist"
   ],
   "cordovaPlatforms": [
     "ios",
