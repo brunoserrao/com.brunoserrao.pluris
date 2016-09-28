@@ -12,10 +12,7 @@
 				<div class="item item-avatar item-text-wrap">
 					<img fallback-src loading-src ng-src="{{ forum.thumbnail }}">
 					<h2>{{ forum.post_title }}</h2>
-				</div>
-
-				<div class="item item-text-wrap" ng-if="forum.post_content">
-					<div class="forum content" ng-bind-html="forum.post_content | externalLinks"></div>
+					<p ng-bind-html="forum.post_content | externalLinks"></p>
 				</div>
 
 				<div class="item item-divider" ng-if="comentarios.length > 0">
