@@ -47,7 +47,7 @@
 	"ALERTA_TITULO" : "Alerta",
 
 	"DATA_FORMATO": "{{date|date:'d/M/y'}}",
-	"HORA_FORMATO": "{{date|date:'H:M'}} h",
+	"HORA_FORMATO": "{{date|date:'H:mm'}} h",
 
 	"COMPARTILHAR": "Compartilhar este link",
 	"ERRO_SERVIDOR": "Sem conexão com a internet",

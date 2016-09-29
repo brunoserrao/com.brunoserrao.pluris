@@ -9230,3 +9230,7 @@ a .uppercased {
 #menu-list ion-item.active {
   border-color: #ccc;
   background-color: #D9D9D9; }
+
+.item-body .aligncenter {
+  margin: auto;
+  display: block; }

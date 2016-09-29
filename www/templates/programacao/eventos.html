@@ -11,7 +11,7 @@
 			</ion-item>
 
 			<ion-item ng-repeat="evento in eventos" href="#/app/evento/{{ evento.ID }}">
-				{{ evento.post_title }}
+				{{ 'HORA_FORMATO' | translate : {date : evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] } }} - {{ evento.post_title }}
 				<span class="item-icon-right">
 					<i class="icon item-note ion-ios-arrow-right"></i>
 				</span>
