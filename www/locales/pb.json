@@ -39,6 +39,7 @@
 	"MENU_APOIO": "Apoio",
 	"MENU_ORGANIZACAO": "Organização",
 	"MENU_AGENCIA_OFICIAL": "Agência oficial de turismo",
+	"MENU_PATROCINIO": "Patrocínio",
 
 	"ORGANIZACAO_PERMANENTE": "Organização permanente",
 	"ORGANIZACAO_LOCAL": "Organização local",
@@ -119,5 +120,9 @@
 	"ENVIAR_PERGUNTA" : "Enviar uma pergunta",
 	"ENVIAR" : "Enviar",
 	"PERGUNTA_ENVIADA_COM_SUCESSO" : "A sua pergunta foi enviada ao palestrante",
-	"FALHA_AO_ENVIAR_A_PERGUNTA" : "Houve um erro ao enviar a pergunta"
+	"FALHA_AO_ENVIAR_A_PERGUNTA" : "Houve um erro ao enviar a pergunta",
+
+	"POPUP_BOTAO_CANCELAR" : "Cancelar",
+	"POPUP_BOTAO_CONFIRMAR" : "Confirmar",
+	"MENSAGEM_CONFIRMAR_SAIR" : "Confirmar a saída do aplicativo ?"
 }

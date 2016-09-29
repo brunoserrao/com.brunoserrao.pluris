@@ -39,6 +39,7 @@
 	"MENU_APOIO": "Support",
 	"MENU_ORGANIZACAO": "Organization",
 	"MENU_AGENCIA_OFICIAL": "Official tourism agency",
+	"MENU_PATROCINIO": "Sponsor",
 
 	"ORGANIZACAO_PERMANENTE": "Permanent organization",
 	"ORGANIZACAO_LOCAL": "Local organization",
@@ -119,5 +120,9 @@
 	"ENVIAR_PERGUNTA" : "Send a question",
 	"ENVIAR" : "Send",
 	"PERGUNTA_ENVIADA_COM_SUCESSO" : "Your question has been sent to lecturer",
-	"FALHA_AO_ENVIAR_A_PERGUNTA" : "An error has occurred. Try again."
+	"FALHA_AO_ENVIAR_A_PERGUNTA" : "An error has occurred. Try again.",
+
+	"POPUP_BOTAO_CANCELAR" : "Cancel",
+	"POPUP_BOTAO_CONFIRMAR" : "Confirm",
+	"MENSAGEM_CONFIRMAR_SAIR" : "Confirm application exit ?"
 }

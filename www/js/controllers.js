@@ -1,7 +1,7 @@
 'use strict';
-angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','artigos.services','foruns.services','paginas.services','eventos.services','toast.services','storage.services','onesignal.services'])
+angular.module('starter.controllers', ['http.services','popup.services','share.services','noticias.services','artigos.services','foruns.services','paginas.services','eventos.services','toast.services','storage.services','onesignal.services','popup.services'])
 
-.controller('AppCtrl', function ($rootScope, $scope, $ionicModal, $timeout, $translate, $translateLocalStorage, $ionicPlatform, $ionicSideMenuDelegate, $state, $ionicHistory, ShareService, OneSignalService, StorageService, RequestService) {
+.controller('AppCtrl', function ($rootScope, $scope, $ionicModal, $timeout, $translate, $translateLocalStorage, $ionicPlatform, $ionicSideMenuDelegate, $state, $ionicHistory, ShareService, OneSignalService, StorageService, RequestService, PopupService) {
 
 	// Form data for the login modal
 	$scope.loginData = {};
@@ -70,12 +70,25 @@ angular.module('starter.controllers', ['http.services','popup.services','share.s
 	// Hardware Back Button
 	$ionicPlatform.registerBackButtonAction(function () {
 		if($state.current.name=='app.home'){
-			$ionicSideMenuDelegate.toggleLeft();
+			// $ionicSideMenuDelegate.toggleLeft();
+			
+			var data = {
+				template : $translate.instant('MENSAGEM_CONFIRMAR_SAIR')
+			}
+
+			PopupService.confirm(data, function(res){
+				if (res) {
+					ionic.Platform.exitApp();
+				}
+			})
 		} else {
 			if ($ionicHistory.currentView().index > 0) {
 				$ionicHistory.goBack(-1);
 			} else {
-				$ionicSideMenuDelegate.toggleLeft();
+				$ionicHistory.nextViewOptions({
+					disableBack: true
+				});
+				$state.go('app.home');
 			}
 		}
 	}, 100);
