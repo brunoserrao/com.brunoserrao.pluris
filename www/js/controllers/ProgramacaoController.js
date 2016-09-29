@@ -22,16 +22,14 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 	}
 	
 	$scope.carregarProgramacao = function(loading) {
-		$scope.descricao  = StorageService.get('programacao-descricao');
-
-		if (!$scope.descricao) {
-			RequestService.request('GET','/programacao',null, loading, function(result){
-				if (result) {
-					$scope.descricao = result;
-					StorageService.set('programacao-descricao',result);
-				}
-			});
-		}
+		RequestService.request('GET','/programacao',null, loading, function(result){
+			if (result) {
+				$scope.descricao = result;
+				StorageService.set('programacao-descricao',result);
+			} else {
+				$scope.descricao  = StorageService.get('programacao-descricao');
+			}
+		});
 	}
 
 	$scope.carregarCategorias = function(loading) {
