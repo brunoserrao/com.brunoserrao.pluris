@@ -2,21 +2,31 @@ angular.module('share.services', [])
 
 .factory('ShareService', function($translate, $cordovaSocialSharing){
     function share(post) {
+        var files = [];
+
+        if (post.thumbnail){
+            files.push(post.thumbnail);
+        } else {
+            files.push('www/img/share.jpg');
+        }
+
         var options = {
             message: post.post_title,
             subject: post.post_excerpt,
-            files: ['www/img/share.jpg'],
-            url: post.link,
+            files: files,
             chooserTitle: $translate.instant('CONGRESSO')
         }
 
+        if (post.link){
+            options.url = post.link
+        }
+
         var onSuccess = function(result) {
-            console.log("Share completed? " + result.completed);
-            console.log("Shared to app: " + result.app);
+
         }
 
         var onError = function(msg) {
-            console.log("Sharing failed with message: " + msg);
+            console.log(msg);
         }
 
         window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
