@@ -9234,3 +9234,18 @@ a .uppercased {
 .item-body .aligncenter {
   margin: auto;
   display: block; }
+
+a.button-download {
+  text-decoration: none;
+  text-indent: -1000px;
+  overflow: hidden; }
+
+a.button-download:before {
+  content: "Faça o download do arquivo";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #FFF;
+  height: 100%;
+  width: 100%;
+  text-indent: initial; }

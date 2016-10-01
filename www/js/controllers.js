@@ -70,8 +70,6 @@ angular.module('starter.controllers', ['http.services','popup.services','share.s
 	// Hardware Back Button
 	$ionicPlatform.registerBackButtonAction(function () {
 		if($state.current.name=='app.home'){
-			// $ionicSideMenuDelegate.toggleLeft();
-			
 			var data = {
 				template : $translate.instant('MENSAGEM_CONFIRMAR_SAIR')
 			}
@@ -98,6 +96,14 @@ angular.module('starter.controllers', ['http.services','popup.services','share.s
 	return function(text) {
 		var regex = /href="([\S]+)"/g;
 		var newString = $sanitize(text).replace(regex, "href= \"#\" onclick=\"window.open('$1', '_blank', 'location=yes')\"");
+		return $sce.trustAsHtml(newString);
+	}
+ })
+
+.filter('externalLinksSystem', function($sce, $sanitize) {
+	return function(text) {
+		var regex = /href="([\S]+)"/g;
+		var newString = $sanitize(text).replace(regex, "href= \"#\" class=\"button button-full button-royal button-download\"  onclick=\"window.open('$1', '_system', 'location=yes')\"");
 		return $sce.trustAsHtml(newString);
 	}
  });
