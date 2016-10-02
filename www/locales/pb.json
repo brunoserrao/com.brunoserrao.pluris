@@ -6,7 +6,7 @@
 	"MENU_CONGRESSO_ORGANIZACAO": "Organização",
 	"MENU_CONGRESSO_IDIOMAS": "Idiomas",
 	"MENU_CONGRESSO_CONTATOS": "Contatos",
-	"MENU_CONGRESSO_PROGRAMACAO": "Programação",
+	"MENU_CONGRESSO_PROGRAMACAO": "Programa",
 	"MENU_CONGRESSO_PUBLICACAO": "Publicação",
 	
 	"MENU_LOCAL": "Local",
@@ -20,6 +20,7 @@
 	"MENU_GALERIA": "Galeria",
 	"MENU_ANAIS": "Anais",
 	"MENU_FALE_CONOSCO": "Fale conosco",
+	"MENU_CONTATO": "Contato",
 	"MENU_MAIS_OPCOES": "Opções",
 	"MENU_PERGUNTE": "Pergunte",
 	"MENU_FORUNS": "Fórum",

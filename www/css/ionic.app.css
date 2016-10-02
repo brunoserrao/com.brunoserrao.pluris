@@ -9249,3 +9249,9 @@ a.button-download:before {
   height: 100%;
   width: 100%;
   text-indent: initial; }
+
+.anais.content {
+  text-align: justify; }
+
+.anais.content p:first-child {
+  text-align: center; }

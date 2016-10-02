@@ -6,7 +6,7 @@
 
 		 <div class="list card" ng-if="artigo">
 			<ion-list>
-				<div class="item item-text-wrap">
+				<div class="item item-text-wrap item-divider text-center">
 					<h2>{{ artigo.post_title }}</h2>
 				</div>
 
@@ -15,7 +15,7 @@
 				</div>
 
 				<div class="item item-body" ng-if="artigo.post_content">
-					<div class="artigo content" ng-bind-html="artigo.post_content | externalLinksSystem"></div>
+					<div class="anais artigo content" ng-bind-html="artigo.post_content | externalLinksSystem"></div>
 				</div>
 
 				<div class="item tabs tabs-icon tabs-icon-left">
