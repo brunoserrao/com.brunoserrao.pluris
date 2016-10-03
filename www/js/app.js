@@ -133,6 +133,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.transla
 			}
 		})
 
+		.state('app.programacao/exposicao-de-e-posters/dia/id/categoria/categoria_id', {
+			url: '/programacao/exposicao-de-e-posters/dia/:dia/categoria/:categoria_id',
+			cache: true,
+			views: {
+				menuContent: {
+					templateUrl: 'templates/programacao/e-posters.html',
+					controller: 'ProgramacaoController'
+				}
+			}
+		})
+
 		.state('app.programacao/programacao/dia/subcategoria/categoria_id', {
 			url: '/programacao/dia/:dia/subcategoria/:categoria_id',
 			cache: true,

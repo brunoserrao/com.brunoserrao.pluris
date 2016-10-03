@@ -10,7 +10,7 @@
 				<p>{{ 'PROGRAMACAO_DIA' | translate:data }}</p>
 			</ion-item>
 
-			<ion-item ng-repeat="evento in eventos" href="#/app/evento/{{ evento.ID }}">
+			<ion-item ng-repeat="evento in eventos | reverse" href="#/app/evento/{{ evento.ID }}">
 				{{ 'HORA_FORMATO' | translate : {date : evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] } }} - {{ evento.post_title }}
 				<span class="item-icon-right">
 					<i class="icon item-note ion-ios-arrow-right"></i>

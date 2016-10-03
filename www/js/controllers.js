@@ -92,6 +92,12 @@ angular.module('starter.controllers', ['http.services','popup.services','share.s
 	}, 100);
 })
 
+.filter('reverse', function() {
+	return function(items) {
+		return items.slice().reverse();
+	};
+})
+
 .filter('externalLinks', function($sce, $sanitize) {
 	return function(text) {
 		var regex = /href="([\S]+)"/g;

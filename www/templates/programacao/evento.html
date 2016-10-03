@@ -18,35 +18,43 @@
 		</div>
 
 		<ion-list ng-if="evento">
-			<ion-item class="item-divider text-center" ng-if="categoria.cat_ID == 13">
+			<ion-item class="item-divider text-center" ng-if="categoria.cat_ID == 13 || categoria.cat_ID == 55">
 				<h2>{{ categoria.name }}</h2>
 				<p>{{ 'PROGRAMACAO_DIA' | translate:data }}</p>
 			</ion-item>
 
-			<div class="item item-text-wrap">
+			<div class="item item-text-wrap" ng-if="categoria.cat_ID != 55">
 				<h2>{{ evento.post_title }}</h2>
 			</div>
 
-			<div class="item item-icon-left">
+			<div class="item item-text-wrap item-divider text-center" ng-if="categoria.cat_ID == 55">
+				<h2>{{ evento.post_title }}</h2>
+			</div>
+
+			<div class="item item-icon-left" ng-if="evento.metas.date_start[0]">
 				<i class="icon ion-ios-calendar-outline"></i>
 				<strong>{{ 'DIA' | translate }}: </strong>
 				{{ 'DATA_FORMATO' | translate : {date : evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] } }}
 			</div>
 
-			<div class="item item-icon-left">
+			<div class="item item-icon-left" ng-if="evento.metas.date_start[0]">
 				<i class="icon ion-clock"></i>
 				<strong>{{ 'CALENDARIO_DATA_HORA_INICIO' | translate }}: </strong>
 				{{ 'HORA_FORMATO' | translate : {date : evento.metas.date_start[0] +'T'+ evento.metas.time_start[0] } }}
 			</div>
 
-			<div class="item item-icon-left">
+			<div class="item item-icon-left" ng-if="evento.metas.date_end[0]">
 				<i class="icon ion-clock"></i>
 				<strong>{{ 'CALENDARIO_DATA_HORA_FINAL' | translate }}: </strong>
 				{{ 'HORA_FORMATO' | translate : {date : evento.metas.date_end[0] +'T'+ evento.metas.time_end[0] } }}
 			</div>
 
-			<div class="item item-body" ng-if="evento.post_content">
+			<div class="item item-body" ng-if="evento.post_content && categoria.cat_ID != 55">
 				<div class="noticia content" ng-bind-html="evento.post_content | externalLinks"></div>
+			</div>
+
+			<div class="item item-body" ng-if="evento.post_content && categoria.cat_ID == 55">
+				<div class="anais evento content" ng-bind-html="evento.post_content | externalLinksSystem"></div>
 			</div>
 
 			<div class="row" ng-if="categoria.cat_ID == 11">

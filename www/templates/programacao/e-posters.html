@@ -1,0 +1,21 @@
+<ion-view view-title="{{ 'MENU_CONGRESSO_PROGRAMACAO' | translate }}" ng-init="carregarPosters(true);">
+	<ion-content>
+		<ion-refresher
+			on-refresh="carregarPosters(false)">
+		</ion-refresher>
+		
+		<ion-list>
+			<ion-item class="item-divider text-center">
+				<h2>{{ categoria.name }}</h2>
+				<p>{{ 'PROGRAMACAO_DIA' | translate:data }}</p>
+			</ion-item>
+
+			<ion-item ng-repeat="evento in eventos" href="#/app/evento/{{ evento.ID }}">
+				{{ evento.post_title }}
+				<span class="item-icon-right">
+					<i class="icon item-note ion-ios-arrow-right"></i>
+				</span>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

@@ -83,6 +83,28 @@ angular.module('starter.controllers').controller('ProgramacaoController', functi
 		});
 	}
 
+
+	$scope.carregarPosters = function(loading) {
+		$scope.dia = StorageService.get('programacao-dia-selecionado');
+		$scope.categoria = StorageService.get('programacao-categoria-selecionada');
+		
+		$scope.data = {
+			categoria_id : $scope.categoria.cat_ID
+		};
+
+		RequestService.request('POST','/eventos', $scope.data, loading, function(result){
+			if (result) {
+				$scope.eventos = result.data;
+
+				$scope.data = {
+					dia : $scope.dia
+				};
+			}
+
+			$scope.hideLoading();
+		});
+	}
+
 	$scope.carregarSubEventos = function(loading) {
 		$scope.dia = StorageService.get('programacao-dia-selecionado');
 		$scope.categoria = StorageService.get('programacao-categoria-selecionada');
